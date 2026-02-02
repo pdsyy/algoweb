@@ -85,6 +85,54 @@ const TerraPage = ({activePopup, setActivePopup}) => {
 
 
 
+    const initial = {opacity: 0, y: 40}
+    const whileInView = {opacity: 1, y: 0}
+    const transition = {duration: 0.8, ease: "easeOut", delay:0.1}
+    const viewport = {once: true}
+
+    const pointVariants = {
+        hidden: {opacity: 0, y: 20},
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {delay: i * 0.15, duration: 0.6, ease: "easeOut"}
+        })
+    };
+    const fadeNumeric = {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: {once: true},
+        variants: pointVariants
+    };
+
+    const fadeUp = {
+        initial: {opacity: 0, y: 40},
+        whileInView: {opacity: 1, y: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeDown = {
+        initial: {opacity: 0, y: -40},
+        whileInView: {opacity: 1, y: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeLeft = {
+        initial: {opacity: 0, x: -50},
+        whileInView: {opacity: 1, x: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeRight = {
+        initial: {opacity: 0, x: 50},
+        whileInView: {opacity: 1, x: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+
+
+
+
 
     return (
         <div className="product_page">

@@ -616,7 +616,7 @@ h2 span{
     color: #727272;
     font-family: Inter;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 120%;
 
 }
@@ -926,9 +926,19 @@ h2 span{
     border-bottom: none;
 }
 
-
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
 
 @media screen and (max-width: 768px) {
+    .learn_ho_to a{
+        width: 100%;
+    }
+    .select_bot_info a{
+        width: 100%;
+    }
     .header{
         width: 100%;
         height: auto;
@@ -1002,10 +1012,18 @@ h2 span{
 
     .market_list {
         width: 100%;
-        margin-left: 0px;
-        overflow-x: scroll;
+
         gap: 12px;
-        scrollbar-width: none;
+    }
+    .market_list {
+        display: flex;
+        width: max-content;
+        animation: marquee 40s linear infinite;
+        overflow-x: visible;
+    }
+    .about_us_block {
+        overflow: hidden;
+        width: 100%;
     }
     .our_main_advantages {
         margin-top: 48px;
@@ -1155,8 +1173,23 @@ h2 span{
 
     .review_item{
         padding: 20px;
+        width: calc(100% - 40px);
     }
 
+    .slider-container {
+        overflow: visible !important;
+    }
+
+    .swiper {
+        overflow: visible !important;
+        width: 100%;
+    }
+
+    .swiper-slide {
+        width: calc(100% - 40px);
+        display: flex;
+        justify-content: center;
+    }
     .review_author {
         margin-top: 16px;
         font-size: 20px;

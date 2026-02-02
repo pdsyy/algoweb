@@ -67,7 +67,7 @@ const PopupBot = ({bot_info = [], bot_name, price, isActive, setIsActive, active
                             <div className = "popup_input_theme">
                                 Ваша пошта або телеграм
                             </div>
-                            <input type = "text" placeholder = "Пошта або телеграм" className = "popup_input" value={contactChanelValue} onChange={e => setContactChanelValue(e.target.value)}/>
+                            <input type = "text" placeholder = {`Пошта або ${contactChanel === "Telegram" ? "телеграм" : "інстаграм"}`} className = "popup_input" value={contactChanelValue} onChange={e => setContactChanelValue(e.target.value)}/>
 
                             <div className = "send_button" onClick = {handleFormSubmit}>
                                 Відправити

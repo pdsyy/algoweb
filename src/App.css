@@ -103,6 +103,7 @@
 }
 
 .desktop_header_menu {
+    cursor: pointer;
     display: flex;
     gap: 48px;
     font-family: Inter;
@@ -433,12 +434,13 @@
 }
 
 
-.App {
-    overflow: hidden;
-}
+
 
 
 @media screen and (max-width: 768px) {
+    .App {
+        overflow: hidden;
+    }
     .popup_container_gradient{
         max-height: calc(100vh - 20px);
         overflow-y: scroll;

@@ -41,6 +41,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import logo from "../../images/logo.svg";
 import {useScroll} from "../../context/ScrollContext";
+import {motion} from "framer-motion"
 
 const MainPage = () => {
 
@@ -186,11 +187,58 @@ const MainPage = () => {
         },
     ]
 
+
+    const initial = {opacity: 0, y: 40}
+    const whileInView = {opacity: 1, y: 0}
+    const transition = {duration: 0.8, ease: "easeOut", delay:0.1}
+    const viewport = {once: true}
+
+    const pointVariants = {
+        hidden: {opacity: 0, y: 20},
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {delay: i * 0.15, duration: 0.6, ease: "easeOut"}
+        })
+    };
+    const fadeNumeric = {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: {once: true},
+        variants: pointVariants
+    };
+
+    const fadeUp = {
+        initial: {opacity: 0, y: 40},
+        whileInView: {opacity: 1, y: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeDown = {
+        initial: {opacity: 0, y: -40},
+        whileInView: {opacity: 1, y: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeLeft = {
+        initial: {opacity: 0, x: -50},
+        whileInView: {opacity: 1, x: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeRight = {
+        initial: {opacity: 0, x: 50},
+        whileInView: {opacity: 1, x: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+
+
     return (
         <div className="main_page">
             <div className="main_block" onMouseMove={handleMouseMove}>
                 <img src={window.innerWidth > 768 ? mainBlockBg : mainBlockBgMobile} alt="" className="main_block_bg"/>
-                <div className="main_info_block">
+                <motion.div className="main_info_block" {...fadeLeft}>
                     <div className="algo_block">
                         algo
                     </div>
@@ -203,15 +251,15 @@ const MainPage = () => {
                     <div className="select_bot_button" onClick={() => scrollToSection("catalog")}>
                         Обрати бота
                     </div>
-                </div>
+                </motion.div>
 
-                <img src={metalPackage} alt="" className="metalPackage" ref={boxRef}/>
+                <motion.img src={metalPackage} alt="" className="metalPackage" ref={boxRef} {...fadeRight}/>
             </div>
             <div className="main_page_content">
 
 
                 <div className="about_us_block">
-                    <div className="market_list">
+                    <motion.div className="market_list" {...fadeUp}>
                         <img src={market_image1} alt=""/>
                         <img src={market_image2} alt=""/>
                         <img src={market_image3} alt=""/>
@@ -219,53 +267,64 @@ const MainPage = () => {
                         <img src={market_image5} alt=""/>
                         <img src={market_image6} alt=""/>
                         <img src={market_image7} alt=""/>
-                    </div>
-                    <h2 className="our_main_advantages">
+                        {window.innerWidth < 768 ? <>
+                            <img src={market_image1} alt=""/>
+                            <img src={market_image2} alt=""/>
+                            <img src={market_image3} alt=""/>
+                            <img src={market_image4} alt=""/>
+                            <img src={market_image5} alt=""/>
+                            <img src={market_image6} alt=""/>
+                            <img src={market_image7} alt=""/>
+                        </> : ""
+                        }
+
+                    </motion.div>
+                    <motion.h2 className="our_main_advantages" {...fadeUp}>
                         <span>Наша команда вже автоматизувала трейдинг</span><br/>
                         для багатьох клієнтів, допоможемо і вам.
-                    </h2>
+                    </motion.h2>
                     <div className="our_advantages_list">
-                        <div className="advantages_point">
+                        <motion.div className="advantages_point" {...fadeNumeric} custom={1}>
                             <div className="advantages_point_number">2</div>
                             <div className="advantages_point_desc">Роки на ринку</div>
-                        </div>
-                        <div className="advantages_point">
+                        </motion.div>
+                        <motion.div className="advantages_point" {...fadeNumeric} custom={2}>
                             <div className="advantages_point_number">3</div>
                             <div className="advantages_point_desc">Профітних ботів</div>
-                        </div>
-                        <div className="advantages_point">
+                        </motion.div>
+                        <motion.div className="advantages_point" {...fadeNumeric} custom={3}>
                             <div className="advantages_point_number">5</div>
                             <div className="advantages_point_desc">Рахунків з live статистикою</div>
-                        </div>
-                        <div className="advantages_point">
+                        </motion.div>
+                        <motion.div className="advantages_point" {...fadeNumeric} custom={4}>
                             <div className="advantages_point_number">+80%</div>
                             <div className="advantages_point_desc">За 2025 рік</div>
-                        </div>
+                        </motion.div>
                     </div>
 
                 </div>
 
                 <div className="money_in_management">
-                    <div className="money_in_management_number">
+                    <motion.div className="money_in_management_number" {...fadeUp}>
                         200 000$
-                    </div>
+                    </motion.div>
 
-                    <div className="in_management">
+                    <motion.div className="in_management" {...fadeUp}>
                         в управлінні
-                    </div>
+                    </motion.div>
                 </div>
 
                 <div className="first_deal_block" id="how-it-works">
-                    <h2>
+                    <motion.h2 {...fadeUp}>
                         <span>Шлях від налаштування</span> до першої угоди
-                    </h2>
+                    </motion.h2>
                     <div className="first_deal_details">
-                        <div className="first_deal_image">
+                        <motion.div className="first_deal_image" {...fadeLeft}>
                             <img src={firstDealImage} alt=""/>
-                        </div>
+                        </motion.div>
 
 
-                        <div className="first_deal_block_list">
+                        <motion.div className="first_deal_block_list" {...fadeRight}>
                             <div className="first_deal_item_gradient">
 
                                 <div className="first_deal_item">
@@ -337,18 +396,18 @@ const MainPage = () => {
                                 </div>
                             </div>
 
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 
 
                 <div className="effective_algorithm" id="advantages">
-                    <h2>
+                    <motion.h2 {...fadeUp}>
                         Чому алгоритми ефективніші <br/><span>за ручну торгівлю?</span>
-                    </h2>
+                    </motion.h2>
 
                     <div className="effective_points first">
-                        <div className="effective_point">
+                        <motion.div className="effective_point" {...fadeLeft}>
                             <img src={effectiveImage1} alt=""/>
                             <div className="name">
                                 Торгівля без «людського фактора»
@@ -357,8 +416,8 @@ const MainPage = () => {
                                 Бот не закриє угоду занадто рано через страх і не затримається в
                                 збитках через надію. Лише математичне очікування.
                             </div>
-                        </div>
-                        <div className="effective_point">
+                        </motion.div>
+                        <motion.div className="effective_point" {...fadeRight}>
                             <img src={effectiveImage2} alt=""/>
                             <div className="name">
                                 Реальна статистика
@@ -367,11 +426,11 @@ const MainPage = () => {
                                 У кожного алгоритму є відкрита статистика мінімум за 6 місяців роботи
                                 на реальному рахунку у ліцензованого брокера.
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                     <div className="effective_points second">
-                        <div className="effective_point">
+                        <motion.div className="effective_point" {...fadeLeft}>
                             <img src={effectiveImage3} alt=""/>
                             <div className="name">
                                 Пасивний дохід
@@ -380,8 +439,8 @@ const MainPage = () => {
                                 Ринок не спить. Бот працює і вдень, і вночі, поки ви відпочиваєте.
                                 Це повноцінний пасивний дохід без вашої участі.
                             </div>
-                        </div>
-                        <div className="effective_point">
+                        </motion.div>
+                        <motion.div className="effective_point" {...fadeRight}>
                             <img src={effectiveImage4} alt=""/>
                             <div className="name">
                                 Прозорість і тести
@@ -390,19 +449,19 @@ const MainPage = () => {
                                 Кожен алгоритм прогнаний через історичні дані. Ви розумієте
                                 логіку роботи системи ще до того, як запустите її.
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 
                 <div className="bots_catalog" id="catalog">
-                    <h2>
+                    <motion.h2 {...fadeUp}>
                         Каталог ботів
-                    </h2>
+                    </motion.h2>
 
 
                     <div className="bots_list">
-                        {botsList.map((el) =>
-                            <div className="bot_item">
+                        {botsList.map((el, idx) =>
+                            <motion.div className="bot_item" {...fadeNumeric} custom={idx}>
                                 <div className="bot_image">
                                     {el.prop ? <div className="prop_pl">
                                         Підходить під проп
@@ -465,16 +524,16 @@ const MainPage = () => {
                                         Детальніше
                                     </div>
                                 </a>
-                            </div>
+                            </motion.div>
                         )}
                     </div>
                 </div>
 
                 <div className="algo_feedback_block" id="reviews">
                     <div className="feedback_h2">
-                        <h2>
+                        <motion.h2 {...fadeUp}>
                             <span>Що кажуть ті,</span> хто вже перейшов на ALGO
-                        </h2>
+                        </motion.h2>
 
                         <div className="reviews_nav">
                             <div
@@ -493,7 +552,7 @@ const MainPage = () => {
 
                     </div>
 
-                    <div className="slider-container">
+                    <motion.div className="slider-container" {...fadeUp}>
 
 
                         <Swiper
@@ -525,7 +584,7 @@ const MainPage = () => {
                             <div className="custom-pagination"></div>
                         </Swiper>
 
-                    </div>
+                    </motion.div>
 
                     <div className="center-btn">
                         <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
@@ -538,9 +597,9 @@ const MainPage = () => {
                 </div>
 
                 <div className="faq_container" id="faq">
-                    <h2>
+                    <motion.h2 {...fadeUp}>
                         Відповіді на запитання
-                    </h2>
+                    </motion.h2>
                     <div className="faq_list">
                         <img src={circles_bg} alt="" className="bg_circles_faq"/>
                         <div className="faq_questions_list">
@@ -548,9 +607,11 @@ const MainPage = () => {
                                 const isOpen = openFaqs.includes(index);
 
                                 return (
-                                    <div
+                                    <motion.div
                                         key={index}
                                         className={`faq_item ${isOpen ? "open_faq" : ""}`}
+                                        {...fadeNumeric}
+                                        custom={index}
                                     >
                                         <div className="faq_item_question" onClick={() => {
                                             setOpenFaqs((prev) =>
@@ -570,7 +631,7 @@ const MainPage = () => {
                                         <div className="faq_item_answer">
                                             {el.answer}
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 );
                             })}
 
@@ -580,7 +641,7 @@ const MainPage = () => {
                 </div>
 
 
-                <div className="select_bot_fs">
+                <motion.div className="select_bot_fs" {...fadeUp}>
                     <div className="select_bot_block">
                         <div className="select_bot_info">
                             <div className="select_bot_theme">
@@ -598,9 +659,9 @@ const MainPage = () => {
                         </div>
                         <img src={select_bot_img} alt=""/>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="footer">
+                <motion.div className="footer" {...fadeUp}>
                     <a href="/">
                         <img src={logo} alt="" className="logo_img"/>
                     </a>
@@ -616,7 +677,7 @@ const MainPage = () => {
                             <a href="https://www.youtube.com/@alg0_ofx">Youtube</a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
 
             </div>
