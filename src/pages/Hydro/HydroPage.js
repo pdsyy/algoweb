@@ -29,8 +29,9 @@ import YearMonthHandler from "../../components/YearMonthHandler";
 import logo from "../../images/logo.svg";
 import PopupBot from "../../components/PopupBot";
 import {Pagination} from "swiper/modules";
+import CalculatorSection from "../../components/CalculatorSection";
 
-const HydroPage = () => {
+const HydroPage = ({activePopup, setActivePopup}) => {
 
     const [hoverMode, setHoverMode] = useState(null);
     const [mode, setMode] = useState("2024");
@@ -94,6 +95,8 @@ const HydroPage = () => {
                 price={bot_info_popup.bot_price}
                 isActive={isActive}
                 setIsActive={setIsActive}
+                activeThx={activePopup}
+                setActiveThx={setActivePopup}
             />
             <div className="bot_info_main">
                 <div>
@@ -253,9 +256,11 @@ const HydroPage = () => {
 
                         </div>
 
-                        <div className="see_stat_button">
-                            Дивитися статистику
-                        </div>
+                        <a href="https://www.myfxbook.com/portfolio/aero-ea-low-risk-set/11648009">
+                            <div className="see_stat_button">
+                                Дивитися статистику
+                            </div>
+                        </a>
                     </div>
                     <div className="result_image">
                         <img src={result2025} alt=""/>
@@ -351,9 +356,11 @@ const HydroPage = () => {
                 </div>
 
                 <div className="center-btn">
-                    <div className="more_reviews_button">
-                        Більше відгуків
-                    </div>
+                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
+                        <div className="more_reviews_button">
+                            Більше відгуків
+                        </div>
+                    </a>
                 </div>
 
             </div>
@@ -438,97 +445,7 @@ const HydroPage = () => {
                 </div>
 
             </div>
-            <div className="calculate_block_container">
-                <h2>
-                    <span>Розрахуйте свою</span> довгострокову дохідність
-                </h2>
-                <div className="calculate_block_fs">
-                    <div className="calculate_block">
-                        <div className="calculate_theme">
-                            Сума та термін
-                        </div>
-                        <div className="input_name">
-                            Початкова сума
-                        </div>
-                        <InputRangeBar SLIDER_MAX="50000" startValue="10000" inputIcon={dollar_circle}/>
-
-                        <div className="calculate_warn">
-                            <img src={info_icon} alt=""/> Сума, з якої починаються інвестиції
-                        </div>
-                        <div className="input_name">
-                            Одиниця виміру
-                        </div>
-
-
-                        <YearMonthHandler leftItem="Рік" rightItem="Місяць"/>
-
-                        <div className="input_name mt8">
-                            Термін
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX="10" startValue="5" inputIcon={calendar_icon}/>
-
-                        <div className="calculate_warn">
-                            <img src={info_icon} alt=""/> Кількість років/місяців, протягом яких ви плануєте інвестувати
-                            кошти
-                        </div>
-
-                        <hr className="calculate_hr"/>
-
-                        <div className="calculate_theme mt12">
-                            Нарахування відсотків
-                        </div>
-                        <div className="input_name mt8">
-                            Періодичність
-                        </div>
-
-                        <YearMonthHandler leftItem="Щорічно" rightItem="Щомісяця"/>
-
-                        <div className="input_name mt8">
-                            Відсоткова ставка
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX="40" startValue="20" inputIcon={percent_icon}/>
-
-                        <div className="calculate_warn">
-                            <img src={info_icon} alt=""/> Розмір річного/місячного доходу у відсотках
-                        </div>
-
-                        <hr className="calculate_hr"/>
-
-                        <div className="calculate_theme mt12">
-                            Поповнення
-                        </div>
-                        <div className="input_name mt8">
-                            Перiодичнiсть
-                        </div>
-                        <YearMonthHandler leftItem="Щорічно" rightItem="Щомісяця"/>
-                        <div className="input_name mt8">
-                            Сума
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX="10000" startValue="0" inputIcon={percent_icon}/>
-
-                        <div className="calculate_warn">
-                            <img src={info_icon} alt=""/> Сума, на яку плануєте поповнювати
-                        </div>
-
-                        <div className="calculate_button">
-                            Розрахувати дохідність
-                        </div>
-
-                    </div>
-                    <div className="calculate_table">
-                        <div className="calculate_table_name">
-                            Таблиця з розрахунками
-                        </div>
-                        <div className="calculate_table_description">
-                            Terra EA в середньому робить стабільні +20% на рік/1.6% на місяць.<br/>
-                            Чим більший термін інвестицій, тим більша магія складного відсотку!
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <CalculatorSection/>
 
             <div className="buy_block_fs">
                 <div className="buy_block">
@@ -587,7 +504,9 @@ const HydroPage = () => {
                             }}>
                                 Придбати
                             </div>
-                            <div className="piece_pay_bottom">
+                            <div className="piece_pay_bottom" onClick = {() => {
+                                setIsActive(true)
+                            }}>
                                 Оплата частинами
                             </div>
                         </div>

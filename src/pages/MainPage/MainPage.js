@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import "./mainPageStyle.css"
 import mainBlockBg from "./images/mainBlockBg.png"
 import mainBlockBgMobile from "./images/MainBlockBgMobile.png"
@@ -40,8 +40,40 @@ import 'swiper/css/pagination';
 import "swiper/css";
 import "swiper/css/navigation";
 import logo from "../../images/logo.svg";
+import {useScroll} from "../../context/ScrollContext";
 
 const MainPage = () => {
+
+
+    useEffect(() => {
+        if (window.location.hash) {
+            const id = window.location.hash.replace('#', '');
+
+            window.addEventListener("DOMContentLoaded", () => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const elementHeight = element.offsetHeight;
+                    const windowHeight = window.innerHeight;
+                    const headerOffset = 80;
+
+                    if (elementHeight > windowHeight * 0.8) {
+                        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                            top: elementPosition - headerOffset,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                }
+            })
+        }
+    }, []);
+
+    const {scrollToSection} = useScroll();
 
     const boxRef = useRef(null);
     const handleMouseMove = (e) => {
@@ -168,7 +200,7 @@ const MainPage = () => {
                     <div className="main_desc">
                         Торгові боти, які працюють за заданою логікою та з контролем ризику.
                     </div>
-                    <div className="select_bot_button">
+                    <div className="select_bot_button" onClick={() => scrollToSection("catalog")}>
                         Обрати бота
                     </div>
                 </div>
@@ -223,7 +255,7 @@ const MainPage = () => {
                     </div>
                 </div>
 
-                <div className="first_deal_block">
+                <div className="first_deal_block" id="how-it-works">
                     <h2>
                         <span>Шлях від налаштування</span> до першої угоди
                     </h2>
@@ -310,7 +342,7 @@ const MainPage = () => {
                 </div>
 
 
-                <div className="effective_algorithm">
+                <div className="effective_algorithm" id="advantages">
                     <h2>
                         Чому алгоритми ефективніші <br/><span>за ручну торгівлю?</span>
                     </h2>
@@ -362,7 +394,7 @@ const MainPage = () => {
                     </div>
                 </div>
 
-                <div className="bots_catalog">
+                <div className="bots_catalog" id="catalog">
                     <h2>
                         Каталог ботів
                     </h2>
@@ -372,13 +404,13 @@ const MainPage = () => {
                         {botsList.map((el) =>
                             <div className="bot_item">
                                 <div className="bot_image">
-                                    {el.prop ? <div className = "prop_pl">
+                                    {el.prop ? <div className="prop_pl">
                                         Підходить під проп
                                     </div> : ""}
                                     <img src={el.image} alt=""/>
 
                                     {el.paying ?
-                                        <div className  = "paying_pl">
+                                        <div className="paying_pl">
                                             Оплата частинами
                                         </div>
                                         : ""}
@@ -438,7 +470,7 @@ const MainPage = () => {
                     </div>
                 </div>
 
-                <div className="algo_feedback_block">
+                <div className="algo_feedback_block" id="reviews">
                     <div className="feedback_h2">
                         <h2>
                             <span>Що кажуть ті,</span> хто вже перейшов на ALGO
@@ -496,14 +528,16 @@ const MainPage = () => {
                     </div>
 
                     <div className="center-btn">
-                        <div className="more_reviews_button">
-                            Більше відгуків
-                        </div>
+                        <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
+                            <div className="more_reviews_button">
+                                Більше відгуків
+                            </div>
+                        </a>
                     </div>
 
                 </div>
 
-                <div className="faq_container">
+                <div className="faq_container" id="faq">
                     <h2>
                         Відповіді на запитання
                     </h2>
@@ -556,9 +590,11 @@ const MainPage = () => {
                                 Ринок пропонує сотні варіантів, але не всі вони підходять під ваш капітал і темперамент.
                                 Ми допоможемо підібрати рішення, яке буде комфортним саме для вас.
                             </div>
-                            <div className="consult_button">
-                                Отримати консультацію
-                            </div>
+                            <a href="https://t.me/alg0_o">
+                                <div className="consult_button">
+                                    Отримати консультацію
+                                </div>
+                            </a>
                         </div>
                         <img src={select_bot_img} alt=""/>
                     </div>

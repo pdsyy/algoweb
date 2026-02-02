@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const YearMonthHandler = ({leftItem, rightItem}) => {
+const YearMonthHandler = ({leftItem, rightItem, handleValue, setHandleValue}) => {
 
     const [hoverMonthYearFirst, setHoverMonthYearFirst] = useState(null);
     const [MonthYearFirst, setMonthYearFirst] = useState(leftItem);
@@ -15,6 +15,7 @@ const YearMonthHandler = ({leftItem, rightItem}) => {
                 onClick={() => {
                     setHoverMonthYearFirst(leftItem)
                     setMonthYearFirst(leftItem)
+                    setHandleValue(leftItem)
                 }}
             >
                 {leftItem}</div>
@@ -23,6 +24,7 @@ const YearMonthHandler = ({leftItem, rightItem}) => {
                 onClick={() => {
                     setHoverMonthYearFirst(rightItem)
                     setMonthYearFirst(rightItem)
+                    setHandleValue(rightItem)
                 }}
             >
                 {rightItem}

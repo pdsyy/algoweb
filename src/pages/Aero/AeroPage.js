@@ -27,13 +27,12 @@ import YearMonthHandler from "../../components/YearMonthHandler";
 import logo from "../../images/logo.svg";
 import PopupBot from "../../components/PopupBot";
 import {Pagination} from "swiper/modules";
+import CalculatorSection from "../../components/CalculatorSection";
 
-const AeroPage = () => {
+const AeroPage = ({activePopup, setActivePopup}) => {
 
     const [hoverMode, setHoverMode] = useState(null);
     const [mode, setMode] = useState("2024");
-
-
 
 
     const reviews = [
@@ -76,7 +75,7 @@ const AeroPage = () => {
             "Гарантія 100% ідентичності ваших результатів з нашими",
             "Налаштування бота під проп-компанію"],
         bot_name: "AERO EA",
-        bot_price:1200
+        bot_price: 1200
     }
 
 
@@ -90,6 +89,8 @@ const AeroPage = () => {
                 price={bot_info_popup.bot_price}
                 isActive={isActive}
                 setIsActive={setIsActive}
+                activeThx={activePopup}
+                setActiveThx={setActivePopup}
             />
             <div className="bot_info_main">
                 <div>
@@ -106,7 +107,7 @@ const AeroPage = () => {
                         Має понад 7 місяців підтвердженої статистики і 10 років тестів зі стабільними
                         результатами.
                     </div>
-                    <div className="button_buy_bot" onClick = {() => {
+                    <div className="button_buy_bot" onClick={() => {
                         setIsActive(true)
                     }}>
                         Придбати бота
@@ -115,9 +116,11 @@ const AeroPage = () => {
                         Безпека вашого капіталу
                     </div>
                     <div className="product_description">
-                        Aero - елемент повітря, він може бути спокійним, як легкий вітер, так і динамічним, перетворюючи вітер на бурю, завдяки рівню ризику, що налаштовується.
+                        Aero - елемент повітря, він може бути спокійним, як легкий вітер, так і динамічним, перетворюючи
+                        вітер на бурю, завдяки рівню ризику, що налаштовується.
                         <br/><br/>
-                        Алгоритм навчали за допомогою AI на базі символу XAUUSD з 1999 року, його стратегія не має жодних «небезпечних» методик як мартингейл, сіткова торгівля та подібні.
+                        Алгоритм навчали за допомогою AI на базі символу XAUUSD з 1999 року, його стратегія не має
+                        жодних «небезпечних» методик як мартингейл, сіткова торгівля та подібні.
                         <br/><br/>
                         Це забезпечує максимально безпечну торгівлю.
                     </div>
@@ -137,7 +140,8 @@ const AeroPage = () => {
                                 <div className="product_advantage_num">01</div>
                             </div>
                             <div className="product_advantage_desc">
-                                Оскільки він не використовує заборонених стратегій, Aero підходить для більшості популярних проп-компаній.
+                                Оскільки він не використовує заборонених стратегій, Aero підходить для більшості
+                                популярних проп-компаній.
                             </div>
                         </div>
                     </div>
@@ -150,7 +154,8 @@ const AeroPage = () => {
                                 <div className="product_advantage_num">02</div>
                             </div>
                             <div className="product_advantage_desc">
-                                Алгоритм працює на пробій ключових цінових рівнів і підлаштовується під різні стадії ринку.
+                                Алгоритм працює на пробій ключових цінових рівнів і підлаштовується під різні стадії
+                                ринку.
                             </div>
                         </div>
                     </div>
@@ -163,7 +168,8 @@ const AeroPage = () => {
                                 <div className="product_advantage_num">03</div>
                             </div>
                             <div className="product_advantage_desc">
-                                Ідеальний як для консервативних, так і для агресивних трейдерів. Ви самі контролюєте стиль торгівлі.
+                                Ідеальний як для консервативних, так і для агресивних трейдерів. Ви самі контролюєте
+                                стиль торгівлі.
                             </div>
                         </div>
                     </div>
@@ -176,7 +182,8 @@ const AeroPage = () => {
                                 <div className="product_advantage_num">02</div>
                             </div>
                             <div className="product_advantage_desc">
-                                Aero EA працює у фоновому режимі, повністю автоматизований і не потребує постійної участі.
+                                Aero EA працює у фоновому режимі, повністю автоматизований і не потребує постійної
+                                участі.
                             </div>
                         </div>
                     </div>
@@ -193,7 +200,7 @@ const AeroPage = () => {
                             Aero EA
                         </div>
                         <div className="result_block_name_aero">
-                            На live рахунку Aero демонструє феноменальний результат  з дохідністю
+                            На live рахунку Aero демонструє феноменальний результат з дохідністю
                             2%/місяць при просадці 3.7%
                         </div>
                         <div className="plus_result">
@@ -227,10 +234,11 @@ const AeroPage = () => {
 
 
                         </div>
-
-                        <div className="see_stat_button">
-                            Дивитися статистику
-                        </div>
+                        <a href="https://www.myfxbook.com/members/alg0_o/aero-ea-low-risk-set/11648009" target = "_blank">
+                            <div className="see_stat_button">
+                                Дивитися статистику
+                            </div>
+                        </a>
                     </div>
                     <div className="result_image">
                         <img src={result2025} alt=""/>
@@ -238,31 +246,33 @@ const AeroPage = () => {
                 </div>
             </div>
 
-            <div className = "video_demonstration">
-                <div className = "video_text">
+            <div className="video_demonstration">
+                <div className="video_text">
                     <h2>
                         <span>Відео-демонстрація</span><br/> роботи бота
                     </h2>
                 </div>
-                <div className = "video_block">
-                    <img src = {demonstration} alt = ""/>
+                <div className="video_block">
+                    <img src={demonstration} alt=""/>
                 </div>
             </div>
 
 
-            <div className = "how_to_fs">
-                <div className = "how_to_block">
-                    <div className = "learn_ho_to">
-                        <div className = "how_to_main_info">
+            <div className="how_to_fs">
+                <div className="how_to_block">
+                    <div className="learn_ho_to">
+                        <div className="how_to_main_info">
                             Дізнайтесь як збільшити дохідність Aero за допомогою проп-компаній
                         </div>
-                        <div className = "read_more_button">
-                            Читати більше
-                        </div>
+                        <a href="https://teletype.in/@volodymyrbbk/d-OhuPGz2YL" target = "_blank">
+                            <div className="read_more_button">
+                                Читати більше
+                            </div>
+                        </a>
                     </div>
 
-                    <div className = "hot_to_image">
-                        <img src = {how_to_image} alt = ""/>
+                    <div className="hot_to_image">
+                        <img src={how_to_image} alt=""/>
                     </div>
                 </div>
             </div>
@@ -307,9 +317,9 @@ const AeroPage = () => {
                             swiperRef.current = swiper;
                         }}
                         breakpoints={{
-                            0: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
+                            0: {slidesPerView: 1},
+                            768: {slidesPerView: 2},
+                            1024: {slidesPerView: 3},
                         }}
                     >
                         {reviews.map((review, i) => (
@@ -326,228 +336,141 @@ const AeroPage = () => {
                 </div>
 
                 <div className="center-btn">
-                    <div className="more_reviews_button">
-                        Більше відгуків
-                    </div>
+                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
+                        <div className="more_reviews_button">
+                            Більше відгуків
+                        </div>
+                    </a>
                 </div>
 
             </div>
 
-            <div className = "test_result">
+            <div className="test_result">
                 <h2>
                     Результати тестів <span>за останні 10 років</span>
                 </h2>
-                <div className = "test_details_block_fs">
-                    <div className = "test_details_block">
-                        <div className = "test_info">
-                            <div className = "test_theme">
+                <div className="test_details_block_fs">
+                    <div className="test_details_block">
+                        <div className="test_info">
+                            <div className="test_theme">
                                 Період тестування
                             </div>
-                            <div className = "test_detail_item">
+                            <div className="test_detail_item">
                                 Таймфрейм
-                                <div className = "test_detail_number">
+                                <div className="test_detail_number">
                                     1 година (H1)
                                 </div>
                             </div>
-                            <div className = "test_detail_item">
+                            <div className="test_detail_item">
                                 Дати тестування
-                                <div className = "test_detail_number">
-                                    2016.01.04  — 2026.01.01
+                                <div className="test_detail_number">
+                                    2016.01.04 — 2026.01.01
                                 </div>
                             </div>
 
-                            <div className = "test_theme mt24">
+                            <div className="test_theme mt24">
                                 Депозит та прибуток
                             </div>
-                            <div className = "test_numbers_grid">
-                                <div className = "test_numbers_grid_item">
-                                    <div className = "test_item_name">
+                            <div className="test_numbers_grid">
+                                <div className="test_numbers_grid_item">
+                                    <div className="test_item_name">
                                         Початковий депозит
                                     </div>
-                                    <div className = "test_item_number">
+                                    <div className="test_item_number">
                                         10000.00
                                     </div>
                                 </div>
-                                <div className = "test_numbers_grid_item">
-                                    <div className = "test_item_name">
+                                <div className="test_numbers_grid_item">
+                                    <div className="test_item_name">
                                         Чистий прибуток
                                     </div>
-                                    <div className = "test_item_number">
+                                    <div className="test_item_number">
                                         +1113%
                                     </div>
                                 </div>
                             </div>
 
-                            <div className = "test_detail_item">
+                            <div className="test_detail_item">
                                 Валютні пари
-                                <div className = "test_detail_number">
+                                <div className="test_detail_number">
                                     XAUUSD ( GOLD )
                                 </div>
                             </div>
 
 
-                            <div className = "test_theme mt24">
+                            <div className="test_theme mt24">
                                 Ризик
                             </div>
-                            <div className = "test_detail_item">
+                            <div className="test_detail_item">
                                 Максимальна просадка
-                                <div className = "test_detail_number">
+                                <div className="test_detail_number">
                                     12.31%
                                 </div>
                             </div>
 
-                            <div className = "test_theme mt24">
+                            <div className="test_theme mt24">
                                 Статистика угод
                             </div>
-                            <div className = "test_detail_item">
+                            <div className="test_detail_item">
                                 Прибуткові угоди
-                                <div className = "test_detail_number">
+                                <div className="test_detail_number">
                                     85.66%
                                 </div>
                             </div>
                         </div>
-                        <div className = "test_result_image">
-                            <img src = {test_image} alt = ""/>
+                        <div className="test_result_image">
+                            <img src={test_image} alt=""/>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div className = "calculate_block_container">
-                <h2>
-                    <span>Розрахуйте свою</span> довгострокову дохідність
-                </h2>
-                <div className = "calculate_block_fs">
-                    <div className = "calculate_block">
-                        <div className = "calculate_theme">
-                            Сума та термін
-                        </div>
-                        <div className = "input_name">
-                            Початкова сума
-                        </div>
-                        <InputRangeBar SLIDER_MAX = "50000" startValue = "10000" inputIcon = {dollar_circle}/>
+            <CalculatorSection/>
 
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Сума, з якої починаються інвестиції
-                        </div>
-                        <div className = "input_name">
-                            Одиниця виміру
-                        </div>
-
-
-                        <YearMonthHandler leftItem = "Рік" rightItem = "Місяць"/>
-
-                        <div className = "input_name mt8">
-                            Термін
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX = "10" startValue = "5" inputIcon = {calendar_icon}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Кількість років/місяців, протягом яких ви плануєте інвестувати кошти
-                        </div>
-
-                        <hr className = "calculate_hr"/>
-
-                        <div className = "calculate_theme mt12">
-                            Нарахування відсотків
-                        </div>
-                        <div className = "input_name mt8">
-                            Періодичність
-                        </div>
-
-                        <YearMonthHandler leftItem = "Щорічно" rightItem = "Щомісяця"/>
-
-                        <div className = "input_name mt8">
-                            Відсоткова ставка
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX = "40" startValue = "20" inputIcon = {percent_icon}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Розмір річного/місячного доходу у відсотках
-                        </div>
-
-                        <hr className = "calculate_hr"/>
-
-                        <div className = "calculate_theme mt12">
-                            Поповнення
-                        </div>
-                        <div className = "input_name mt8">
-                            Перiодичнiсть
-                        </div>
-                        <YearMonthHandler leftItem = "Щорічно" rightItem = "Щомісяця"/>
-                        <div className = "input_name mt8">
-                            Сума
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX = "10000" startValue = "0" inputIcon = {percent_icon}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Сума, на яку плануєте поповнювати
-                        </div>
-
-                        <div className = "calculate_button">
-                            Розрахувати дохідність
-                        </div>
-
+            <div className="buy_block_fs">
+                <div className="buy_block">
+                    <div className="buy_block_image">
+                        <img src={bottom_product_image} alt=""/>
                     </div>
-                    <div className = "calculate_table">
-                        <div className = "calculate_table_name">
-                            Таблиця з розрахунками
-                        </div>
-                        <div className = "calculate_table_description">
-                            Terra EA в середньому робить стабільні +20% на рік/1.6% на місяць.<br/>
-                            Чим більший термін інвестицій, тим більша магія складного відсотку!
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className = "buy_block_fs">
-                <div className = "buy_block">
-                    <div className = "buy_block_image">
-                        <img src = {bottom_product_image} alt = ""/>
-                    </div>
-                    <div className = "buy_block_info">
-                        <div className = "product_name_bottom">
+                    <div className="buy_block_info">
+                        <div className="product_name_bottom">
                             Aero EA
                         </div>
-                        <div className = "product_desc_bottom">
+                        <div className="product_desc_bottom">
                             Надійний фундамент для автоматичної торгівлі зі стабільними результатами.
                         </div>
-                        <div className = "buy_block_bot_stat">
-                            <div className = "bot_stat_item">
-                                <div className = "bot_stat_name">
+                        <div className="buy_block_bot_stat">
+                            <div className="bot_stat_item">
+                                <div className="bot_stat_name">
                                     Year profit
                                 </div>
-                                <div className = "bot_stat_num">
+                                <div className="bot_stat_num">
                                     +30%
                                 </div>
                             </div>
 
-                            <div className = "bot_stat_item">
-                                <div className = "bot_stat_name">
+                            <div className="bot_stat_item">
+                                <div className="bot_stat_name">
                                     Max drawdown
                                 </div>
-                                <div className = "bot_stat_num">
+                                <div className="bot_stat_num">
                                     3.7%
                                 </div>
                             </div>
 
-                            <div className = "bot_stat_item">
-                                <div className = "bot_stat_name">
+                            <div className="bot_stat_item">
+                                <div className="bot_stat_name">
                                     Winrate
                                 </div>
-                                <div className = "bot_stat_num">
+                                <div className="bot_stat_num">
                                     86.8%
                                 </div>
                             </div>
                         </div>
 
-                        <div className = "bot_stat_price">
+                        <div className="bot_stat_price">
                             Ціна
-                            <div className = "price_block_bottom">
+                            <div className="price_block_bottom">
                                 1200
                                 <span>
                                     USD
@@ -555,13 +478,15 @@ const AeroPage = () => {
                             </div>
                         </div>
 
-                        <div className = "bottom_buttons_block">
-                            <div className = "button_buy_bottom" onClick = {() => {
+                        <div className="bottom_buttons_block">
+                            <div className="button_buy_bottom" onClick={() => {
                                 setIsActive(true)
                             }}>
                                 Придбати
                             </div>
-                            <div className = "piece_pay_bottom">
+                            <div className="piece_pay_bottom" onClick={() => {
+                                setIsActive(true)
+                            }}>
                                 Оплата частинами
                             </div>
                         </div>
@@ -576,13 +501,13 @@ const AeroPage = () => {
                 <hr/>
                 <div className="society_block">
                     <div>
-                        <a href = "https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==">Instagram</a>
+                        <a href="https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==">Instagram</a>
                     </div>
                     <div>
-                        <a href = "https://t.me/alg0_o">Telegram</a>
+                        <a href="https://t.me/alg0_o">Telegram</a>
                     </div>
                     <div>
-                        <a href = "https://www.youtube.com/@alg0_ofx">Youtube</a>
+                        <a href="https://www.youtube.com/@alg0_ofx">Youtube</a>
                     </div>
                 </div>
             </div>

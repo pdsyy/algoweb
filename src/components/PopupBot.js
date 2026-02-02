@@ -1,8 +1,38 @@
 import React, {useState} from 'react';
 import cross from "../images/popup_cross.svg"
 import YearMonthHandler from "./YearMonthHandler";
+import axios from "axios";
 
-const PopupBot = ({bot_info = [], bot_name, price, isActive, setIsActive}) => {
+const PopupBot = ({bot_info = [], bot_name, price, isActive, setIsActive, activeThx, setActiveThx}) => {
+
+
+    const [name, setName] = useState("")
+    const [contactChanelValue, setContactChanelValue] = useState("")
+
+    const handlerItems = ["Telegram", "Instagram"]
+
+    const [contactChanel, setContactChanel] = useState(handlerItems[0])
+
+    const handleFormSubmit = async () => {
+        try {
+            const response = await axios.post('/api/send-email', {
+                botName: bot_name,
+                contactChanel:contactChanel,
+                userName: name,
+                account: contactChanelValue,
+            });
+
+            if (response.status === 200) {
+                setIsActive(false)
+                setActiveThx(true)
+                //alert('Заявка успешно отправлена!');
+
+            }
+        } catch (error) {
+            console.error('Ошибка отправки:', error.response?.data || error.message);
+            alert('Произошла ошибка при отправке заявки.');
+        }
+    };
 
      return (
         <div className={`popup_fs ${isActive ? "active_popup" : ""}`} onClick={() => {
@@ -27,19 +57,19 @@ const PopupBot = ({bot_info = [], bot_name, price, isActive, setIsActive}) => {
                     <div className="contact_info_block">
                         <div className="contact_block_popup">
                             <div className="contact_us_text">Звʼяжіться з нами</div>
-                            <YearMonthHandler leftItem="Telegram" rightItem="Instagram"/>
+                            <YearMonthHandler leftItem={handlerItems[0]} rightItem={handlerItems[1]} handleValue={contactChanel} setHandleValue={setContactChanel}/>
 
                             <div className = "popup_input_theme">
                                 Ваше імʼя
                             </div>
-                            <input type = "text" placeholder = "Ваше імʼя" className = "popup_input"/>
+                            <input type = "text" placeholder = "Ваше імʼя" className = "popup_input" value = {name} onChange={(e) => setName(e.target.value)}/>
 
                             <div className = "popup_input_theme">
                                 Ваша пошта або телеграм
                             </div>
-                            <input type = "text" placeholder = "Пошта або телеграм" className = "popup_input"/>
+                            <input type = "text" placeholder = "Пошта або телеграм" className = "popup_input" value={contactChanelValue} onChange={e => setContactChanelValue(e.target.value)}/>
 
-                            <div className = "send_button">
+                            <div className = "send_button" onClick = {handleFormSubmit}>
                                 Відправити
                             </div>
 

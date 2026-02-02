@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import cross from "../images/popup_cross.svg";
 
-const ThxPopup = () => {
+const ThxPopup = ({activePopup, setActivePopup}) => {
 
-    const [activePopup, setActivePopup] = useState(false)
 
     return (
         <div className={`popup_fs ${activePopup ? "active_popup" : ""}`} onClick={() => {
             setActivePopup(false)
         }}>
-            <div className="popup_container_gradient" onClick={(e) => {
+            <div className="popup_container_gradient thx" onClick={(e) => {
                 e.stopPropagation()
             }}>
                 <div className="popup_container">

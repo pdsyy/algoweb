@@ -931,6 +931,9 @@
 
 
 @media screen and (max-width: 768px) {
+    .calculate_table{
+        max-height: max-content;
+    }
     .bot_info_main {
         width: 100%;
         padding: 0 16px;
@@ -1345,7 +1348,7 @@
 @media screen and (min-width: 1920px) {
     .product_result_info{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
     }
     .test_info{
@@ -1361,4 +1364,8 @@
     .popup_container_gradient {
         max-width: max-content;
     }
+}
+
+a{
+    text-decoration: none;
 }

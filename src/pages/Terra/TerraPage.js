@@ -26,8 +26,10 @@ import YearMonthHandler from "../../components/YearMonthHandler";
 import logo from "../../images/logo.svg";
 import PopupBot from "../../components/PopupBot";
 import {Pagination} from "swiper/modules";
+import CalculatorSection from "../../components/CalculatorSection";
+import ThxPopup from "../../components/ThxPopup";
 
-const TerraPage = () => {
+const TerraPage = ({activePopup, setActivePopup}) => {
 
     const [hoverMode, setHoverMode] = useState(null);
     const [mode, setMode] = useState("2024");
@@ -82,48 +84,6 @@ const TerraPage = () => {
 
 
 
-    const [calcResults, setCalcResults] = useState([]);
-
-    const [startSum, setStartSum] = useState(10000)
-
-    const [years, setYears] = useState(5);
-    const [rate, setRate] = useState(20);
-    const [refillSum, setRefillSum] = useState(0);
-
-    const handleCalculate = () => {
-        // Для теста берем значения: 10 000 старт, 10 лет, 20% ставка, 0 пополнение
-        // Позже вы замените это на реальные значения из ваших инпутов
-        //const startAmount = 10000;
-        //const years = 10;
-        //const rate = 10;
-        //const monthlyAdd = 0;
-
-        let currentBalance = startSum;
-        let totalInvested = startSum;
-        let totalIncome = 0;
-        const results = [];
-
-        for (let i = 1; i <= years; i++) {
-            const startOfYearBalance = currentBalance;
-            const yearlyIncome = currentBalance * (rate / 100);
-            const yearlyAdded = refillSum * 12;
-
-            currentBalance += yearlyIncome + yearlyAdded;
-            totalInvested += yearlyAdded;
-            totalIncome += yearlyIncome;
-
-            results.push({
-                year: i,
-                balance: startOfYearBalance,
-                addedYear: yearlyAdded,
-                totalAdded: totalInvested,
-                yearlyIncome: yearlyIncome,
-                totalIncome: totalIncome,
-                finalBalance: currentBalance
-            });
-        }
-        setCalcResults(results);
-    };
 
 
     return (
@@ -134,7 +94,10 @@ const TerraPage = () => {
                 price={bot_info_popup.bot_price}
                 isActive={isActive}
                 setIsActive={setIsActive}
+                activeThx={activePopup}
+                setActiveThx={setActivePopup}
             />
+
             <div className="bot_info_main">
                 <div>
                     <img src={productImage} alt=""/>
@@ -283,9 +246,11 @@ const TerraPage = () => {
 
                         </div>
 
-                        <div className="see_stat_button">
-                            Дивитися статистику
-                        </div>
+                        <a href="https://www.myfxbook.com/members/alg0_o/terra-ea-v2/11649755" target = "_blank">
+                            <div className="see_stat_button">
+                                Дивитися статистику
+                            </div>
+                        </a>
                     </div>
                     <div className="result_image">
                         <img src={mode === "2024" ? result2024 : result2025} alt=""/>
@@ -363,9 +328,11 @@ const TerraPage = () => {
                 </div>
 
                 <div className="center-btn">
-                    <div className="more_reviews_button">
-                        Більше відгуків
-                    </div>
+                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
+                        <div className="more_reviews_button">
+                            Більше відгуків
+                        </div>
+                    </a>
                 </div>
 
             </div>
@@ -450,126 +417,9 @@ const TerraPage = () => {
                 </div>
 
             </div>
-            <div className = "calculate_block_container">
-                <h2>
-                    <span>Розрахуйте свою</span> довгострокову дохідність
-                </h2>
-                <div className = "calculate_block_fs">
-                    <div className = "calculate_block">
-                        <div className = "calculate_theme">
-                            Сума та термін
-                        </div>
-                        <div className = "input_name">
-                            Початкова сума
-                        </div>
-                        <InputRangeBar SLIDER_MAX = "50000" startValue = "10000" inputIcon = {dollar_circle} value={startSum} setValue={setStartSum}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Сума, з якої починаються інвестиції
-                        </div>
-                        <div className = "input_name">
-                            Одиниця виміру
-                        </div>
 
 
-                        <YearMonthHandler leftItem = "Рік" rightItem = "Місяць"/>
-
-                        <div className = "input_name mt8">
-                            Термін
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX="10" startValue="5" inputIcon={calendar_icon} value={years} setValue={setYears}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Кількість років/місяців, протягом яких ви плануєте інвестувати кошти
-                        </div>
-
-                        <hr className = "calculate_hr"/>
-
-                        <div className = "calculate_theme mt12">
-                            Нарахування відсотків
-                        </div>
-                        <div className = "input_name mt8">
-                            Періодичність
-                        </div>
-
-                        <YearMonthHandler leftItem = "Щорічно" rightItem = "Щомісяця"/>
-
-                        <div className = "input_name mt8">
-                            Відсоткова ставка
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX="40" startValue="20" inputIcon={percent_icon} value={rate} setValue={setRate}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Розмір річного/місячного доходу у відсотках
-                        </div>
-
-                        <hr className = "calculate_hr"/>
-
-                        <div className = "calculate_theme mt12">
-                            Поповнення
-                        </div>
-                        <div className = "input_name mt8">
-                            Перiодичнiсть
-                        </div>
-                        <YearMonthHandler leftItem = "Щорічно" rightItem = "Щомісяця"/>
-                        <div className = "input_name mt8">
-                            Сума
-                        </div>
-
-                        <InputRangeBar SLIDER_MAX="10000" startValue="0" inputIcon={dollar_circle} value={refillSum} setValue={setRefillSum}/>
-
-                        <div className = "calculate_warn">
-                            <img src = {info_icon} alt = ""/> Сума, на яку плануєте поповнювати
-                        </div>
-
-                        <div className = "calculate_button" onClick={handleCalculate}>
-                            Розрахувати дохідність
-                        </div>
-
-                    </div>
-                    <div className="calculate_table">
-                        <div className="calculate_table_name">Таблиця з розрахунками</div>
-
-                        {calcResults.length > 0 ? (
-                            <div className="table_wrapper">
-                                <table className="results_table">
-                                    <thead>
-                                    <tr>
-                                        <th>Рік</th>
-                                        <th>Баланс</th>
-                                        <th>Поповнено за рік</th>
-                                        <th>Сумарні поповнення</th>
-                                        <th>Річний дохід</th>
-                                        <th>Загальний дохід</th>
-                                        <th>Підсумковий баланс</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {calcResults.map((row) => (
-                                        <tr key={row.year}>
-                                            <td>{row.year}</td>
-                                            <td>{row.balance.toLocaleString()}</td>
-                                            <td>{row.addedYear.toLocaleString()}</td>
-                                            <td>{row.totalAdded.toLocaleString()}</td>
-                                            <td>{row.yearlyIncome.toLocaleString()}</td>
-                                            <td>{row.totalIncome.toLocaleString()}</td>
-                                            <td>{row.finalBalance.toLocaleString()}</td>
-                                        </tr>
-                                    ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        ) : (
-                            <div className="calculate_table_description">
-                                Terra EA в середньому робить стабільні +20% на рік/1.6% на місяць.<br/>
-                                Чим більший термін інвестицій, тим більша магія складного відсотку!
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
+            <CalculatorSection/>
 
             <div className = "buy_block_fs">
                 <div className = "buy_block">
@@ -628,7 +478,9 @@ const TerraPage = () => {
                             }}>
                                 Придбати
                             </div>
-                            <div className = "piece_pay_bottom">
+                            <div className = "piece_pay_bottom" onClick = {() => {
+                                setIsActive(true)
+                            }}>
                                 Оплата частинами
                             </div>
                         </div>
