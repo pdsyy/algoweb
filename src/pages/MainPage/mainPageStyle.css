@@ -3,6 +3,7 @@
 }
 .main_block{
     width: 100%;
+    overflow-x: hidden;
     /*
     position: sticky;
     top: 0;
@@ -242,11 +243,29 @@ h2{
 
 
 .first_deal_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 0 48px;
     margin-top: 85px;
+    overflow-x: hidden;
 }
+@media screen and (min-width: 1919px) {
+    .effective_algorithm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .effective_points, .first_deal_details{
+        max-width: 1344px;
+    }
 
+
+    .bots_list{
+
+    }
+}
 
 h2 span{
     color: #7E7E7E;
@@ -264,9 +283,15 @@ h2 span{
 }
 
 .first_deal_block_list{
+    justify-content: space-between;
+    padding: 4px 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+}
+@media screen and (max-width: 1439px){
+    .first_deal_block_list{
+        gap: 12px;
+    }
 }
 
 .first_deal_item{
@@ -330,6 +355,7 @@ h2 span{
 }
 
 .effective_points{
+    overflow-x: hidden;
     display: grid;
     grid-gap: 24px;
     padding: 0 48px;
@@ -688,6 +714,7 @@ h2 span{
 }
 
 .faq_item_question{
+    cursor: pointer;
     color: #232323;
     font-family: Inter;
     font-weight: 500;
@@ -876,6 +903,7 @@ h2 span{
 
 .table_wrapper {
     overflow-x: auto;
+    scrollbar-width: auto;
 }
 
 
@@ -933,6 +961,12 @@ h2 span{
 }
 
 @media screen and (max-width: 768px) {
+    .active_menu .liquidGlass-effect{
+        opacity: 0;
+    }
+    .active_menu .mobile_menu{
+        z-index: 99;
+    }
     .learn_ho_to a{
         width: 100%;
     }
@@ -1415,6 +1449,15 @@ h2 span{
 
 
 @media screen and (min-width: 769px) and (max-width: 1199.9px){
+
+    .header_container.active_menu .liquidGlass-effect{
+        opacity: 0;
+    }
+
+    .header_container.active_menu .liquidGlass-effect{
+        filter: none;
+    }
+
     .bots_list {
         margin-top: 36px;
         display: grid;
@@ -1693,6 +1736,7 @@ h2 span{
     }
 
     .mobile_menu{
+
         opacity: 0;
         display: flex !important;
         max-height: 0;
@@ -1758,6 +1802,7 @@ h2 span{
     .active_menu .mobile_menu{
         opacity: 1;
         max-height: 650px;
+        z-index: 99;
     }
     .desktop_header_menu{
         display: none;
@@ -1858,4 +1903,12 @@ h2 span{
 
 .custom-pagination .swiper-pagination-bullet-active {
     background: #232323;
+}
+
+
+.fix_test{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
 }

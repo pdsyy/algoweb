@@ -5,8 +5,11 @@ import info_icon from "../pages/Terra/images/info_icon.svg";
 import YearMonthHandler from "./YearMonthHandler";
 import calendar_icon from "../pages/Terra/images/calendar_icon.svg";
 import percent_icon from "../pages/Terra/images/percent_icon.svg";
+import {motion} from "framer-motion"
+import {useLanguage} from "../context/LanguageProvider";
 
 const CalculatorSection = () => {
+    const { t } = useLanguage();
 
     const [calcResults, setCalcResults] = useState([]);
 
@@ -72,121 +75,160 @@ const CalculatorSection = () => {
         setCalcResults(results);
     };
 
+
+    const pointVariants = {
+        hidden: {opacity: 0, y: 20},
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {delay: i * 0.15, duration: 0.6, ease: "easeOut"}
+        })
+    };
+    const fadeNumeric = {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: {once: true},
+        variants: pointVariants
+    };
+
+    const fadeUp = {
+        initial: {opacity: 0, y: 40},
+        whileInView: {opacity: 1, y: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeDown = {
+        initial: {opacity: 0, y: -40},
+        whileInView: {opacity: 1, y: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeLeft = {
+        initial: {opacity: 0, x: -50},
+        whileInView: {opacity: 1, x: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+    const fadeRight = {
+        initial: {opacity: 0, x: 50},
+        whileInView: {opacity: 1, x: 0},
+        viewport: {once: true, amount: 0.3},
+        transition: {duration: 0.8, ease: "easeOut"}
+    };
+
     return (
         <div className="calculate_block_container">
-            <h2>
-                <span>Розрахуйте свою</span> довгострокову дохідність
-            </h2>
+            <motion.h2 {...fadeUp}>
+                <span>{t.terra.calculator.titleAccent}</span> {t.terra.calculator.title}
+            </motion.h2>
             <div className="calculate_block_fs">
-                <div className="calculate_block">
+                <motion.div className="calculate_block" {...fadeNumeric} custom={1}>
                     <div className="calculate_theme">
-                        Сума та термін
+                        {t.terra.calculator.themes.sumAndTerm}
                     </div>
                     <div className="input_name">
-                        Початкова сума
+                        {t.terra.calculator.labels.startSum}
                     </div>
                     <InputRangeBar SLIDER_MAX="50000" startValue="10000" inputIcon={dollar_circle} value={startSum}
                                    setValue={setStartSum}/>
 
                     <div className="calculate_warn">
-                        <img src={info_icon} alt=""/> Сума, з якої починаються інвестиції
+                        <img src={info_icon} alt=""/> {t.terra.calculator.warnings.startSum}
                     </div>
                     <div className="input_name">
-                        Одиниця виміру
+                        {t.terra.calculator.labels.unit}
                     </div>
 
-
                     <YearMonthHandler
-                        leftItem="Рік"
-                        rightItem="Місяць"
+                        leftItem={t.terra.calculator.units.year}
+                        rightItem={t.terra.calculator.units.month}
                         handleValue={periodUnit}
                         setHandleValue={setPeriodUnit}
                     />
 
                     <div className="input_name mt8">
-                        Термін
+                        {t.terra.calculator.labels.term}
                     </div>
 
                     <InputRangeBar SLIDER_MAX="10" startValue="5" inputIcon={calendar_icon} value={years}
                                    setValue={setYears}/>
 
                     <div className="calculate_warn">
-                        <img src={info_icon} alt=""/> Кількість років/місяців, протягом яких ви плануєте інвестувати
-                        кошти
+                        <img src={info_icon} alt=""/> {t.terra.calculator.warnings.term}
                     </div>
 
                     <hr className="calculate_hr"/>
 
                     <div className="calculate_theme mt12">
-                        Нарахування відсотків
+                        {t.terra.calculator.themes.interest}
                     </div>
                     <div className="input_name mt8">
-                        Періодичність
+                        {t.terra.calculator.labels.frequency}
                     </div>
 
                     <YearMonthHandler
-                        leftItem="Щорічно"
-                        rightItem="Щомісяця"
+                        leftItem={t.terra.calculator.units.yearly}
+                        rightItem={t.terra.calculator.units.monthly}
                         handleValue={rateFrequency}
                         setHandleValue={setRateFrequency}
                     />
 
                     <div className="input_name mt8">
-                        Відсоткова ставка
+                        {t.terra.calculator.labels.rate}
                     </div>
 
                     <InputRangeBar SLIDER_MAX="40" startValue="20" inputIcon={percent_icon} value={rate}
                                    setValue={setRate}/>
 
                     <div className="calculate_warn">
-                        <img src={info_icon} alt=""/> Розмір річного/місячного доходу у відсотках
+                        <img src={info_icon} alt=""/> {t.terra.calculator.warnings.rate}
                     </div>
 
                     <hr className="calculate_hr"/>
 
                     <div className="calculate_theme mt12">
-                        Поповнення
+                        {t.terra.calculator.themes.refill}
                     </div>
                     <div className="input_name mt8">
-                        Перiодичнiсть
+                        {t.terra.calculator.labels.frequency}
                     </div>
                     <YearMonthHandler
-                        leftItem="Щорічно"
-                        rightItem="Щомісяця"
+                        leftItem={t.terra.calculator.units.yearly}
+                        rightItem={t.terra.calculator.units.monthly}
                         handleValue={refillFrequency}
                         setHandleValue={setRefillFrequency}
                     />
                     <div className="input_name mt8">
-                        Сума
+                        {t.terra.calculator.labels.sum}
                     </div>
 
                     <InputRangeBar SLIDER_MAX="10000" startValue="0" inputIcon={dollar_circle} value={refillSum}
                                    setValue={setRefillSum}/>
 
                     <div className="calculate_warn">
-                        <img src={info_icon} alt=""/> Сума, на яку плануєте поповнювати
+                        <img src={info_icon} alt=""/> {t.terra.calculator.warnings.refill}
                     </div>
 
                     <div className="calculate_button" onClick={handleCalculate}>
-                        Розрахувати дохідність
+                        {t.terra.calculator.button}
                     </div>
 
-                </div>
-                <div className="calculate_table">
-                    <div className="calculate_table_name">Таблиця з розрахунками</div>
+                </motion.div>
+                <motion.div className="calculate_table" {...fadeNumeric} custom={2}>
+                    <div className="calculate_table_name">{t.terra.calculator.table.tableName}</div>
 
                     {calcResults.length > 0 ? (
                         <div className="table_wrapper">
                             <table className="results_table">
                                 <thead>
                                 <tr>
-                                    <th>{periodUnit === "Рік" ? "Рік" : "Місяць"}</th>
-                                    <th>Баланс</th>
-                                    <th>{periodUnit === "Рік" ? "Поповнено (рік)" : "Поповнено (міс.)"}</th>
-                                    <th>Сумарні інвестиції</th>
-                                    <th>{periodUnit === "Рік" ? "Річний дохід" : "Місячний дохід"}</th>
-                                    <th>Загальний дохід</th>
-                                    <th>Підсумковий баланс</th>
+                                    <th>{periodUnit === t.terra.calculator.units.year ? t.terra.calculator.units.year : t.terra.calculator.units.month}</th>
+                                    <th>{t.terra.calculator.table.balance}</th>
+                                    <th>{periodUnit === t.terra.calculator.units.year ? t.terra.calculator.table.addedYear : t.terra.calculator.table.addedMonth}</th>
+                                    <th>{t.terra.calculator.table.totalAdded}</th>
+                                    <th>{periodUnit === t.terra.calculator.units.year ? t.terra.calculator.table.incomeYear : t.terra.calculator.table.incomeMonth}</th>
+                                    <th>{t.terra.calculator.table.totalIncome}</th>
+                                    <th>{t.terra.calculator.table.finalBalance}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -205,12 +247,9 @@ const CalculatorSection = () => {
                             </table>
                         </div>
                     ) : (
-                        <div className="calculate_table_description">
-                            Terra EA в середньому робить стабільні +20% на рік/1.6% на місяць.<br/>
-                            Чим більший термін інвестицій, тим більша магія складного відсотку!
-                        </div>
+                        <div className="calculate_table_description" dangerouslySetInnerHTML={{ __html: t.terra.calculator.table.description }} />
                     )}
-                </div>
+                </motion.div>
             </div>
         </div>
     );

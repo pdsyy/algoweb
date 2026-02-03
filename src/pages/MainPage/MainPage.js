@@ -42,8 +42,12 @@ import "swiper/css/navigation";
 import logo from "../../images/logo.svg";
 import {useScroll} from "../../context/ScrollContext";
 import {motion} from "framer-motion"
+import SEO from "../../SEO";
+import preview from "../../images/logo192.png"
+import {useLanguage} from "../../context/LanguageProvider";
 
 const MainPage = () => {
+    const { t } = useLanguage();
 
 
     useEffect(() => {
@@ -88,104 +92,26 @@ const MainPage = () => {
     };
 
 
-    const botsList = [
-        {
-            image: bot_item1,
-            name: "Terra EA",
-            description: "Бот з найдовшою публічною статистикою в Україні.",
-            advantages: {
-                yearProfit: "+20%",
-                maxDrawDown: "16.5%",
-                winRate: "72.3%"
-            },
-            price: 800,
-            href: "/terra",
-            prop: false,
-            paying: true,
-        }, {
-            image: bot_item2,
-            name: "Aero EA",
-            description: "Бот з найнижчою просадкою в асортименті.",
-            advantages: {
-                yearProfit: "+30%",
-                maxDrawDown: "3.7%",
-                winRate: "86.8%"
-            },
-            price: 1200,
-            href: "/aero",
-            prop: true,
-            paying: true,
+    const bot_images = [bot_item1, bot_item2, bot_item3];
 
-        }, {
-            image: bot_item3,
-            name: "Hydro EA",
-            description: "Бот з найвищою прибутковістю в асортименті.",
-            advantages: {
-                yearProfit: "+50%",
-                maxDrawDown: "14.3%",
-                winRate: "91.9%"
-            },
-            price: 2000,
-            href: "/hydro",
-            prop: true,
-            paying: true
-        }]
+    const botsList = t.home.botsList.map((bot, index) => ({
+        ...bot,
+        image: bot_images[index]
+    }));
 
-    const reviews = [
-        {
-            name: "Valerii R.",
-            text: "Придбав бота два тижні тому, зацікавила детальна статистика 📈 Тестував його тиждень, бо в цій сфері давно і знаю, що часто на словах одне, а на практиці зовсім інше. Можу підтвердити — все відповідає заявленому, трейди сходяться зі статистикою.",
-            image: review_image1,
-        },
-        {
-            name: "Eduard F.",
-            text: "Бот успішно пройшов першу фазу на FTMO за 22 торгові дні ✅ Другу фазу верифікації закрив усього за 4 дні. Результатом повністю задоволений, працює стабільно, без сюрпризів, дотримується ризик-менеджменту та показує прогнозований результат.",
-            image: review_image2,
-        },
-        {
-            name: "Dmytro K.",
-            text: "Зробив свій перший вивід коштів з трейдингу за довгий період часу. Чесно — дуже приємні відчуття, особливо коли результат отриманий без постійного контролю. Чудовий бонус і подарунок до майбутніх свят, який реально мотивує рухатися далі.",
-            image: review_image3,
-        }, {
-            name: "Andry D.",
-            text: "Пишу відгук про свій досвід використання ботів. Придбав одразу два алго — дуже сподобалась подача та презентація. Запустив на одному рахунку й отримав хороші цифри. Підтримка, консультації та супровід — на високому рівні.",
-            image: review_image4,
-        },
-        {
-            name: "Mykola P.",
-            text: "За перший місяць користування ботом отримав такий результат ⬆️ +5% чистого прибутку до депозиту. Працює стабільно, без зайвого ризику, з чіткою логікою входів і виходів. Для мене це хороший та прогнозований результат.",
-            image: review_image5,
-        },
-        {
-            name: "Max S.",
-            text: "Довго не доходили руки залишити фідбек по Террі. За 3 місяці на підвищеному ризику отримав +48%. Дуже задоволений ботом, постійними оновленнями налаштувань і підтримкою. Окрема повага за чесність — усе, що пишеш, відповідає реальності.",
-            image: review_image6,
-        },
-    ];
+    const reviews_images = [review_image1, review_image2, review_image3, review_image4, review_image5, review_image6];
+
+    const reviews = t.home.reviewsList.map((review, index) => ({
+        ...review,
+        image: reviews_images[index]
+    }));
 
 
     const swiperRef = useRef(null);
 
     const [openFaqs, setOpenFaqs] = useState([]);
 
-    const faqElements = [
-        {
-            question: "Як підібрати бота?",
-            answer: "Усі ризики по кожному боту прописані на його сторінці. Ми працюємо виключно зі стабільними і низькими настройками ризику, які не перевищують 15-20% просадки від депозиту."
-        }, {
-            question: "Чи потрібно мені постійно тримати комп'ютер увімкненим?",
-            answer: "Ні. Боти працюють на віддалених серверах. Ви можете вимкнути телефон або ноутбук - процес не перерветься."
-        }, {
-            question: "Чи потрібен великий досвід у трейдингу?",
-            answer: "Абсолютно ні, все що потрібно від клієнта це створення аккаунту для торгівлі і підключення бота до нього. Усі відео-інструкції як це зробити будуть доступні після покупки і сам процес на займе більше 5 хвилин."
-        }, {
-            question: "Чи можна втратити весь депозит?",
-            answer: "Наші боти були протестовані на різних етапах ринку та критичних ситуаціях як епідемія ковіду, початок війни і тому подібні. Тому ми готові до будь-яких сценаріїв, в яких з нашими настройками злив депозиту неможливий."
-        }, {
-            question: "Як підібрати бота?",
-            answer: "Для правильного підбору бота рекомендуємо ознайомитись з кожним із них на окремих сторінках або звернутись на консультацію в телеграм, де ми визначимо який саме алгоритм підходить саме вам."
-        },
-    ]
+    const faqElements = t.home.faq;
 
 
     const initial = {opacity: 0, y: 40}
@@ -233,286 +159,170 @@ const MainPage = () => {
         transition: {duration: 0.8, ease: "easeOut"}
     };
 
+    const marketImages = [
+        market_image1,
+        market_image2,
+        market_image3,
+        market_image4,
+        market_image5,
+        market_image6,
+        market_image7
+    ];
+
 
     return (
         <div className="main_page">
+            <SEO
+                title="ALGO — Алгоритмічна торгівля та торгові боти"
+                description="Автоматизовані торгові боти з прозорою статистикою. Пасивний дохід на трейдингу без людського фактора. Оберіть свій алгоритм: Terra, Aero або Hydro EA."
+                keywords="трейдинг боти, алгоритмічна торгівля, пасивний дохід, Terra EA, Aero EA, Hydro EA, торгові роботи Україна, автоматизація трейдингу"
+                image={preview}
+            />
             <div className="main_block" onMouseMove={handleMouseMove}>
-                <img src={window.innerWidth > 768 ? mainBlockBg : mainBlockBgMobile} alt="" className="main_block_bg"/>
+                <img
+                    src={window.innerWidth > 768 ? mainBlockBg : mainBlockBgMobile}
+                    alt="Background"
+                    className="main_block_bg"
+                />
                 <motion.div className="main_info_block" {...fadeLeft}>
                     <div className="algo_block">
                         algo
                     </div>
                     <h1 className="main_h1">
-                        Алгоритмічна торгівля за чіткими правилами
+                        {t.home.hero.title}
                     </h1>
                     <div className="main_desc">
-                        Торгові боти, які працюють за заданою логікою та з контролем ризику.
+                        {t.home.hero.desc}
                     </div>
                     <div className="select_bot_button" onClick={() => scrollToSection("catalog")}>
-                        Обрати бота
+                        {t.home.hero.button}
                     </div>
                 </motion.div>
 
-                <motion.img src={metalPackage} alt="" className="metalPackage" ref={boxRef} {...fadeRight}/>
+                <motion.img
+                    src={metalPackage}
+                    alt="Metal Package"
+                    className="metalPackage"
+                    ref={boxRef}
+                    {...fadeRight}
+                />
             </div>
             <div className="main_page_content">
 
 
                 <div className="about_us_block">
                     <motion.div className="market_list" {...fadeUp}>
-                        <img src={market_image1} alt=""/>
-                        <img src={market_image2} alt=""/>
-                        <img src={market_image3} alt=""/>
-                        <img src={market_image4} alt=""/>
-                        <img src={market_image5} alt=""/>
-                        <img src={market_image6} alt=""/>
-                        <img src={market_image7} alt=""/>
-                        {window.innerWidth < 768 ? <>
-                            <img src={market_image1} alt=""/>
-                            <img src={market_image2} alt=""/>
-                            <img src={market_image3} alt=""/>
-                            <img src={market_image4} alt=""/>
-                            <img src={market_image5} alt=""/>
-                            <img src={market_image6} alt=""/>
-                            <img src={market_image7} alt=""/>
-                        </> : ""
-                        }
-
+                        {[...Array(window.innerWidth < 768 ? 14 : 7)].map((_, i) => (
+                            <img
+                                key={i}
+                                src={marketImages[i % 7]}
+                                alt={`market-${i}`}
+                            />
+                        ))}
                     </motion.div>
-                    <motion.h2 className="our_main_advantages" {...fadeUp}>
-                        <span>Наша команда вже автоматизувала трейдинг</span><br/>
-                        для багатьох клієнтів, допоможемо і вам.
-                    </motion.h2>
-                    <div className="our_advantages_list">
-                        <motion.div className="advantages_point" {...fadeNumeric} custom={1}>
-                            <div className="advantages_point_number">2</div>
-                            <div className="advantages_point_desc">Роки на ринку</div>
-                        </motion.div>
-                        <motion.div className="advantages_point" {...fadeNumeric} custom={2}>
-                            <div className="advantages_point_number">3</div>
-                            <div className="advantages_point_desc">Профітних ботів</div>
-                        </motion.div>
-                        <motion.div className="advantages_point" {...fadeNumeric} custom={3}>
-                            <div className="advantages_point_number">5</div>
-                            <div className="advantages_point_desc">Рахунків з live статистикою</div>
-                        </motion.div>
-                        <motion.div className="advantages_point" {...fadeNumeric} custom={4}>
-                            <div className="advantages_point_number">+80%</div>
-                            <div className="advantages_point_desc">За 2025 рік</div>
-                        </motion.div>
-                    </div>
 
+                    <motion.h2 className="our_main_advantages" {...fadeUp} dangerouslySetInnerHTML={{ __html: t.home.stats.title }} />
+
+                    <div className="our_advantages_list">
+                        {t.home.stats.items.map((item, index) => (
+                            <motion.div key={index} className="advantages_point" {...fadeNumeric} custom={index + 1}>
+                                <div className="advantages_point_number">{item.num}</div>
+                                <div className="advantages_point_desc">{item.desc}</div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="money_in_management">
                     <motion.div className="money_in_management_number" {...fadeUp}>
                         200 000$
                     </motion.div>
-
                     <motion.div className="in_management" {...fadeUp}>
-                        в управлінні
+                        {t.home.stats.management}
                     </motion.div>
                 </div>
 
                 <div className="first_deal_block" id="how-it-works">
-                    <motion.h2 {...fadeUp}>
-                        <span>Шлях від налаштування</span> до першої угоди
-                    </motion.h2>
+                    <motion.h2 {...fadeUp} dangerouslySetInnerHTML={{ __html: t.home.steps.title }} />
                     <div className="first_deal_details">
                         <motion.div className="first_deal_image" {...fadeLeft}>
                             <img src={firstDealImage} alt=""/>
                         </motion.div>
 
-
                         <motion.div className="first_deal_block_list" {...fadeRight}>
-                            <div className="first_deal_item_gradient">
-
-                                <div className="first_deal_item">
-                                    <div className="item_name">
-                                        <img src={firstDealItem1} alt=""/>
-                                        Вибір алгоритму
-                                        <div className="item_number">
-                                            01
+                            {t.home.steps.items.map((step, index) => (
+                                <div className="first_deal_item_gradient" key={index}>
+                                    <div className="first_deal_item">
+                                        <div className="item_name">
+                                            <img src={index === 0 ? firstDealItem1 : index === 1 ? firstDealItem2 : index === 2 ? firstDealItem3 : firstDealItem4} alt=""/>
+                                            {step.title}
+                                            <div className="item_number">0{index + 1}</div>
                                         </div>
-                                    </div>
-                                    <div className="item_desc">
-                                        Ви визначаєте свої цілі та допустимий ризик. У нашому каталозі є рішення
-                                        як для консервативного накопичення, так і для активної торгівлі.
+                                        <div className="item_desc">{step.desc}</div>
                                     </div>
                                 </div>
-                            </div>
-
-
-                            <div className="first_deal_item_gradient">
-
-                                <div className="first_deal_item">
-                                    <div className="item_name">
-                                        <img src={firstDealItem2} alt=""/>
-                                        Підключення
-                                        <div className="item_number">
-                                            02
-                                        </div>
-                                    </div>
-                                    <div className="item_desc">
-                                        Бот встановлюється на ваш акаунт за кілька кліків. Ви отримуєте всі
-                                        необхідні інструкції по підключенню разом з індивідуальною ліцензією
-                                        для активації, після чого обраний бот починає свою роботу.
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className="first_deal_item_gradient">
-
-                                <div className="first_deal_item">
-                                    <div className="item_name">
-                                        <img src={firstDealItem3} alt=""/>
-                                        Автономна торгівля
-                                        <div className="item_number">
-                                            03
-                                        </div>
-                                    </div>
-                                    <div className="item_desc">
-                                        Алгоритм сканує ринок 24/7. Як тільки умови стратегії збігаються (ціна,
-                                        індикатори, обсяги), бот миттєво відкриває позицію.
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className="first_deal_item_gradient">
-                                <div className="first_deal_item">
-                                    <div className="item_name">
-                                        <img src={firstDealItem4} alt=""/>
-                                        Моніторинг і результат
-                                        <div className="item_number">
-                                            04
-                                        </div>
-                                    </div>
-                                    <div className="item_desc">
-                                        Ви слідкуєте за статистикою в реальному часі. У будь-який момент роботу
-                                        бота можна призупинити або скоригувати налаштування.
-                                    </div>
-                                </div>
-                            </div>
-
+                            ))}
                         </motion.div>
                     </div>
                 </div>
 
 
                 <div className="effective_algorithm" id="advantages">
-                    <motion.h2 {...fadeUp}>
-                        Чому алгоритми ефективніші <br/><span>за ручну торгівлю?</span>
-                    </motion.h2>
+                    <motion.h2 {...fadeUp} dangerouslySetInnerHTML={{ __html: t.home.effective.title }} />
 
                     <div className="effective_points first">
-                        <motion.div className="effective_point" {...fadeLeft}>
-                            <img src={effectiveImage1} alt=""/>
-                            <div className="name">
-                                Торгівля без «людського фактора»
-                            </div>
-                            <div className="desc">
-                                Бот не закриє угоду занадто рано через страх і не затримається в
-                                збитках через надію. Лише математичне очікування.
-                            </div>
-                        </motion.div>
-                        <motion.div className="effective_point" {...fadeRight}>
-                            <img src={effectiveImage2} alt=""/>
-                            <div className="name">
-                                Реальна статистика
-                            </div>
-                            <div className="desc">
-                                У кожного алгоритму є відкрита статистика мінімум за 6 місяців роботи
-                                на реальному рахунку у ліцензованого брокера.
-                            </div>
-                        </motion.div>
+                        {t.home.effective.items.slice(0, 2).map((item, index) => (
+                            <motion.div key={index} className="effective_point" {...(index === 0 ? fadeLeft : fadeRight)}>
+                                <img src={index === 0 ? effectiveImage1 : effectiveImage2} alt=""/>
+                                <div className="name">{item.title}</div>
+                                <div className="desc">{item.desc}</div>
+                            </motion.div>
+                        ))}
                     </div>
 
                     <div className="effective_points second">
-                        <motion.div className="effective_point" {...fadeLeft}>
-                            <img src={effectiveImage3} alt=""/>
-                            <div className="name">
-                                Пасивний дохід
-                            </div>
-                            <div className="desc">
-                                Ринок не спить. Бот працює і вдень, і вночі, поки ви відпочиваєте.
-                                Це повноцінний пасивний дохід без вашої участі.
-                            </div>
-                        </motion.div>
-                        <motion.div className="effective_point" {...fadeRight}>
-                            <img src={effectiveImage4} alt=""/>
-                            <div className="name">
-                                Прозорість і тести
-                            </div>
-                            <div className="desc">
-                                Кожен алгоритм прогнаний через історичні дані. Ви розумієте
-                                логіку роботи системи ще до того, як запустите її.
-                            </div>
-                        </motion.div>
+                        {t.home.effective.items.slice(2, 4).map((item, index) => (
+                            <motion.div key={index + 2} className="effective_point" {...(index === 0 ? fadeLeft : fadeRight)}>
+                                <img src={index === 0 ? effectiveImage3 : effectiveImage4} alt=""/>
+                                <div className="name">{item.title}</div>
+                                <div className="desc">{item.desc}</div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
 
                 <div className="bots_catalog" id="catalog">
                     <motion.h2 {...fadeUp}>
-                        Каталог ботів
+                        {t.home.catalog.title}
                     </motion.h2>
-
 
                     <div className="bots_list">
                         {botsList.map((el, idx) =>
-                            <motion.div className="bot_item" {...fadeNumeric} custom={idx}>
+                            <motion.div className="bot_item" key={idx} {...fadeNumeric} custom={idx}>
                                 <div className="bot_image">
-                                    {el.prop ? <div className="prop_pl">
-                                        Підходить під проп
-                                    </div> : ""}
-                                    <img src={el.image} alt=""/>
-
-                                    {el.paying ?
-                                        <div className="paying_pl">
-                                            Оплата частинами
-                                        </div>
-                                        : ""}
+                                    {el.prop && <div className="prop_pl">{t.home.catalog.propLabel}</div>}
+                                    <img src={el.image} alt={el.name}/>
+                                    {el.paying && <div className="paying_pl">{t.home.catalog.payingLabel}</div>}
                                 </div>
-                                <div className="bot_name">
-                                    {el.name}
-                                </div>
-                                <div className="bot_description">
-                                    {el.description}
-                                </div>
+                                <div className="bot_name">{el.name}</div>
+                                <div className="bot_description">{el.description}</div>
                                 <div className="bot_advantages">
                                     <div className="advantages_item">
-                                        <div className="advantages_name">
-                                            Year profit
-                                        </div>
-                                        <div className="advantages_numbers">
-                                            {el.advantages.yearProfit}
-                                        </div>
+                                        <div className="advantages_name">Year profit</div>
+                                        <div className="advantages_numbers">{el.advantages.yearProfit}</div>
                                     </div>
                                     <div className="advantages_item">
-                                        <div className="advantages_name">
-                                            Max drawdown
-                                        </div>
-                                        <div className="advantages_numbers">
-                                            {el.advantages.maxDrawDown}
-                                        </div>
+                                        <div className="advantages_name">Max drawdown</div>
+                                        <div className="advantages_numbers">{el.advantages.maxDrawDown}</div>
                                     </div>
                                     <div className="advantages_item">
-                                        <div className="advantages_name">
-                                            Winrate
-                                        </div>
-                                        <div className="advantages_numbers">
-                                            {el.advantages.winRate}
-                                        </div>
+                                        <div className="advantages_name">Winrate</div>
+                                        <div className="advantages_numbers">{el.advantages.winRate}</div>
                                     </div>
-
-
                                 </div>
 
                                 <div className="bot_price_block">
-                                    <div className="bot_price_text">
-                                        Ціна
-                                    </div>
+                                    <div className="bot_price_text">{t.terra.buy.price}</div>
                                     <div className="bot_price">
                                         {el.price}
                                         <span>USD</span>
@@ -521,7 +331,7 @@ const MainPage = () => {
 
                                 <a href={el.href}>
                                     <div className="bot_more_details">
-                                        Детальніше
+                                        {t.home.catalog.moreDetails}
                                     </div>
                                 </a>
                             </motion.div>
@@ -532,41 +342,26 @@ const MainPage = () => {
                 <div className="algo_feedback_block" id="reviews">
                     <div className="feedback_h2">
                         <motion.h2 {...fadeUp}>
-                            <span>Що кажуть ті,</span> хто вже перейшов на ALGO
+                            <span>{t.home.reviews.titleAccent}</span> {t.home.reviews.title}
                         </motion.h2>
-
                         <div className="reviews_nav">
-                            <div
-                                className="nav-btn prev"
-                                onClick={() => swiperRef.current?.slidePrev()}
-                            >
+                            <div className="nav-btn prev" onClick={() => swiperRef.current?.slidePrev()}>
                                 <img src={prev_arrow} alt=""/>
                             </div>
-                            <div
-                                className="nav-btn next"
-                                onClick={() => swiperRef.current?.slideNext()}
-                            >
+                            <div className="nav-btn next" onClick={() => swiperRef.current?.slideNext()}>
                                 <img src={next_arrow} alt=""/>
                             </div>
                         </div>
-
                     </div>
 
                     <motion.div className="slider-container" {...fadeUp}>
-
-
                         <Swiper
                             loop
                             modules={[Pagination]}
-                            pagination={{
-                                clickable: true,
-                                el: '.custom-pagination',
-                            }}
+                            pagination={{ clickable: true, el: '.custom-pagination' }}
                             spaceBetween={24}
                             slidesPerView={3}
-                            onBeforeInit={(swiper) => {
-                                swiperRef.current = swiper;
-                            }}
+                            onBeforeInit={(swiper) => { swiperRef.current = swiper; }}
                             breakpoints={{
                                 0: {slidesPerView: 1},
                                 768: {slidesPerView: 2},
@@ -580,25 +375,22 @@ const MainPage = () => {
                                     <div className="review_description">{review.text}</div>
                                 </SwiperSlide>
                             ))}
-
                             <div className="custom-pagination"></div>
                         </Swiper>
-
                     </motion.div>
 
                     <div className="center-btn">
-                        <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
+                        <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank" rel="noreferrer">
                             <div className="more_reviews_button">
-                                Більше відгуків
+                                {t.terra.reviews1.more}
                             </div>
                         </a>
                     </div>
-
                 </div>
 
                 <div className="faq_container" id="faq">
                     <motion.h2 {...fadeUp}>
-                        Відповіді на запитання
+                        {t.home.faqTitle}
                     </motion.h2>
                     <div className="faq_list">
                         <img src={circles_bg} alt="" className="bg_circles_faq"/>
@@ -634,47 +426,49 @@ const MainPage = () => {
                                     </motion.div>
                                 );
                             })}
-
                         </div>
                     </div>
-
                 </div>
-
 
                 <motion.div className="select_bot_fs" {...fadeUp}>
                     <div className="select_bot_block">
                         <div className="select_bot_info">
                             <div className="select_bot_theme">
-                                Складно вибрати свого першого бота?
+                                {t.home.consult.title}
                             </div>
                             <div className="select_bot_desc">
-                                Ринок пропонує сотні варіантів, але не всі вони підходять під ваш капітал і темперамент.
-                                Ми допоможемо підібрати рішення, яке буде комфортним саме для вас.
+                                {t.home.consult.desc}
                             </div>
-                            <a href="https://t.me/alg0_o">
+                            <a href="https://t.me/alg0_o" target="_blank" rel="noreferrer">
                                 <div className="consult_button">
-                                    Отримати консультацію
+                                    {t.home.consult.button}
                                 </div>
                             </a>
                         </div>
-                        <img src={select_bot_img} alt=""/>
+                        <img src={select_bot_img} alt="Consultation"/>
                     </div>
                 </motion.div>
 
                 <motion.div className="footer" {...fadeUp}>
                     <a href="/">
-                        <img src={logo} alt="" className="logo_img"/>
+                        <img src={logo} alt="Logo" className="logo_img"/>
                     </a>
                     <hr/>
                     <div className="society_block">
                         <div>
-                            <a href="https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==">Instagram</a>
+                            <a href="https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==" target="_blank" rel="noreferrer">
+                                {t.terra.footer.instagram}
+                            </a>
                         </div>
                         <div>
-                            <a href="https://t.me/alg0_o">Telegram</a>
+                            <a href="https://t.me/alg0_o" target="_blank" rel="noreferrer">
+                                {t.terra.footer.telegram}
+                            </a>
                         </div>
                         <div>
-                            <a href="https://www.youtube.com/@alg0_ofx">Youtube</a>
+                            <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
+                                {t.terra.footer.youtube}
+                            </a>
                         </div>
                     </div>
                 </motion.div>

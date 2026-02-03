@@ -28,8 +28,15 @@ import PopupBot from "../../components/PopupBot";
 import {Pagination} from "swiper/modules";
 import CalculatorSection from "../../components/CalculatorSection";
 import ThxPopup from "../../components/ThxPopup";
+import {AnimatePresence, motion} from "framer-motion"
+import terraPreview from "./images/terraPreview.png";
+import terraVideo from "./images/terra_gif.mp4";
+import SEO from "../../SEO";
+import preview from "../../images/logo192.png"
+import { useLanguage } from "../../context/LanguageProvider";
 
 const TerraPage = ({activePopup, setActivePopup}) => {
+    const { t } = useLanguage();
 
     const [hoverMode, setHoverMode] = useState(null);
     const [mode, setMode] = useState("2024");
@@ -37,58 +44,25 @@ const TerraPage = ({activePopup, setActivePopup}) => {
 
 
 
-    const reviews = [
-        {
-            name: "Taras O.",
-            text: "Користуюсь ботом з листопада і дуже задоволений результатом. Шукав інструмент для пасивного доходу з низькими ризиками — цей варіант підійшов ідеально. За два місяці отримав 4% чистого прибутку завдяки системі складного відсотка. Бот повністю автоматичний: налаштував за допомогою продавця і більше не втручався. Особливо радує, що система сама вимикається під час сильних новин, мінімізуючи ризики. Очікую близько 40% річних. Рекомендую як надійний та безпечний інструмент.",
-            image: review_image1,
-        },
-        {
-            name: "Max S.",
-            text: "Бот демонструє відмінну роботу. Використовую його на мінімальних ризиках для стабільного приросту капіталу. Для мене це стала чудова альтернатива іншим способам диверсифікації коштів під відсоток. Величезним плюсом є те, що бот інтегрується з біржею Bybit, і я можу тримати весь депозит на власному рахунку, що додає впевненості у безпеці активів. Інструмент зручний, зрозумілий і, головне, приносить прогнозований прибуток без зайвого клопоту та щоденного моніторингу.",
-            image: review_image2,
-        },
-        {
-            name: "Dmytro P.",
-            text: "Користуюсь ботом «Терра» вже три місяці. Вирішив протестувати стратегію на високих ризиках і результат вразив — маю +48% до депозиту. Дуже круто, що розробник постійно оновлює налаштування та завжди на зв’язку в чаті, відповідаючи на всі питання. Окрім технічної частини, імпонує чесність автора: слова в постах завжди відповідають реальним цифрам. Це викликає велику довіру. З нетерпінням чекаю на нові релізи та алгоритми, бо цей продукт однозначно вартий уваги.",
-            image: review_image3,
-        }, {
-            name: "Valerii R.",
-            text: "Придбав цей софт близько місяця тому і вже можу зробити перші висновки. Процес налаштування пройшов швидко, алгоритм стратегії зрозумілий навіть без глибоких технічних знань. Бот працює дуже чітко, без технічних збоїв чи помилок у виконанні ордерів. Це саме той продукт, який відповідає заявленим характеристикам. Поки що все йде за планом, результати стабільні, тож можу сміливо радити цього бота тим, хто цінує якість виконання та зрозумілу логіку торгівлі.",
-            image: review_image4,
-        },
-        {
-            name: "Sergii I.",
-            text: "Працюю з ботом «Терра» вже п’ятий місяць. Свідомо пішов на експеримент і занизив рівень безпеки (завищив ризики), хоча розробник попереджав про можливі наслідки. Незважаючи на це, результатом за цей період дуже задоволений — бот витримав ринкові рухи та показав гарний плюс. Система працює стабільно навіть при агресивних налаштуваннях. Дякую Вові за якісний продукт, який дає можливість гнучко керувати своєю стратегією та отримувати бажаний прибуток на дистанції.",
-            image: review_image5,
-        },
-    ];
+    const reviews_images = [review_image1, review_image2, review_image3, review_image4, review_image5];
+
+    const reviews = t.terra.reviewsList.map((review, index) => ({
+        ...review,
+        image: reviews_images[index]
+    }));
 
     const [isActive, setIsActive] = useState(false)
 
     const bot_info_popup = {
-        bot_info: [
-            "Безлімітна кількість активацій бота",
-            "Пожиттєвий доступ до оновлень",
-            "2 версії під MT4/MT5",
-            "Відеоінструкції з налаштуванням на кожному етапі",
-            "Сет файли під різні види ризику",
-            "Доступ до закритого каналу з новинами",
-            "Гарантія 100% ідентичності ваших результатів з нашими"],
-        bot_name: "TERRA EA",
-        bot_price:800
-    }
+        bot_info: t.terra.botInfoPopup.botInfo,
+        bot_name: t.terra.botInfoPopup.botName,
+        bot_price: t.terra.botInfoPopup.botPrice
+    };
 
 
     const swiperRef = useRef(null);
 
 
-
-
-    const initial = {opacity: 0, y: 40}
-    const whileInView = {opacity: 1, y: 0}
-    const transition = {duration: 0.8, ease: "easeOut", delay:0.1}
-    const viewport = {once: true}
 
     const pointVariants = {
         hidden: {opacity: 0, y: 20},
@@ -131,11 +105,22 @@ const TerraPage = ({activePopup, setActivePopup}) => {
     };
 
 
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handlePlay = () => {
+        setIsPlaying(true);
+    };
 
 
 
     return (
         <div className="product_page">
+            <SEO
+                title="Terra EA — Торговий бот з найдовшою статистикою в Україні"
+                description="Terra EA: понад 2 роки підтвердженої статистики, 23 з 24 місяців у плюс. Надійний алгоритм для MT4/MT5 з річним прибутком +20% та контролем ризику."
+                keywords="Terra EA, торговий робот статистика, форекс бот скачати, автоматична торгівля MT4, алгоритм RSI Bollinger, стабільний заробіток на трейдингу"
+                image={preview}
+            />
             <PopupBot
                 bot_info={bot_info_popup.bot_info}
                 bot_name={bot_info_popup.bot_name}
@@ -147,98 +132,98 @@ const TerraPage = ({activePopup, setActivePopup}) => {
             />
 
             <div className="bot_info_main">
-                <div>
-                    <img src={productImage} alt=""/>
-                </div>
+                <motion.div {...fadeLeft}>
+                    <video
+                        src={terraVideo}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="my-video-class"
+                    >
+                        {t.terra.hero.videoFallback}
+                    </video>
+                </motion.div>
+
                 <div className="product_info_main">
-                    <div className="product_name">
+                    <motion.div className="product_name" {...fadeNumeric} custom={1}>
                         TERRA EA
-                    </div>
-                    <div className="bot_main_theme">
-                        Бот з найдовшою статистикою в Україні
-                    </div>
-                    <div className="bot_main_desc">
-                        Має понад 2 роки підтвердженої статистики зі стабільними результатами
-                    </div>
-                    <div className="button_buy_bot" onClick = {() => {
-                        setIsActive(true)
-                    }}>
-                        Придбати бота
-                    </div>
-                    <div className="product_slogan">
-                        Основа вашого капіталу
-                    </div>
-                    <div className="product_description">
-                        Як земля, що підтримує все живе і слугує фундаментом для всього, Terra EA забезпечить вам
-                        надійну основу для торгівлі зі стабільними результатами.
-                        <br/><br/>
-                        Алгоритм створено для тих, хто шукає впевненість.
-                        <br/><br/>
-                        Стратегія має прибуткове математичне очікування і пройшла перевірку часом і ринком.
-                    </div>
+                    </motion.div>
+
+                    <motion.div className="bot_main_theme" {...fadeNumeric} custom={2}>
+                        {t.terra.hero.theme}
+                    </motion.div>
+
+                    <motion.div className="bot_main_desc" {...fadeNumeric} custom={3}>
+                        {t.terra.hero.desc}
+                    </motion.div>
+
+                    <motion.div
+                        className="button_buy_bot"
+                        onClick={() => setIsActive(true)}
+                        {...fadeNumeric}
+                        custom={4}
+                    >
+                        {t.terra.hero.buy}
+                    </motion.div>
+
+                    <motion.div className="product_slogan" {...fadeNumeric} custom={5}>
+                        {t.terra.hero.slogan}
+                    </motion.div>
+
+                    <motion.div className="product_description" {...fadeNumeric} custom={6}>
+                        {t.terra.hero.about.p1}
+                        <br /><br />
+                        {t.terra.hero.about.p2}
+                        <br /><br />
+                        {t.terra.hero.about.p3}
+                    </motion.div>
                 </div>
             </div>
 
             <div className="product_advantages">
-                <h2>
-                    <span>Інтелектуальний підхід</span> до трейдингу
-                </h2>
+                <motion.h2 {...fadeUp}>
+                    <span>{t.terra.advantages.titleAccent}</span> {t.terra.advantages.title}
+                </motion.h2>
+
                 <div className="product_advantages_list">
-                    <div className="product_advantage_item_gradient">
-                        <div className="product_advantage_item">
-                            <div className="product_advantage_name">
-                                <img src={advantageIcon1} alt=""/>
-                                Комбінація індикаторів:
-                                <div className="product_advantage_num">01</div>
+                    {t.terra.advantages.items.map((item, i) => (
+                        <motion.div
+                            key={i}
+                            className="product_advantage_item_gradient"
+                            {...fadeNumeric}
+                            custom={i + 1}
+                        >
+                            <div className="product_advantage_item">
+                                <div className="product_advantage_name">
+                                    <img
+                                        src={[advantageIcon1, advantageIcon2, advantageIcon3][i]}
+                                        alt=""
+                                    />
+                                    {item.title}
+                                    <div className="product_advantage_num">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </div>
+                                </div>
+                                <div className="product_advantage_desc">
+                                    {item.desc}
+                                </div>
                             </div>
-                            <div className="product_advantage_desc">
-                                В основі алгоритму лежить синергія RSI, Bollinger Bands та ATR.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="product_advantage_item_gradient">
-                        <div className="product_advantage_item">
-                            <div className="product_advantage_name">
-                                <img src={advantageIcon2} alt=""/>
-                                Розумний ризик-менеджмент:
-                                <div className="product_advantage_num">02</div>
-                            </div>
-                            <div className="product_advantage_desc">
-                                Грамотне управління капіталом, хеджування позицій та використання мартингейла
-                                лише за необхідності.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="product_advantage_item_gradient">
-                        <div className="product_advantage_item">
-                            <div className="product_advantage_name">
-                                <img src={advantageIcon3} alt=""/>
-                                Money менеджмент
-                                <div className="product_advantage_num">03</div>
-                            </div>
-                            <div className="product_advantage_desc">
-                                Терра демонструє ефективну роботу з мінімальними просадками при депозиті від 1000$,
-                                що для мартінгейл ботів є рідкістю
-                            </div>
-                        </div>
-                    </div>
-
+                        </motion.div>
+                    ))}
                 </div>
             </div>
 
             <div className="product_result_fs">
-
-
                 <div className="product_result">
-                    <div className="product_result_info">
+                    <motion.div className="product_result_info" {...fadeNumeric} custom={1}>
                         <div className="years_handler">
                             <div
                                 className={`top_handler ${
                                     (hoverMode === "2025" || (!hoverMode && mode === "2025")) ? "active2025" : ""
                                 }`}
                             ></div>
+
                             <div
                                 className={`year2024 ${mode === "2024" ? "active" : ""}`}
                                 onClick={() => {
@@ -259,89 +244,110 @@ const TerraPage = ({activePopup, setActivePopup}) => {
                                 2025
                             </div>
                         </div>
+
                         <div className="result_block_name">
-                            Результати говорять самі за себе
+                            {t.terra.results.title}
                         </div>
+
                         <div className="plus_result">
-                            23 з 24 місяців торгівлі закриті в плюс.
+                            {t.terra.results.subtitle}
                         </div>
+
                         <div className="result_advantages">
-                            <div className="result_item">
-                                <div className="result_name">
-                                    Year profit
+                            {t.terra.results.stats.map((item, i) => (
+                                <div className="result_item" key={i}>
+                                    <div className="result_name">
+                                        {item.label}
+                                    </div>
+                                    <div className="result_numbers">
+                                        {item.value}
+                                    </div>
                                 </div>
-                                <div className="result_numbers">
-                                    +20%
-                                </div>
-                            </div>
-                            <div className="result_item">
-                                <div className="result_name">
-                                    Max drawdown
-                                </div>
-                                <div className="result_numbers">
-                                    16.5%
-                                </div>
-                            </div>
-                            <div className="result_item">
-                                <div className="result_name">
-                                    Winrate
-                                </div>
-                                <div className="result_numbers">
-                                    72.3%
-                                </div>
-                            </div>
-
-
+                            ))}
                         </div>
 
-                        <a href="https://www.myfxbook.com/members/alg0_o/terra-ea-v2/11649755" target = "_blank">
+                        <a
+                            href="https://www.myfxbook.com/members/alg0_o/terra-ea-v2/11649755"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <div className="see_stat_button">
-                                Дивитися статистику
+                                {t.terra.results.button}
                             </div>
                         </a>
-                    </div>
-                    <div className="result_image">
-                        <img src={mode === "2024" ? result2024 : result2025} alt=""/>
-                    </div>
+                    </motion.div>
+
+                    <motion.div className="result_image" {...fadeNumeric} custom={2}>
+                        <img src={mode === "2024" ? result2024 : result2025} alt="" />
+                    </motion.div>
                 </div>
             </div>
 
-            <div className = "video_demonstration">
-                <div className = "video_text">
+
+            <div className="video_demonstration">
+                <motion.div className="video_text" {...fadeLeft}>
                     <h2>
-                        <span>Відео-демонстрація</span><br/> роботи бота
+                        <span>{t.terra.video.titleAccent}</span><br />
+                        {t.terra.video.title}
                     </h2>
-                </div>
-                <div className = "video_block">
-                    <img src = {demonstration} alt = ""/>
-                </div>
+                </motion.div>
+
+                <motion.div className="video_block" {...fadeRight}>
+                    <iframe
+                        key={isPlaying ? "playing" : "stopped"}
+                        style={{ width: '100%', height: '100%', border: 'none' }}
+                        src={
+                            isPlaying
+                                ? "https://www.youtube.com/embed/XthGYjSNjN0?autoplay=1&mute=0&si=oCgsWa31-1ZkLTj1"
+                                : "about:blank"
+                        }
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                    />
+
+                    <AnimatePresence>
+                        {!isPlaying && (
+                            <motion.div
+                                key="cover"
+                                initial={{ opacity: 1 }}
+                                exit={{ opacity: 0, scale: 1.05 }}
+                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                className="video_cover_wrapper"
+                                onClick={handlePlay}
+                            >
+                                <img src={terraPreview} alt="Video Cover" />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
             </div>
 
 
             <div className="algo_feedback_block">
                 <div className="feedback_h2">
-                    <h2>
-                        <span>Що кажуть ті,</span> хто користуються TERRA EA
-                    </h2>
+                    <motion.h2 {...fadeUp}>
+                        <span>{t.terra.reviews.titleAccent}</span> {t.terra.reviews.title}
+                    </motion.h2>
 
                     <div className="reviews_nav">
                         <div
                             className="nav-btn prev"
                             onClick={() => swiperRef.current?.slidePrev()}
                         >
-                            <img src={prev_arrow} alt=""/>
+                            <img src={prev_arrow} alt="" />
                         </div>
                         <div
                             className="nav-btn next"
                             onClick={() => swiperRef.current?.slideNext()}
                         >
-                            <img src={next_arrow} alt=""/>
+                            <img src={next_arrow} alt="" />
                         </div>
                     </div>
-
                 </div>
 
-                <div className="slider-container">
+
+                <motion.div className="slider-container" {...fadeUp}>
 
 
                     <Swiper
@@ -373,183 +379,183 @@ const TerraPage = ({activePopup, setActivePopup}) => {
                         <div className="custom-pagination"></div>
                     </Swiper>
 
-                </div>
+                </motion.div>
 
-                <div className="center-btn">
-                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank">
+                <motion.div className="center-btn" {...fadeUp}>
+                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank" rel="noreferrer">
                         <div className="more_reviews_button">
-                            Більше відгуків
+                            {t.terra.reviews1.more}
                         </div>
                     </a>
-                </div>
+                </motion.div>
+
 
             </div>
 
-            <div className = "test_result">
-                <h2>
-                    Результати тестів <span>за останні 10 років</span>
-                </h2>
-                <div className = "test_details_block_fs">
-                    <div className = "test_details_block">
-                        <div className = "test_info">
-                            <div className = "test_theme">
-                                Період тестування
+            <div className="test_result">
+                <motion.h2 {...fadeUp}>
+                    {t.terra.tests.title} <span>{t.terra.tests.titleAccent}</span>
+                </motion.h2>
+
+                <div className="test_details_block_fs">
+                    <div className="test_details_block">
+                        <motion.div className="test_info" {...fadeNumeric} custom={1}>
+                            <div className="test_theme">
+                                {t.terra.tests.period}
                             </div>
-                            <div className = "test_detail_item">
-                                Таймфрейм
-                                <div className = "test_detail_number">
-                                    1 година (H1)
-                                </div>
-                            </div>
-                            <div className = "test_detail_item">
-                                Дати тестування
-                                <div className = "test_detail_number">
-                                    2016.01.04  — 2026.01.01
+
+                            <div className="test_detail_item">
+                                {t.terra.tests.timeframe}
+                                <div className="test_detail_number">
+                                    {t.terra.tests.timeframeValue}
                                 </div>
                             </div>
 
-                            <div className = "test_theme mt24">
-                                Депозит та прибуток
-                            </div>
-                            <div className = "test_numbers_grid">
-                                <div className = "test_numbers_grid_item">
-                                    <div className = "test_item_name">
-                                        Початковий депозит
-                                    </div>
-                                    <div className = "test_item_number">
-                                        10000.00
-                                    </div>
-                                </div>
-                                <div className = "test_numbers_grid_item">
-                                    <div className = "test_item_name">
-                                        Чистий прибуток
-                                    </div>
-                                    <div className = "test_item_number">
-                                        +525.59%
-                                    </div>
+                            <div className="test_detail_item">
+                                {t.terra.tests.dates}
+                                <div className="test_detail_number">
+                                    2016.01.04 — 2026.01.01
                                 </div>
                             </div>
 
-                            <div className = "test_detail_item">
-                                Валютні пари
-                                <div className = "test_detail_number">
+                            <div className="test_theme mt24">
+                                {t.terra.tests.depositProfit}
+                            </div>
+
+                            <div className="test_numbers_grid">
+                                <div className="test_numbers_grid_item">
+                                    <div className="test_item_name">
+                                        {t.terra.tests.startDeposit}
+                                    </div>
+                                    <div className="test_item_number">10000.00</div>
+                                </div>
+
+                                <div className="test_numbers_grid_item">
+                                    <div className="test_item_name">
+                                        {t.terra.tests.netProfit}
+                                    </div>
+                                    <div className="test_item_number">+525.59%</div>
+                                </div>
+                            </div>
+
+                            <div className="test_detail_item">
+                                {t.terra.tests.pairs}
+                                <div className="test_detail_number">
                                     NZDCAD, AUDCAD, AUDNZD
                                 </div>
                             </div>
 
-
-                            <div className = "test_theme mt24">
-                                Ризик
-                            </div>
-                            <div className = "test_detail_item">
-                                Максимальна просадка
-                                <div className = "test_detail_number">
-                                    31.42%
-                                </div>
+                            <div className="test_theme mt24">
+                                {t.terra.tests.risk}
                             </div>
 
-                            <div className = "test_theme mt24">
-                                Статистика угод
+                            <div className="test_detail_item">
+                                {t.terra.tests.maxDrawdown}
+                                <div className="test_detail_number">31.42%</div>
                             </div>
-                            <div className = "test_detail_item">
-                                Статистика угод
-                                <div className = "test_detail_number">
-                                    70.15%
-                                </div>
+
+                            <div className="test_theme mt24">
+                                {t.terra.tests.trades}
                             </div>
-                        </div>
-                        <div className = "test_result_image">
-                            <img src = {test_image} alt = ""/>
-                        </div>
+
+                            <div className="test_detail_item">
+                                {t.terra.tests.trades}
+                                <div className="test_detail_number">70.15%</div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div className="test_result_image" custom={2}>
+                            <img src={test_image} alt="" />
+                        </motion.div>
                     </div>
                 </div>
-
             </div>
 
 
             <CalculatorSection/>
 
-            <div className = "buy_block_fs">
-                <div className = "buy_block">
-                    <div className = "buy_block_image">
-                        <img src = {bottom_product_image} alt = ""/>
-                    </div>
-                    <div className = "buy_block_info">
-                        <div className = "product_name_bottom">
-                            Terra EA
+            <div className="buy_block_fs">
+                <div className="buy_block">
+                    <motion.div className="buy_block_image" {...fadeNumeric} custom={1}>
+                        <img src={bottom_product_image} alt="" />
+                    </motion.div>
+
+                    <motion.div className="buy_block_info" {...fadeNumeric} custom={2}>
+                        <div className="product_name_bottom">Terra EA</div>
+
+                        <div className="product_desc_bottom">
+                            {t.terra.buy.desc}
                         </div>
-                        <div className = "product_desc_bottom">
-                            Надійний фундамент для автоматичної торгівлі зі стабільними результатами.
-                        </div>
-                        <div className = "buy_block_bot_stat">
-                            <div className = "bot_stat_item">
-                                <div className = "bot_stat_name">
-                                    Year profit
+
+                        <div className="buy_block_bot_stat">
+                            <div className="bot_stat_item">
+                                <div className="bot_stat_name">
+                                    {t.terra.stats.yearProfit}
                                 </div>
-                                <div className = "bot_stat_num">
-                                    +20%
-                                </div>
+                                <div className="bot_stat_num">+20%</div>
                             </div>
 
-                            <div className = "bot_stat_item">
-                                <div className = "bot_stat_name">
-                                    Max drawdown
+                            <div className="bot_stat_item">
+                                <div className="bot_stat_name">
+                                    {t.terra.stats.maxDrawdown}
                                 </div>
-                                <div className = "bot_stat_num">
-                                    16.5%
-                                </div>
+                                <div className="bot_stat_num">16.5%</div>
                             </div>
 
-                            <div className = "bot_stat_item">
-                                <div className = "bot_stat_name">
-                                    Winrate
+                            <div className="bot_stat_item">
+                                <div className="bot_stat_name">
+                                    {t.terra.stats.winrate}
                                 </div>
-                                <div className = "bot_stat_num">
-                                    72.3%
-                                </div>
+                                <div className="bot_stat_num">72.3%</div>
                             </div>
                         </div>
 
-                        <div className = "bot_stat_price">
-                            Ціна
-                            <div className = "price_block_bottom">
-                                800
-                                <span>
-                                    USD
-                                </span>
+                        <div className="bot_stat_price">
+                            {t.terra.buy.price}
+                            <div className="price_block_bottom">
+                                800 <span>USD</span>
                             </div>
                         </div>
 
-                        <div className = "bottom_buttons_block">
-                            <div className = "button_buy_bottom" onClick = {() => {
-                                setIsActive(true)
-                            }}>
-                                Придбати
+                        <div className="bottom_buttons_block">
+                            <div
+                                className="button_buy_bottom"
+                                onClick={() => setIsActive(true)}
+                            >
+                                {t.terra.buy.buy}
                             </div>
-                            <div className = "piece_pay_bottom" onClick = {() => {
-                                setIsActive(true)
-                            }}>
-                                Оплата частинами
+
+                            <div
+                                className="piece_pay_bottom"
+                                onClick={() => setIsActive(true)}
+                            >
+                                {t.terra.buy.parts}
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
             <div className="footer">
                 <a href="/">
-                    <img src={logo} alt="" className="logo_img"/>
+                    <img src={logo} alt="" className="logo_img" />
                 </a>
-                <hr/>
+                <hr />
                 <div className="society_block">
                     <div>
-                        <a href = "https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==">Instagram</a>
+                        <a href="https://www.instagram.com/alg0_o" target="_blank" rel="noreferrer">
+                            {t.terra.footer.instagram}
+                        </a>
                     </div>
                     <div>
-                        <a href = "https://t.me/alg0_o">Telegram</a>
+                        <a href="https://t.me/alg0_o" target="_blank" rel="noreferrer">
+                            {t.terra.footer.telegram}
+                        </a>
                     </div>
                     <div>
-                        <a href = "https://www.youtube.com/@alg0_ofx">Youtube</a>
+                        <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
+                            {t.terra.footer.youtube}
+                        </a>
                     </div>
                 </div>
             </div>

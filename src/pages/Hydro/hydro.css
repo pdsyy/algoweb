@@ -2,6 +2,10 @@
     padding-bottom: 27px;
 }
 
+.product_page div{
+    scrollbar-width: none;
+}
+
 .bot_info_main {
     width: 100%;
     padding: 0 48px;
@@ -9,6 +13,7 @@
     grid-template-columns: 614fr 682fr;
     grid-gap: 48px;
     margin-top: 144px;
+    overflow-x: hidden;
 }
 
 .bot_info_main img {
@@ -111,6 +116,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    cursor: pointer;
 
 
 }
@@ -368,6 +374,7 @@
 }
 
 .video_demonstration {
+    overflow-x: hidden;
     width: 100%;
     padding: 0 48px;
     display: flex;
@@ -384,7 +391,6 @@
     width: 771px;
     margin-left: auto;
     overflow: hidden;
-    border-radius: 24px;
 
 }
 
@@ -930,7 +936,80 @@
     box-shadow: 0px 1px 3px 0px #0E121B1F;
 
 }
+.video_cover_wrapper{
+    overflow: hidden;
+}
 
+.video_block{
+    aspect-ratio: 771 / 433;
+    overflow: hidden;
+    position: relative;
+    background: black;
+}
+.my-video-class{
+    width: 100%;
+    border-radius: 24px;
+}
+
+.select_bot_button, .button_buy_bot,
+.see_stat_button, .more_reviews_button,
+.calculate_button, .button_buy_bottom,
+.read_more_button, .telegram_btn,
+.bot_more_details, .consult_button,
+.piece_pay_bottom, .send_button{
+    transition: all 0.1s, background-color 0.4s;
+}
+
+
+.select_bot_button:active, .button_buy_bot:active,
+.see_stat_button:active, .more_reviews_button:active,
+.calculate_button:active, .button_buy_bottom:active,
+.read_more_button:active, .telegram_btn:active,
+.bot_more_details:active, .consult_button:active{
+    background: #000000;
+    box-shadow: 0px 1px 3px 0px #0E121B1F;
+    transform: scale(0.98);
+}
+
+.piece_pay_bottom:active, .send_button:active{
+    background: #23232340;
+    box-shadow: 0px 1px 3px 0px #0E121B1F;
+
+}
+
+.select_bot_button:hover, .button_buy_bot:hover, .see_stat_button:hover, .more_reviews_button:hover, .calculate_button:hover, .button_buy_bottom:hover, .read_more_button:hover, .telegram_btn:hover, .bot_more_details:hover, .consult_button:hover{
+    background: #414141;
+    box-shadow: 0px 1px 3px 0px #0E121B1F;
+
+}
+
+.piece_pay_bottom:hover, .send_button:hover{
+    background: #23232326;
+    box-shadow: 0px 1px 3px 0px #0E121B1F;
+
+}
+.product_page.hydro .bot_info_item, .product_page.aero .bot_info_item{
+    padding: 10px 13px;
+}
+.product_page.hydro .contact_block_popup, .product_page.aero .contact_block_popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.video_block .video_cover_wrapper{
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.video_block iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 24px;
+}
 
 @media screen and (max-width: 768px) {
     .calculate_table{

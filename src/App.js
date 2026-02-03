@@ -10,6 +10,8 @@ import HydroPage from "./pages/Hydro/HydroPage";
 import PopupBot from "./components/PopupBot";
 import ThxPopup from "./components/ThxPopup";
 import {ScrollProvider} from "./context/ScrollContext";
+import {HelmetProvider} from "react-helmet-async";
+import {LanguageProvider} from "./context/LanguageProvider";
 
 function App() {
     useEffect(() => {
@@ -22,20 +24,25 @@ function App() {
     const [activePopup, setActivePopup] = useState(false)
 
     return (
-        <ScrollProvider>
-            <div className="App">
-                <Header/>
-                <ThxPopup activePopup={activePopup} setActivePopup={setActivePopup}/>
+        <HelmetProvider>
+            <ScrollProvider>
+                <LanguageProvider>
+                    <div className="App">
 
-                <Routes>
-                    <Route path="/" element={<MainPage/>} index/>
-                    <Route path="/terra" element={<TerraPage setActivePopup={setActivePopup}/>}/>
-                    <Route path="/aero" element={<AeroPage setActivePopup={setActivePopup}/>}/>
-                    <Route path="/hydro" element={<HydroPage setActivePopup={setActivePopup}/>}/>
-                </Routes>
+                        <Header/>
+                        <ThxPopup activePopup={activePopup} setActivePopup={setActivePopup}/>
 
-            </div>
-        </ScrollProvider>
+                        <Routes>
+                            <Route path="/" element={<MainPage/>} index/>
+                            <Route path="/terra" element={<TerraPage setActivePopup={setActivePopup}/>}/>
+                            <Route path="/aero" element={<AeroPage setActivePopup={setActivePopup}/>}/>
+                            <Route path="/hydro" element={<HydroPage setActivePopup={setActivePopup}/>}/>
+                        </Routes>
+
+                    </div>
+                </LanguageProvider>
+            </ScrollProvider>
+        </HelmetProvider>
     );
 }
 

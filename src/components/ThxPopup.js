@@ -1,34 +1,28 @@
 import React, {useState} from 'react';
 import cross from "../images/popup_cross.svg";
+import {useLanguage} from "../context/LanguageProvider";
 
 const ThxPopup = ({activePopup, setActivePopup}) => {
-
+    const { t } = useLanguage();
 
     return (
-        <div className={`popup_fs ${activePopup ? "active_popup" : ""}`} onClick={() => {
-            setActivePopup(false)
-        }}>
-            <div className="popup_container_gradient thx" onClick={(e) => {
-                e.stopPropagation()
-            }}>
+        <div className={`popup_fs ${activePopup ? "active_popup" : ""}`} onClick={() => setActivePopup(false)}>
+            <div className="popup_container_gradient thx" onClick={(e) => e.stopPropagation()}>
                 <div className="popup_container">
                     <div className="thx_tex">
-                        Дякуємо! Вашу заявку успішно відправлено.
-                        <div className="cross_block_popup" onClick={() => {
-                            setActivePopup(false)
-                        }}>
-                            <img src={cross} alt=""/>
+                        {t.thx.title}
+                        <div className="cross_block_popup" onClick={() => setActivePopup(false)}>
+                            <img src={cross} alt="close" />
                         </div>
                     </div>
 
                     <div className="thx_desc">
-                        Наш менеджер опрацює інформацію та зв'яжеться з вами протягом найближчого часу для уточнення
-                        деталей. Гарного дня!
+                        {t.thx.desc}
                     </div>
 
                     <a href="/">
                         <div className="main_page_button">
-                            На головну
+                            {t.thx.button}
                         </div>
                     </a>
                 </div>

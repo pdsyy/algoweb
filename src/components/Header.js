@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom'; // Если используете react-router-dom
 import logo from "../images/logo.svg";
 import {useScroll} from "../context/ScrollContext";
+import {useLanguage} from "../context/LanguageProvider";
 
 const Header = () => {
     const lang = localStorage.getItem("algo_lang") === "UA";
+    const { t, language, setLanguage } = useLanguage();
+
+
+
     const { scrollToSection } = useScroll();
     const [activeMenu, setActiveMenu] = useState(false);
 
@@ -14,17 +19,20 @@ const Header = () => {
     };
 
     const menuItems = [
-        { name: "Як працюють", id: "how-it-works" },
-        { name: "Переваги", id: "advantages" },
-        { name: "Каталог ботів", id: "catalog" },
-        { name: "Відгуки", id: "reviews" },
-        { name: "FAQ", id: "faq" },
+        { name: t.home.header.howItWorks, id: "how-it-works" },
+        { name: t.home.header.advantages, id: "advantages" },
+        { name: t.home.header.catalog, id: "catalog" },
+        { name: t.home.header.reviews, id: "reviews" },
+        { name: t.home.header.faq, id: "faq" },
     ];
 
     return (
-        <div className={`header_container ${activeMenu ? "active_menu" : ""}`}>
-            <div className="header">
-                <a href="/"><img src={logo} alt="" className="logo_img" /></a>
+        <div className={`header_container liquidGlass-wrapper ${activeMenu ? "active_menu" : ""}`}>
+            <div className="liquidGlass-effect"></div>
+            <div className="liquidGlass-tint"></div>
+            <div className="header liquidGlass-text">
+                <a href="/"><img src={logo} alt="Logo" className="logo_img" /></a>
+
                 <div className="desktop_header_menu">
                     {menuItems.map((item) => (
                         <div key={item.id} onClick={() => handleMenuClick(item.id)}>
@@ -35,11 +43,21 @@ const Header = () => {
 
                 <div className="lang_select_block">
                     <div className="languages_block">
-                        <div className={lang ? "active" : ""}>UA</div>
-                        <div className={lang ? "" : "active"}>RU</div>
+                        <div
+                            className={language === "ua" ? "active" : ""}
+                            onClick={() => setLanguage("ua")}
+                        >
+                            UA
+                        </div>
+                        <div
+                            className={language === "ru" ? "active" : ""}
+                            onClick={() => setLanguage("ru")}
+                        >
+                            RU
+                        </div>
                     </div>
                     <div className="select_bot_button" onClick={() => handleMenuClick("catalog")}>
-                        Обрати бота
+                        {t.home.hero.button}
                     </div>
                 </div>
 
@@ -52,6 +70,7 @@ const Header = () => {
                 </div>
             </div>
 
+            {/* Mobile Menu */}
             <div className="mobile_menu">
                 {menuItems.map((item) => (
                     <div key={item.id} className="menu_item" onClick={() => handleMenuClick(item.id)}>
@@ -59,13 +78,41 @@ const Header = () => {
                     </div>
                 ))}
                 <div className="languages_block_mobile">
-                    <div className="lang_mob active_item">UA</div>
-                    <div className="lang_mob">RU</div>
+                    <div
+                        className={`lang_mob ${language === "ua" ? "active_item" : ""}`}
+                        onClick={() => { setLanguage("ua"); setActiveMenu(false); }}
+                    >
+                        UA
+                    </div>
+                    <div
+                        className={`lang_mob ${language === "ru" ? "active_item" : ""}`}
+                        onClick={() => { setLanguage("ru"); setActiveMenu(false); }}
+                    >
+                        RU
+                    </div>
                 </div>
-                <div className="select_bot_button_mobile">
-                    Обрати бота
+                <div className="select_bot_button_mobile" onClick={() => handleMenuClick("catalog")}>
+                    {t.home.hero.button}
                 </div>
             </div>
+
+            {/* SVG Filter remains the same */}
+            <svg style={{display:"none"}}>
+                <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="2" seed="5" result="turbulence" />
+                    <feComponentTransfer in="turbulence" result="mapped">
+                        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5"/>
+                        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0"/>
+                        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5"/>
+                    </feComponentTransfer>
+                    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap"/>
+                    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+                        <fePointLight x="-200" y="-200" z="300"/>
+                    </feSpecularLighting>
+                    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+                    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="150" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+            </svg>
         </div>
     );
 };
