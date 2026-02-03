@@ -1204,6 +1204,7 @@
     }
     .calculate_table{
         padding: 20px;
+        width: 100%;
     }
     .calculate_table_description{
         font-size: 18px;
