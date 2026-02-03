@@ -10,7 +10,7 @@ import HydroPage from "./pages/Hydro/HydroPage";
 import PopupBot from "./components/PopupBot";
 import ThxPopup from "./components/ThxPopup";
 import {ScrollProvider} from "./context/ScrollContext";
-import {HelmetProvider} from "react-helmet-async";
+
 import {LanguageProvider} from "./context/LanguageProvider";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     const [activePopup, setActivePopup] = useState(false)
 
     return (
-        <HelmetProvider>
+
             <ScrollProvider>
                 <LanguageProvider>
                     <div className="App">
@@ -43,7 +43,6 @@ function App() {
                     </div>
                 </LanguageProvider>
             </ScrollProvider>
-        </HelmetProvider>
     );
 }
 
