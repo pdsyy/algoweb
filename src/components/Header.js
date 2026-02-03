@@ -44,14 +44,14 @@ const Header = () => {
                 <div className="lang_select_block">
                     <div className="languages_block">
                         <div
-                            className={language === "ua" ? "active" : ""}
-                            onClick={() => setLanguage("ua")}
+                            className={language === "UA" ? "active" : ""}
+                            onClick={() => setLanguage("UA")}
                         >
                             UA
                         </div>
                         <div
-                            className={language === "ru" ? "active" : ""}
-                            onClick={() => setLanguage("ru")}
+                            className={language === "RU" ? "active" : ""}
+                            onClick={() => setLanguage("RU")}
                         >
                             RU
                         </div>
@@ -79,14 +79,14 @@ const Header = () => {
                 ))}
                 <div className="languages_block_mobile">
                     <div
-                        className={`lang_mob ${language === "ua" ? "active_item" : ""}`}
-                        onClick={() => { setLanguage("ua"); setActiveMenu(false); }}
+                        className={`lang_mob ${language === "UA" ? "active_item" : ""}`}
+                        onClick={() => { setLanguage("UA"); setActiveMenu(false); }}
                     >
                         UA
                     </div>
                     <div
-                        className={`lang_mob ${language === "ru" ? "active_item" : ""}`}
-                        onClick={() => { setLanguage("ru"); setActiveMenu(false); }}
+                        className={`lang_mob ${language === "RU" ? "active_item" : ""}`}
+                        onClick={() => { setLanguage("RU"); setActiveMenu(false); }}
                     >
                         RU
                     </div>
