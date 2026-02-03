@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const SEO = ({ title, description, keywords, image }) => {
     const siteName = "ALGO Trading";
+
     const defaultDescription = "Автоматизированный трейдинг для каждого.";
 
     return (
