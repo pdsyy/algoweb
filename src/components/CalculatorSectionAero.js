@@ -8,7 +8,7 @@ import percent_icon from "../pages/Terra/images/percent_icon.svg";
 import {motion} from "framer-motion"
 import {useLanguage} from "../context/LanguageProvider";
 
-const CalculatorSection = ({name}) => {
+const CalculatorSection = () => {
     const { t } = useLanguage();
 
     const [calcResults, setCalcResults] = useState([]);
@@ -247,7 +247,7 @@ const CalculatorSection = ({name}) => {
                             </table>
                         </div>
                     ) : (
-                        <div className="calculate_table_description" dangerouslySetInnerHTML={{ __html: t.terra.calculator.table.description }} />
+                        <div className="calculate_table_description" dangerouslySetInnerHTML={{ __html: t.terra.calculator.table.descriptionAero }} />
                     )}
                 </motion.div>
             </div>

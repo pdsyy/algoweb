@@ -32,6 +32,7 @@ import review_image5 from "./images/review_image5.png"
 import review_image6 from "./images/review_image6.png"
 import circles_bg from "./images/circles.svg"
 import select_bot_img from "./images/select_bot_img.png"
+import select_bot_img_mob from "./images/select_bot_img_mob.png"
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper/modules";
@@ -393,7 +394,9 @@ const MainPage = () => {
                         {t.home.faqTitle}
                     </motion.h2>
                     <div className="faq_list">
-                        <img src={circles_bg} alt="" className="bg_circles_faq"/>
+                        <div className="bg_circles_faq">
+                            <img src={circles_bg} alt=""/>
+                        </div>
                         <div className="faq_questions_list">
                             {faqElements.map((el, index) => {
                                 const isOpen = openFaqs.includes(index);
@@ -445,7 +448,7 @@ const MainPage = () => {
                                 </div>
                             </a>
                         </div>
-                        <img src={select_bot_img} alt="Consultation"/>
+                        <img src={window.innerWidth < 768.1 ? select_bot_img_mob :select_bot_img} alt="Consultation"/>
                     </div>
                 </motion.div>
 

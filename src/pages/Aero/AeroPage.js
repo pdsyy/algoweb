@@ -26,6 +26,7 @@ import aeroVideo from "./images/aerogif2.mp4";
 import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import {useLanguage} from "../../context/LanguageProvider";
+import CalculatorSectionAero from "../../components/CalculatorSectionAero";
 
 const AeroPage = ({activePopup, setActivePopup}) => {
     const { t } = useLanguage();
@@ -392,7 +393,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                     </div>
                 </div>
             </div>
-            <CalculatorSection/>
+            <CalculatorSectionAero/>
 
             <div className="buy_block_fs">
                 <div className="buy_block">

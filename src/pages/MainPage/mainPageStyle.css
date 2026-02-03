@@ -687,6 +687,10 @@ h2 span{
     position: relative;
 
 }
+.bg_circles_faq img{
+    width: 100%;
+    will-change: opacity;
+}
 
 .bg_circles_faq{
     left: -9px;

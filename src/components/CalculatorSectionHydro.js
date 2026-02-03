@@ -247,7 +247,7 @@ const CalculatorSection = ({name}) => {
                             </table>
                         </div>
                     ) : (
-                        <div className="calculate_table_description" dangerouslySetInnerHTML={{ __html: t.terra.calculator.table.description }} />
+                        <div className="calculate_table_description" dangerouslySetInnerHTML={{ __html: t.terra.calculator.table.descriptionHydro }} />
                     )}
                 </motion.div>
             </div>

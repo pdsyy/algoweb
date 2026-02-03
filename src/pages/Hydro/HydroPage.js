@@ -36,6 +36,7 @@ import hydroVideo from "./images/hydro.mp4";
 import preview from "../../images/logo192.png"
 import SEO from "../../SEO";
 import {useLanguage} from "../../context/LanguageProvider";
+import CalculatorSectionHydro from "../../components/CalculatorSectionHydro";
 
 const HydroPage = ({activePopup, setActivePopup}) => {
     const { t } = useLanguage();
@@ -420,7 +421,7 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                     </motion.div>
                 </div>
             </div>
-            <CalculatorSection/>
+            <CalculatorSectionHydro/>
 
             <div className="buy_block_fs">
                 <div className="buy_block">
