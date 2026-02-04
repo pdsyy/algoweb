@@ -857,7 +857,12 @@ h2 span{
 }
 
 .footer hr{
-    background: #B9B9B9;
+    background: none !important;
+    border: none;
+    border-top: 1px solid #b9b9b9;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 1;
     flex-grow: 1;
 }
 
