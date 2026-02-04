@@ -2,13 +2,13 @@ import React, {useEffect, useRef, useState} from 'react';
 import "./mainPageStyle.css"
 import mainBlockBg from "./images/mainBlockBg.png"
 import mainBlockBgMobile from "./images/MainBlockBgMobile.png"
-import metalPackage from "./images/Metal-Packages.png"
-import market_image1 from "./images/market_image1.svg"
-import market_image2 from "./images/market_image2.svg"
+import metalPackage from "./images/metalPackage.png"
+import market_image1 from "./images/market_image1.png"
+import market_image2 from "./images/market_image2.png"
 import market_image3 from "./images/market_image3.svg"
-import market_image4 from "./images/market_image4.svg"
-import market_image5 from "./images/market_image5.svg"
-import market_image6 from "./images/market_image6.svg"
+import market_image4 from "./images/market_image4.png"
+import market_image5 from "./images/market_image5.png"
+import market_image6 from "./images/market_image6.png"
 import market_image7 from "./images/market_image7.svg"
 import firstDealImage from "./images/firstDealImage.png"
 import firstDealItem1 from "./images/firstDealItem1.svg"
@@ -87,8 +87,8 @@ const MainPage = () => {
         const {innerWidth, innerHeight} = window;
         const x = (e.clientX / innerWidth) - 0.5;
         const y = (e.clientY / innerHeight) - 0.5;
-        const moveX = x * 30;
-        const moveY = y * 30;
+        const moveX = x * 60;
+        const moveY = y * 60;
         boxRef.current.style.transform = `translate(${moveX}px, ${moveY}px)`;
     };
 
@@ -442,7 +442,7 @@ const MainPage = () => {
                             <div className="select_bot_desc">
                                 {t.home.consult.desc}
                             </div>
-                            <a href="https://t.me/alg0_o" target="_blank" rel="noreferrer">
+                            <a href="https://t.me/volodymyrbbk" target="_blank" rel="noreferrer">
                                 <div className="consult_button">
                                     {t.home.consult.button}
                                 </div>
@@ -459,12 +459,12 @@ const MainPage = () => {
                     <hr/>
                     <div className="society_block">
                         <div>
-                            <a href="https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==" target="_blank" rel="noreferrer">
+                            <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank" rel="noreferrer">
                                 {t.terra.footer.instagram}
                             </a>
                         </div>
                         <div>
-                            <a href="https://t.me/alg0_o" target="_blank" rel="noreferrer">
+                            <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
                                 {t.terra.footer.telegram}
                             </a>
                         </div>

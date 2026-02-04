@@ -8,7 +8,7 @@ import percent_icon from "../pages/Terra/images/percent_icon.svg";
 import {motion} from "framer-motion"
 import {useLanguage} from "../context/LanguageProvider";
 
-const CalculatorSection = ({name}) => {
+const CalculatorSection = ({startPercentage}) => {
     const { t } = useLanguage();
 
     const [calcResults, setCalcResults] = useState([]);
@@ -16,7 +16,7 @@ const CalculatorSection = ({name}) => {
     const [startSum, setStartSum] = useState(10000)
 
     const [years, setYears] = useState(5);
-    const [rate, setRate] = useState(20);
+    const [rate, setRate] = useState(startPercentage);
     const [refillSum, setRefillSum] = useState(0);
 
     const [periodUnit, setPeriodUnit] = useState("Рік"); // Рік / Місяць
@@ -177,7 +177,7 @@ const CalculatorSection = ({name}) => {
                         {t.terra.calculator.labels.rate}
                     </div>
 
-                    <InputRangeBar SLIDER_MAX="40" startValue="20" inputIcon={percent_icon} value={rate}
+                    <InputRangeBar SLIDER_MAX="40" startValue={startPercentage} inputIcon={percent_icon} value={rate}
                                    setValue={setRate}/>
 
                     <div className="calculate_warn">

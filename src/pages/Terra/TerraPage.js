@@ -29,8 +29,8 @@ import {Pagination} from "swiper/modules";
 import CalculatorSection from "../../components/CalculatorSection";
 import ThxPopup from "../../components/ThxPopup";
 import {AnimatePresence, motion} from "framer-motion"
-import terraPreview from "./images/terraPreview.png";
-import terraVideo from "./images/terra_gif.mp4";
+import terraPreview from "./images/terraPreviewVIdeoFigma.png";
+import terraVideo from "./images/terraVideoMain.mp4";
 import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import { useLanguage } from "../../context/LanguageProvider";
@@ -132,7 +132,7 @@ const TerraPage = ({activePopup, setActivePopup}) => {
             />
 
             <div className="bot_info_main">
-                <motion.div {...fadeLeft}>
+                <motion.div className = "main_video_block" {...fadeLeft}>
                     <video
                         src={terraVideo}
                         autoPlay
@@ -316,7 +316,7 @@ const TerraPage = ({activePopup, setActivePopup}) => {
                                 className="video_cover_wrapper"
                                 onClick={handlePlay}
                             >
-                                <img src={terraPreview} alt="Video Cover" />
+                                <img src={terraPreview} alt="Video Cover" loading="lazy"/>
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -543,12 +543,12 @@ const TerraPage = ({activePopup, setActivePopup}) => {
                 <hr />
                 <div className="society_block">
                     <div>
-                        <a href="https://www.instagram.com/alg0_o" target="_blank" rel="noreferrer">
+                        <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank" rel="noreferrer">
                             {t.terra.footer.instagram}
                         </a>
                     </div>
                     <div>
-                        <a href="https://t.me/alg0_o" target="_blank" rel="noreferrer">
+                        <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
                             {t.terra.footer.telegram}
                         </a>
                     </div>

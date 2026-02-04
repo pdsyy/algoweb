@@ -22,7 +22,7 @@ import {Pagination} from "swiper/modules";
 import CalculatorSection from "../../components/CalculatorSection";
 import {AnimatePresence, motion} from "framer-motion";
 import aeroPreview from "./images/aeroPreview.png";
-import aeroVideo from "./images/aerogif2.mp4";
+import aeroVideo from "./images/aeroVideoMain.mp4";
 import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import {useLanguage} from "../../context/LanguageProvider";
@@ -121,7 +121,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                 image={preview}
             />
             <div className="bot_info_main">
-                <motion.div {...fadeLeft}>
+                <motion.div className = "main_video_block" {...fadeLeft}>
                     <video
                         src={aeroVideo}
                         autoPlay
@@ -393,7 +393,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                     </div>
                 </div>
             </div>
-            <CalculatorSectionAero/>
+            <CalculatorSectionAero startPercentage = {30}/>
 
             <div className="buy_block_fs">
                 <div className="buy_block">
@@ -443,10 +443,10 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                 <hr/>
                 <div className="society_block">
                     <div>
-                        <a href="https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==">{t.terra.footer.instagram}</a>
+                        <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
                     </div>
                     <div>
-                        <a href="https://t.me/alg0_o">{t.terra.footer.telegram}</a>
+                        <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>

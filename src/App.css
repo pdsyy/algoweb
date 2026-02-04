@@ -421,8 +421,8 @@
 .liquidGlass-wrapper {
     display: flex;
     font-weight: 600;
-    overflow: hidden;
     color: black;
+
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 
@@ -434,6 +434,8 @@
     opacity: 1;
     transition: 0.4s;
     position: absolute;
+    border-radius: 80px;
+    overflow: hidden;
     z-index: 0;
     inset: 0;
 
@@ -454,6 +456,7 @@
 .liquidGlass-tint {
     transition: 0.4s;
     z-index: 1;
+    border-radius: 80px;
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.25);

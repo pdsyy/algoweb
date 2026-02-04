@@ -32,7 +32,7 @@ import PopupBot from "../../components/PopupBot";
 import {Pagination} from "swiper/modules";
 import CalculatorSection from "../../components/CalculatorSection";
 import {AnimatePresence, motion} from "framer-motion";
-import hydroVideo from "./images/hydro.mp4";
+import hydroVideo from "./images/hydroMainVideo.mp4";
 import preview from "../../images/logo192.png"
 import SEO from "../../SEO";
 import {useLanguage} from "../../context/LanguageProvider";
@@ -129,7 +129,7 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                 setActiveThx={setActivePopup}
             />
             <div className="bot_info_main">
-                <motion.div {...fadeLeft}>
+                <motion.div className = "main_video_block" {...fadeLeft}>
                     <video
                         src={hydroVideo}
                         autoPlay
@@ -421,7 +421,7 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                     </motion.div>
                 </div>
             </div>
-            <CalculatorSectionHydro/>
+            <CalculatorSectionHydro startPercentage = {50}/>
 
             <div className="buy_block_fs">
                 <div className="buy_block">
@@ -471,10 +471,10 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                 <hr/>
                 <div className="society_block">
                     <div>
-                        <a href="https://www.instagram.com/alg0_o?igsh=MWR0dXY2dzk2bTlwOA==">{t.terra.footer.instagram}</a>
+                        <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
                     </div>
                     <div>
-                        <a href="https://t.me/alg0_o">{t.terra.footer.telegram}</a>
+                        <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>
