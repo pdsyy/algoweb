@@ -5,7 +5,7 @@ import mainBlockBgMobile from "./images/MainBlockBgMobile.png"
 import metalPackage from "./images/metalPackage.png"
 import market_image1 from "./images/market_image1.png"
 import market_image2 from "./images/market_image2.png"
-import market_image3 from "./images/market_image3.svg"
+import market_image3 from "./images/market_image3.png"
 import market_image4 from "./images/market_image4.png"
 import market_image5 from "./images/market_image5.png"
 import market_image6 from "./images/market_image6.png"
@@ -33,6 +33,9 @@ import review_image6 from "./images/review_image6.png"
 import circles_bg from "./images/circles.svg"
 import select_bot_img from "./images/select_bot_img.png"
 import select_bot_img_mob from "./images/select_bot_img_mob.png"
+import tg_icon from "../../images/tg_icon.svg"
+import instagram_icon from "../../images/insta_icon.svg"
+import youtube_icon from "../../images/youtube_icon.svg"
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper/modules";
@@ -115,49 +118,61 @@ const MainPage = () => {
     const faqElements = t.home.faq;
 
 
-    const initial = {opacity: 0, y: 40}
-    const whileInView = {opacity: 1, y: 0}
-    const transition = {duration: 0.8, ease: "easeOut", delay:0.1}
-    const viewport = {once: true}
+    const fastEase = [0.25, 0.1, 0.25, 1.0];
 
     const pointVariants = {
-        hidden: {opacity: 0, y: 20},
+        hidden: {
+            opacity: 0,
+            y: 20,
+            rotate: 0.001
+        },
         visible: (i) => ({
             opacity: 1,
             y: 0,
-            transition: {delay: i * 0.15, duration: 0.6, ease: "easeOut"}
+            transition: {
+                delay: i * 0.1,
+                duration: 0.5,
+                ease: fastEase
+            }
         })
     };
+
     const fadeNumeric = {
         initial: "hidden",
         whileInView: "visible",
-        viewport: {once: true},
+        viewport: { once: true, amount: 0.1 },
         variants: pointVariants
     };
 
+    const baseTransition = { duration: 0.7, ease: fastEase };
+    const baseViewport = { once: true, amount: 0.1 };
+
     const fadeUp = {
-        initial: {opacity: 0, y: 40},
-        whileInView: {opacity: 1, y: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, y: 30, translateZ: 0 },
+        whileInView: { opacity: 1, y: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
+
     const fadeDown = {
-        initial: {opacity: 0, y: -40},
-        whileInView: {opacity: 1, y: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, y: -30, translateZ: 0 },
+        whileInView: { opacity: 1, y: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
+
     const fadeLeft = {
-        initial: {opacity: 0, x: -50},
-        whileInView: {opacity: 1, x: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, x: -40, translateZ: 0 },
+        whileInView: { opacity: 1, x: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
+
     const fadeRight = {
-        initial: {opacity: 0, x: 50},
-        whileInView: {opacity: 1, x: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, x: 40, translateZ: 0 },
+        whileInView: { opacity: 1, x: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
 
     const marketImages = [
@@ -458,24 +473,37 @@ const MainPage = () => {
                         <img src={logo} alt="Logo" className="logo_img"/>
                     </a>
                     <hr/>
-                    <div className="society_block">
-                        <div>
-                            <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank" rel="noreferrer">
-                                {t.terra.footer.instagram}
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
-                                {t.terra.footer.youtube}
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
-                                {t.terra.footer.telegram}
-                            </a>
-                        </div>
 
-                    </div>
+                        {window.innerWidth < 768 ?
+                            <div className="society_block">
+                                <div>
+                                    <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
+                                        <img src = {tg_icon} alt = ""/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank" rel="noreferrer">
+                                        <img src = {instagram_icon} alt = ""/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
+                                        <img src = {youtube_icon} alt = ""/>
+                                    </a>
+                                </div>
+                            </div>
+
+                            : <div className="society_block">
+                            <div>
+                                <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>
+                            </div>
+                            <div>
+                                <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
+                            </div>
+                        </div>}
                 </motion.div>
 
 

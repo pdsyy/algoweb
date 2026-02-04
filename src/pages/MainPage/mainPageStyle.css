@@ -868,6 +868,9 @@ h2 span{
 .footer img{
     height: 28px;
 }
+.footer .society_block img{
+    height: 24px;
+}
 
 .footer hr{
     background: none !important;
@@ -982,9 +985,12 @@ h2 span{
     100% { transform: translateX(0); }
 }
 
+.market-2{
+    height: 34px;
+}
 @media screen and (max-width: 768px) {
-    .market-2, .market-3, .market-9, .market-10{
-        height: 20px !important;
+    .market-2, .market-9{
+        height: 25.5px !important;
     }
     .active_menu .liquidGlass-effect{
         opacity: 0;
@@ -1077,6 +1083,7 @@ h2 span{
     .market_list {
         display: flex;
         width: max-content;
+        height: 36px;
         animation: marquee 40s linear infinite;
         overflow-x: visible;
     }
@@ -1097,7 +1104,7 @@ h2 span{
         color: #232323;
     }
     .market_list img{
-        height: 32px;
+        height: 100%;
     }
     .advantages_point {
         border-right: none;
@@ -1325,22 +1332,28 @@ h2 span{
     }
     .footer {
         margin-top: 48px;
-        flex-direction: column;
         padding: 0 20px;
-        gap: 12px;
+        gap: 16px;
     }
     .footer hr{
         width: 100%;
     }
     .society_block{
-        width: 100%;
+        width: 116px;
+        align-items: center;
         justify-content: space-around;
+        flex-shrink: 0;
+        gap: 18px;
+    }
+    .society_block div{
+        display: flex;
     }
     .society_block a{
         font-family: Inter;
         font-weight: 500;
         font-size: 16px;
         line-height: 100%;
+        height: 24px;
         text-transform: uppercase;
 
     }

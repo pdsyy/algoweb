@@ -27,6 +27,9 @@ import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import {useLanguage} from "../../context/LanguageProvider";
 import CalculatorSectionAero from "../../components/CalculatorSectionAero";
+import tg_icon from "../../images/tg_icon.svg";
+import instagram_icon from "../../images/insta_icon.svg";
+import youtube_icon from "../../images/youtube_icon.svg";
 
 const AeroPage = ({activePopup, setActivePopup}) => {
     const { t } = useLanguage();
@@ -55,45 +58,61 @@ const AeroPage = ({activePopup, setActivePopup}) => {
 
 
 
+    const fastEase = [0.25, 0.1, 0.25, 1.0];
 
     const pointVariants = {
-        hidden: {opacity: 0, y: 20},
+        hidden: {
+            opacity: 0,
+            y: 20,
+            rotate: 0.001
+        },
         visible: (i) => ({
             opacity: 1,
             y: 0,
-            transition: {delay: i * 0.15, duration: 0.6, ease: "easeOut"}
+            transition: {
+                delay: i * 0.1,
+                duration: 0.5,
+                ease: fastEase
+            }
         })
     };
+
     const fadeNumeric = {
         initial: "hidden",
         whileInView: "visible",
-        viewport: {once: true},
+        viewport: { once: true, amount: 0.1 },
         variants: pointVariants
     };
 
+    const baseTransition = { duration: 0.7, ease: fastEase };
+    const baseViewport = { once: true, amount: 0.1 };
+
     const fadeUp = {
-        initial: {opacity: 0, y: 40},
-        whileInView: {opacity: 1, y: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, y: 30, translateZ: 0 },
+        whileInView: { opacity: 1, y: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
+
     const fadeDown = {
-        initial: {opacity: 0, y: -40},
-        whileInView: {opacity: 1, y: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, y: -30, translateZ: 0 },
+        whileInView: { opacity: 1, y: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
+
     const fadeLeft = {
-        initial: {opacity: 0, x: -50},
-        whileInView: {opacity: 1, x: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, x: -40, translateZ: 0 },
+        whileInView: { opacity: 1, x: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
+
     const fadeRight = {
-        initial: {opacity: 0, x: 50},
-        whileInView: {opacity: 1, x: 0},
-        viewport: {once: true, amount: 0.3},
-        transition: {duration: 0.8, ease: "easeOut"}
+        initial: { opacity: 0, x: 40, translateZ: 0 },
+        whileInView: { opacity: 1, x: 0, translateZ: 0 },
+        viewport: baseViewport,
+        transition: baseTransition
     };
 
 
@@ -127,6 +146,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                         autoPlay
                         muted
                         loop
+                        preload="metadata"
                         playsInline
                         className="my-video-class"
                     >
@@ -436,23 +456,43 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                 </div>
             </div>
 
-            <div className="footer">
+            <motion.div className="footer" {...fadeUp}>
                 <a href="/">
                     <img src={logo} alt="Logo" className="logo_img"/>
                 </a>
                 <hr/>
-                <div className="society_block">
-                    <div>
-                        <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
+
+                {window.innerWidth < 768 ?
+                    <div className="society_block">
+                        <div>
+                            <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
+                                <img src = {tg_icon} alt = ""/>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank" rel="noreferrer">
+                                <img src = {instagram_icon} alt = ""/>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
+                                <img src = {youtube_icon} alt = ""/>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>
-                    </div>
-                    <div>
-                        <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
-                    </div>
-                </div>
-            </div>
+
+                    : <div className="society_block">
+                        <div>
+                            <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
+                        </div>
+                        <div>
+                            <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>
+                        </div>
+                        <div>
+                            <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
+                        </div>
+                    </div>}
+            </motion.div>
         </div>
     );
 };
