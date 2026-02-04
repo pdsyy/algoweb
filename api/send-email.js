@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         const dataF = req.body;
 
         const data = await resend.emails.send({
-            from: 'algo-web@resend.dev',
+            from: 'info@algo-bots.com',
             to: 'prodseoy@gmail.com',
             subject: 'Новая заявка с сайта ALGO',
             html: `
