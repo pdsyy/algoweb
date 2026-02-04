@@ -474,10 +474,10 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                         <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
                     </div>
                     <div>
-                        <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
+                        <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>
                     </div>
                     <div>
-                        <a href="https://www.youtube.com/@alg0_ofx">{t.terra.footer.youtube}</a>
+                        <a href="https://t.me/+uKCqVOr1OAE2ZmQy">{t.terra.footer.telegram}</a>
                     </div>
                 </div>
             </div>

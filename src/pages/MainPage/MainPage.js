@@ -218,6 +218,7 @@ const MainPage = () => {
                                 key={i}
                                 src={marketImages[i % 7]}
                                 alt={`market-${i}`}
+                                className={`market-${i}`}
                             />
                         ))}
                     </motion.div>
@@ -464,15 +465,16 @@ const MainPage = () => {
                             </a>
                         </div>
                         <div>
-                            <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
-                                {t.terra.footer.telegram}
-                            </a>
-                        </div>
-                        <div>
                             <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
                                 {t.terra.footer.youtube}
                             </a>
                         </div>
+                        <div>
+                            <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
+                                {t.terra.footer.telegram}
+                            </a>
+                        </div>
+
                     </div>
                 </motion.div>
 

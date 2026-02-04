@@ -156,6 +156,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .market_list img{
@@ -982,6 +983,9 @@ h2 span{
 }
 
 @media screen and (max-width: 768px) {
+    .market-2, .market-3, .market-9, .market-10{
+        height: 20px !important;
+    }
     .active_menu .liquidGlass-effect{
         opacity: 0;
     }
@@ -1499,7 +1503,7 @@ h2 span{
 }
 
 .main_video_block{
-
+    aspect-ratio: 1/1;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -1518,11 +1522,7 @@ h2 span{
 .catalog_menu_item img.reverse_arrow{
     transform: rotate(180deg);
 }
-@media screen and (min-width: 1439px) {
-    .main_video_block{
-        aspect-ratio: 1/1;
-    }
-}
+
 
 .catalog_menu_item{
     position: relative;
