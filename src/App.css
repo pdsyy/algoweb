@@ -422,12 +422,12 @@
     display: flex;
     font-weight: 600;
     overflow: hidden;
-
     color: black;
     cursor: pointer;
-
-
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .liquidGlass-effect {
@@ -437,10 +437,17 @@
     z-index: 0;
     inset: 0;
 
-    backdrop-filter: blur(2px);
     filter: url(#glass-distortion);
-    overflow: hidden;
-    isolation: isolate;
+    -webkit-filter: url(#glass-distortion);
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: filter, transform;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    pointer-events: none;
 }
 
 
