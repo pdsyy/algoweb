@@ -30,7 +30,7 @@ import CalculatorSection from "../../components/CalculatorSection";
 import ThxPopup from "../../components/ThxPopup";
 import {AnimatePresence, motion} from "framer-motion"
 import terraPreview from "./images/terraPreviewVIdeoFigma.png";
-import terraVideo from "./images/terraVideoMain.mp4";
+import terraVideo from "./images/terraMainVideo.mp4";
 import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import { useLanguage } from "../../context/LanguageProvider";

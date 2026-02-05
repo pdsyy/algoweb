@@ -22,7 +22,7 @@ import {Pagination} from "swiper/modules";
 import CalculatorSection from "../../components/CalculatorSection";
 import {AnimatePresence, motion} from "framer-motion";
 import aeroPreview from "./images/aeroPreview.png";
-import aeroVideo from "./images/aeroVideoMain.mp4";
+import aeroVideo from "./images/aeroMainVideo.mp4";
 import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import {useLanguage} from "../../context/LanguageProvider";
