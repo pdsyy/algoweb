@@ -991,8 +991,8 @@ export const translations = {
                 name: "Ваше имя"
             },
             channels: {
-                tg: "Телеграм",
-                inst: "Инстаграм"
+                tg: "телеграм",
+                inst: "инстаграм"
             },
             submit: "Отправить",
             or: "Или напишите нам",

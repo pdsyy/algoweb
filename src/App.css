@@ -276,6 +276,7 @@
 
 .popup_input::placeholder {
     color: #23232380;
+    text-transform: capitalize;
 }
 
 .send_button {
