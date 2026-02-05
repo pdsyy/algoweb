@@ -60,11 +60,11 @@ const Header = () => {
                     }}>{t.home.header.catalog}</span>
                         <img src={bottomArrow} alt="" className={activeBotList ? "reverse_arrow" : ""}/>
                         <div className={`bots_list_desk_menu ${activeBotList ? "active_bot_list" : ""}`}>
-                            <a href="/aero">
-                                <div className="menu_item">Aero EA</div>
-                            </a>
                             <a href="/terra">
                                 <div className="menu_item">Terra EA</div>
+                            </a>
+                            <a href="/aero">
+                                <div className="menu_item">Aero EA</div>
                             </a>
                             <a href="/hydro">
                                 <div className="menu_item">Hydro EA</div>
@@ -133,8 +133,8 @@ const Header = () => {
                     }}/>
                 </div>
                 <div className={`bots_list_mob_menu ${activeBotList ? "active_bot_list" : ""}`}>
-                   <a href = "/aero"><div className="menu_item">Aero EA</div></a>
                     <a href = "/terra"><div className="menu_item">Terra EA</div></a>
+                   <a href = "/aero"><div className="menu_item">Aero EA</div></a>
                         <a href = "/hydro"><div className="menu_item">Hydro EA</div></a>
                 </div>
                 <div className="menu_item" onClick={() => handleMenuClick("reviews")}>

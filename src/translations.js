@@ -482,7 +482,7 @@ export const translations = {
             },
         },popup: {
             subtitle: "Forex trading bot",
-            title: "Звʼяжіться з нами",
+            title: "Зручний спосіб зв’язку",
             labels: {
                 name: "Ваше імʼя",
                 contact: "Ваш"
@@ -982,7 +982,7 @@ export const translations = {
             },
         },popup: {
             subtitle: "Forex trading bot",
-            title: "Свяжитесь с нами",
+            title: "Удобный способ связи",
             labels: {
                 name: "Ваше имя",
                 contact: "Ваш"
