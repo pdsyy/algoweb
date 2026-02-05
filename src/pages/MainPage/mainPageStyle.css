@@ -127,7 +127,6 @@
 
 }
 .slider-container .swiper{
-    padding-bottom: 33px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1268,11 +1267,7 @@ h2 span{
         line-height: 120%;
     }
     .swiper {
-        padding-bottom: 32px !important;
-    }
 
-    .center-btn{
-        display: none;
     }
 
     .faq_container {
@@ -1756,9 +1751,6 @@ h2 span{
         margin-top: 36px;
     }
 
-    .center-btn{
-        display: none;
-    }
 
     .swiper{
         padding-bottom: 36px;
@@ -2029,7 +2021,9 @@ h2 span{
 
 
 
-
+.product_description span{
+    color: #7E7E7E;
+}
 
 
 .custom-pagination {
@@ -2037,6 +2031,7 @@ h2 span{
     justify-content: center;
     gap: 4px;
     margin-top: 24px;
+    max-width: 760px;
 }
 
 .custom-pagination .swiper-pagination-bullet {

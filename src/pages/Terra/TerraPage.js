@@ -192,13 +192,12 @@ const TerraPage = ({activePopup, setActivePopup}) => {
                         {t.terra.hero.slogan}
                     </motion.div>
 
-                    <motion.div className="product_description" {...fadeNumeric} custom={6}>
-                        {t.terra.hero.about.p1}
-                        <br /><br />
-                        {t.terra.hero.about.p2}
-                        <br /><br />
-                        {t.terra.hero.about.p3}
-                    </motion.div>
+                    <motion.div
+                        className="product_description"
+                        {...fadeNumeric}
+                        custom={6}
+                        dangerouslySetInnerHTML={{ __html: t.terra.hero.about }}
+                    />
                 </div>
             </div>
 
