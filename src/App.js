@@ -14,12 +14,6 @@ import {ScrollProvider} from "./context/ScrollContext";
 import {LanguageProvider} from "./context/LanguageProvider";
 
 function App() {
-    useEffect(() => {
-        localStorage.removeItem("algo_lang")
-        if (!localStorage.getItem("algo_lang")) {
-            localStorage.setItem("algo_lang", "UA")
-        }
-    }, [])
 
 
     const [activePopup, setActivePopup] = useState(false)
