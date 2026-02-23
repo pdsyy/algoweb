@@ -248,7 +248,7 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                             ))}
                         </motion.div>
 
-                        <motion.a href="https://www.myfxbook.com/portfolio/aero-ea-low-risk-set/11648009"
+                        <motion.a href="https://www.myfxbook.com/portfolio/hydro-ea--4-risk/11886037"
                                   target="_blank" rel="noreferrer" {...fadeNumeric} custom={5}>
                             <div className="see_stat_button">
                                 {t.aero.results.button}
