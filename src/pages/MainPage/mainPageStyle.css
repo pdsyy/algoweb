@@ -1473,8 +1473,11 @@ h2 span{
         opacity: 0;
     }
     .bots_list_mob_menu.active_bot_list{
-        height: 168px;
+        height: 224px;
         opacity: 1;
+    }
+    .prop_bot_menu span{
+        height: fit-content;
     }
     .menu_item.catalog_menu_item{
         transition: 0.4s;
@@ -2034,7 +2037,12 @@ h2 span{
     .active_menu .mobile_menu{
         opacity: 1;
         max-height: 650px;
+        overflow-y: scroll;
         z-index: 99;
+    }
+
+    .bots_list_mob_menu{
+        text-align: center;
     }
     .desktop_header_menu{
         display: none;

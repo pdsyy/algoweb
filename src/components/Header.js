@@ -140,6 +140,9 @@ const Header = ({dark, visibleHeader, setVisibleHeader}) => {
                     <a href = "/terra"><div className="menu_item">Terra EA</div></a>
                    <a href = "/aero"><div className="menu_item">Aero EA</div></a>
                         <a href = "/hydro"><div className="menu_item">Hydro EA</div></a>
+                    <a href="/prop">
+                        <div className="menu_item prop_bot_menu">Prop EA <span>NEW</span></div>
+                    </a>
                 </div>
                 <div className="menu_item" onClick={() => handleMenuClick("reviews")}>
                     {t.home.header.reviews}
