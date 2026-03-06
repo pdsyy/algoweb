@@ -288,6 +288,17 @@
     transition: 0.3s;
 }
 
+.prop_bot .test_result_image{
+    align-items: flex-start;
+    margin-top: 21px;
+}
+
+.prop_bot .test_numbers_grid_item{
+    padding: 7px 12px;
+}
+.prop_bot .test_detail_item{
+    padding: 8px 12px;
+}
 .main_page_prop_container.visible_bg::before{
     content: "";
     width: 100%;
@@ -2053,6 +2064,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .prop_bot .test_result_image{
+        margin-top: 0;
+    }
+    .test_numbers_grid {
+        margin-top: 12px;
+    }
     .calculate_table {
         max-height: max-content;
     }

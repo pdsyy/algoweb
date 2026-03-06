@@ -15,7 +15,7 @@ import review_image2 from "./images/reviewImage2.png";
 import review_image3 from "./images/reviewImage3.png";
 import review_image4 from "./images/reviewImage4.png";
 import review_image5 from "./images/reviewImage5.png";
-import test_image from "./images/test_image.png";
+import test_image from "./images/test_image3.png";
 import prop_main_bot_image from "./images/prop_main_bot_image.png";
 import bottom_product_image from "./images/bottom_product_image.png";
 import logo from "./images/logoLight.svg";
