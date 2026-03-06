@@ -344,73 +344,7 @@ const TerraPage = ({activePopup, setActivePopup}) => {
             </div>
 
 
-            <div className="algo_feedback_block">
-                <div className="feedback_h2">
-                    <motion.h2 {...fadeUp}>
-                        <span>{t.terra.reviews.titleAccent}</span> {t.terra.reviews.title}
-                    </motion.h2>
 
-                    <div className="reviews_nav">
-                        <div
-                            className="nav-btn prev"
-                            onClick={() => swiperRef.current?.slidePrev()}
-                        >
-                            <img src={prev_arrow} alt="" />
-                        </div>
-                        <div
-                            className="nav-btn next"
-                            onClick={() => swiperRef.current?.slideNext()}
-                        >
-                            <img src={next_arrow} alt="" />
-                        </div>
-                    </div>
-                </div>
-
-
-                <motion.div className="slider-container" {...fadeUp}>
-
-
-                    <Swiper
-                        loop
-                        modules={[Pagination]}
-                        pagination={{
-                            clickable: true,
-                            el: '.custom-pagination',
-                        }}
-                        spaceBetween={24}
-                        slidesPerView={3}
-                        onBeforeInit={(swiper) => {
-                            swiperRef.current = swiper;
-                        }}
-                        breakpoints={{
-                            0: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
-                        }}
-                    >
-                        {reviews.map((review, i) => (
-                            <SwiperSlide key={i} className="review_item">
-                                <img src={review.image} alt=""/>
-                                <div className="review_author">{review.name}</div>
-                                <div className="review_description">{review.text}</div>
-                            </SwiperSlide>
-                        ))}
-
-                        <div className="custom-pagination"></div>
-                    </Swiper>
-
-                </motion.div>
-
-                <motion.div className="center-btn" {...fadeUp}>
-                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank" rel="noreferrer">
-                        <div className="more_reviews_button">
-                            {t.terra.reviews1.more}
-                        </div>
-                    </a>
-                </motion.div>
-
-
-            </div>
 
             <div className="test_result">
                 <motion.h2 {...fadeUp}>
@@ -489,6 +423,74 @@ const TerraPage = ({activePopup, setActivePopup}) => {
                         </motion.div>
                     </div>
                 </div>
+            </div>
+
+            <div className="algo_feedback_block">
+                <div className="feedback_h2">
+                    <motion.h2 {...fadeUp}>
+                        <span>{t.terra.reviews.titleAccent}</span> {t.terra.reviews.title}
+                    </motion.h2>
+
+                    <div className="reviews_nav">
+                        <div
+                            className="nav-btn prev"
+                            onClick={() => swiperRef.current?.slidePrev()}
+                        >
+                            <img src={prev_arrow} alt="" />
+                        </div>
+                        <div
+                            className="nav-btn next"
+                            onClick={() => swiperRef.current?.slideNext()}
+                        >
+                            <img src={next_arrow} alt="" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <motion.div className="slider-container" {...fadeUp}>
+
+
+                    <Swiper
+                        loop
+                        modules={[Pagination]}
+                        pagination={{
+                            clickable: true,
+                            el: '.custom-pagination',
+                        }}
+                        spaceBetween={24}
+                        slidesPerView={3}
+                        onBeforeInit={(swiper) => {
+                            swiperRef.current = swiper;
+                        }}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },
+                            768: { slidesPerView: 2 },
+                            1024: { slidesPerView: 3 },
+                        }}
+                    >
+                        {reviews.map((review, i) => (
+                            <SwiperSlide key={i} className="review_item">
+                                <img src={review.image} alt=""/>
+                                <div className="review_author">{review.name}</div>
+                                <div className="review_description">{review.text}</div>
+                            </SwiperSlide>
+                        ))}
+
+                        <div className="custom-pagination"></div>
+                    </Swiper>
+
+                </motion.div>
+
+                <motion.div className="center-btn" {...fadeUp}>
+                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank" rel="noreferrer">
+                        <div className="more_reviews_button">
+                            {t.terra.reviews1.more}
+                        </div>
+                    </a>
+                </motion.div>
+
+
             </div>
 
 

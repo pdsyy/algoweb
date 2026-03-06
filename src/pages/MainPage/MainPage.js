@@ -24,6 +24,7 @@ import bot_item2 from "./images/bot_item2.png"
 import bot_item3 from "./images/bot_item3.png"
 import prev_arrow from "./images/prev-arrow.svg"
 import next_arrow from "./images/next-arrow.svg"
+import propBg from "./images/propBotBg.png"
 import review_image1 from "./images/review_image1.png"
 import review_image2 from "./images/review_image2.png"
 import review_image3 from "./images/review_image3.png"
@@ -49,9 +50,10 @@ import {motion} from "framer-motion"
 import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import {useLanguage} from "../../context/LanguageProvider";
+import PopupBot from "../../components/PopupBot";
 
-const MainPage = () => {
-    const { t } = useLanguage();
+const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}) => {
+    const {t} = useLanguage();
 
 
     useEffect(() => {
@@ -140,37 +142,37 @@ const MainPage = () => {
     const fadeNumeric = {
         initial: "hidden",
         whileInView: "visible",
-        viewport: { once: true, amount: 0.1 },
+        viewport: {once: true, amount: 0.1},
         variants: pointVariants
     };
 
-    const baseTransition = { duration: 0.7, ease: fastEase };
-    const baseViewport = { once: true, amount: 0.1 };
+    const baseTransition = {duration: 0.7, ease: fastEase};
+    const baseViewport = {once: true, amount: 0.1};
 
     const fadeUp = {
-        initial: { opacity: 0, y: 30, translateZ: 0 },
-        whileInView: { opacity: 1, y: 0, translateZ: 0 },
+        initial: {opacity: 0, y: 30, translateZ: 0},
+        whileInView: {opacity: 1, y: 0, translateZ: 0},
         viewport: baseViewport,
         transition: baseTransition
     };
 
     const fadeDown = {
-        initial: { opacity: 0, y: -30, translateZ: 0 },
-        whileInView: { opacity: 1, y: 0, translateZ: 0 },
+        initial: {opacity: 0, y: -30, translateZ: 0},
+        whileInView: {opacity: 1, y: 0, translateZ: 0},
         viewport: baseViewport,
         transition: baseTransition
     };
 
     const fadeLeft = {
-        initial: { opacity: 0, x: -40, translateZ: 0 },
-        whileInView: { opacity: 1, x: 0, translateZ: 0 },
+        initial: {opacity: 0, x: -40, translateZ: 0},
+        whileInView: {opacity: 1, x: 0, translateZ: 0},
         viewport: baseViewport,
         transition: baseTransition
     };
 
     const fadeRight = {
-        initial: { opacity: 0, x: 40, translateZ: 0 },
-        whileInView: { opacity: 1, x: 0, translateZ: 0 },
+        initial: {opacity: 0, x: 40, translateZ: 0},
+        whileInView: {opacity: 1, x: 0, translateZ: 0},
         viewport: baseViewport,
         transition: baseTransition
     };
@@ -185,14 +187,36 @@ const MainPage = () => {
         market_image7
     ];
 
+    const [isActive, setIsActive] = useState(false)
+
+    const bot_info_popup = {
+        bot_info: t.prop.botInfoPopup.botInfo,
+        bot_name: t.prop.botInfoPopup.botName,
+        bot_price: t.prop.botInfoPopup.botPrice
+    };
+
+
+    const [visibleBgProp, setVisibleBgProp] = useState(false)
 
     return (
+
         <div className="main_page">
+
             <SEO
                 title="ALGO — Алгоритмічна торгівля та торгові боти"
                 description="Автоматизовані торгові боти з прозорою статистикою. Пасивний дохід на трейдингу без людського фактора. Оберіть свій алгоритм: Terra, Aero або Hydro EA."
                 keywords="трейдинг боти, алгоритмічна торгівля, пасивний дохід, Terra EA, Aero EA, Hydro EA, торгові роботи Україна, автоматизація трейдингу"
                 image={preview}
+            />
+            <PopupBot
+                bot _info={bot_info_popup.bot_info}
+                bot_name={bot_info_popup.bot_name}
+                price={bot_info_popup.bot_price}
+                isActive={isActive}
+                setIsActive={setIsActive}
+                activeThx={activePopup}
+                setActiveThx={setActivePopup}
+                isDark={true}
             />
             <div className="main_block" onMouseMove={handleMouseMove}>
                 <img
@@ -238,7 +262,8 @@ const MainPage = () => {
                         ))}
                     </motion.div>
 
-                    <motion.h2 className="our_main_advantages" {...fadeUp} dangerouslySetInnerHTML={{ __html: t.home.stats.title }} />
+                    <motion.h2 className="our_main_advantages" {...fadeUp}
+                               dangerouslySetInnerHTML={{__html: t.home.stats.title}}/>
 
                     <div className="our_advantages_list">
                         {t.home.stats.items.map((item, index) => (
@@ -259,8 +284,36 @@ const MainPage = () => {
                     </motion.div>
                 </div>
 
+
+                <div className="effective_algorithm" id="advantages">
+                    <motion.h2 {...fadeUp} dangerouslySetInnerHTML={{__html: t.home.effective.title}}/>
+
+                    <div className="effective_points first">
+                        {t.home.effective.items.slice(0, 2).map((item, index) => (
+                            <motion.div key={index}
+                                        className="effective_point" {...(index === 0 ? fadeLeft : fadeRight)}>
+                                <img src={index === 0 ? effectiveImage1 : effectiveImage2} alt=""/>
+                                <div className="name">{item.title}</div>
+                                <div className="desc">{item.desc}</div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="effective_points second">
+                        {t.home.effective.items.slice(2, 4).map((item, index) => (
+                            <motion.div key={index + 2}
+                                        className="effective_point" {...(index === 0 ? fadeLeft : fadeRight)}>
+                                <img src={index === 0 ? effectiveImage3 : effectiveImage4} alt=""/>
+                                <div className="name">{item.title}</div>
+                                <div className="desc">{item.desc}</div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+
                 <div className="first_deal_block" id="how-it-works">
-                    <motion.h2 {...fadeUp} dangerouslySetInnerHTML={{ __html: t.home.steps.title }} />
+                    <motion.h2 {...fadeUp} dangerouslySetInnerHTML={{__html: t.home.steps.title}}/>
                     <div className="first_deal_details">
                         <motion.div className="first_deal_image" {...fadeLeft}>
                             <img src={firstDealImage} alt=""/>
@@ -271,7 +324,9 @@ const MainPage = () => {
                                 <div className="first_deal_item_gradient" key={index}>
                                     <div className="first_deal_item">
                                         <div className="item_name">
-                                            <img src={index === 0 ? firstDealItem1 : index === 1 ? firstDealItem2 : index === 2 ? firstDealItem3 : firstDealItem4} alt=""/>
+                                            <img
+                                                src={index === 0 ? firstDealItem1 : index === 1 ? firstDealItem2 : index === 2 ? firstDealItem3 : firstDealItem4}
+                                                alt=""/>
                                             {step.title}
                                             <div className="item_number">0{index + 1}</div>
                                         </div>
@@ -280,31 +335,6 @@ const MainPage = () => {
                                 </div>
                             ))}
                         </motion.div>
-                    </div>
-                </div>
-
-
-                <div className="effective_algorithm" id="advantages">
-                    <motion.h2 {...fadeUp} dangerouslySetInnerHTML={{ __html: t.home.effective.title }} />
-
-                    <div className="effective_points first">
-                        {t.home.effective.items.slice(0, 2).map((item, index) => (
-                            <motion.div key={index} className="effective_point" {...(index === 0 ? fadeLeft : fadeRight)}>
-                                <img src={index === 0 ? effectiveImage1 : effectiveImage2} alt=""/>
-                                <div className="name">{item.title}</div>
-                                <div className="desc">{item.desc}</div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    <div className="effective_points second">
-                        {t.home.effective.items.slice(2, 4).map((item, index) => (
-                            <motion.div key={index + 2} className="effective_point" {...(index === 0 ? fadeLeft : fadeRight)}>
-                                <img src={index === 0 ? effectiveImage3 : effectiveImage4} alt=""/>
-                                <div className="name">{item.title}</div>
-                                <div className="desc">{item.desc}</div>
-                            </motion.div>
-                        ))}
                     </div>
                 </div>
 
@@ -317,7 +347,7 @@ const MainPage = () => {
                         {botsList.map((el, idx) =>
                             <motion.div className="bot_item" key={idx} {...fadeNumeric} custom={idx}>
                                 <div className="bot_image">
-                                    {el.prop && <div className="prop_pl">{t.home.catalog.propLabel}</div>}
+                                    {/*el.prop && <div className="prop_pl">{t.home.catalog.propLabel}</div>*/}
                                     <img src={el.image} alt={el.name}/>
                                     {el.paying && <div className="paying_pl">{t.home.catalog.payingLabel}</div>}
                                 </div>
@@ -356,6 +386,96 @@ const MainPage = () => {
                     </div>
                 </div>
 
+                <motion.div className="prop_container_fs" style={{overflow: "hidden"}} {...fadeUp}>
+                    <div className={`prop_bot_bg ${visibleBgProp ? "visible_bg" : ""}`}>
+
+                    </div>
+                    <div className={`main_page_prop_container ${visibleBgProp ? "visible_bg" : ""}`}
+                         onMouseOver={() => {
+
+                             if (window.innerWidth > 767) {
+                                 setVisibleBgProp(true)
+                                 setVisibleHeader(true)
+                             }
+                         }} onMouseOut={() => {
+                        if (window.innerWidth > 767) {
+                            setVisibleBgProp(false)
+                            setVisibleHeader(false)
+                        }
+                    }}>
+                        <div className="prop_bot_info">
+                            <div className="best_offer_container">
+                                <div className="best_offer">
+                                    {t.prop.buySection.badge}
+                                </div>
+                                <div className="first_month_free">
+                                    {t.prop.buySection.freeMonth}
+                                </div>
+                            </div>
+                            <div className="prop_bot_name">
+                                {t.prop.buySection.title}
+                            </div>
+                            <div className="prop_bot_desc">
+                                {t.prop.buySection.desc}
+                            </div>
+                            <div className="three_prop_bot_advantages">
+                                <div className="prop_bot_advantages">
+                                    <div className="prop_advantage_name">
+                                        {t.prop.buySection.labels.monthlyProfit}
+                                    </div>
+                                    <div className="prop_advantage_number">
+                                        1.5-3%
+                                    </div>
+                                </div>
+                                <div className="prop_bot_advantages">
+                                    <div className="prop_advantage_name">
+                                        {t.prop.buySection.labels.maxDrawdown}
+                                    </div>
+                                    <div className="prop_advantage_number">
+                                        8.8%
+                                    </div>
+                                </div>
+                                <div className="prop_bot_advantages">
+                                    <div className="prop_advantage_name">
+                                        {t.prop.buySection.labels.winrate}
+                                    </div>
+                                    <div className="prop_advantage_number">
+                                        84.4%
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="two_prop_bot_advantages">
+                                <div className="advantages_block">
+                                    <div className="advantages_name_prop">
+                                        {t.prop.buySection.labels.price}
+                                    </div>
+                                    <div className="advantages_num">
+                                        350
+                                        <span>USD</span>
+                                    </div>
+                                </div>
+                                <div className="advantages_block">
+                                    <div className="advantages_name_prop">
+                                        {t.prop.buySection.labels.subscription}
+                                    </div>
+                                    <div className="advantages_num">
+                                        39
+                                        <span>USD</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/prop">
+                                <div className="main_btn_buy" onClick={() => {
+                                    setIsActive(true)
+                                }}>
+                                    {t.prop.buySection.button}
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </motion.div>
+
                 <div className="algo_feedback_block" id="reviews">
                     <div className="feedback_h2">
                         <motion.h2 {...fadeUp}>
@@ -375,10 +495,12 @@ const MainPage = () => {
                         <Swiper
                             loop
                             modules={[Pagination]}
-                            pagination={{ clickable: true, el: '.custom-pagination' }}
+                            pagination={{clickable: true, el: '.custom-pagination'}}
                             spaceBetween={24}
                             slidesPerView={3}
-                            onBeforeInit={(swiper) => { swiperRef.current = swiper; }}
+                            onBeforeInit={(swiper) => {
+                                swiperRef.current = swiper;
+                            }}
                             breakpoints={{
                                 0: {slidesPerView: 1},
                                 768: {slidesPerView: 2},
@@ -464,7 +586,7 @@ const MainPage = () => {
                                 </div>
                             </a>
                         </div>
-                        <img src={window.innerWidth < 768.1 ? select_bot_img_mob :select_bot_img} alt="Consultation"/>
+                        <img src={window.innerWidth < 768.1 ? select_bot_img_mob : select_bot_img} alt="Consultation"/>
                     </div>
                 </motion.div>
 
@@ -474,26 +596,27 @@ const MainPage = () => {
                     </a>
                     <hr/>
 
-                        {window.innerWidth < 768 ?
-                            <div className="society_block">
-                                <div>
-                                    <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
-                                        <img src = {tg_icon} alt = ""/>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank" rel="noreferrer">
-                                        <img src = {instagram_icon} alt = ""/>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
-                                        <img src = {youtube_icon} alt = ""/>
-                                    </a>
-                                </div>
+                    {window.innerWidth < 768 ?
+                        <div className="society_block">
+                            <div>
+                                <a href="https://t.me/+uKCqVOr1OAE2ZmQy" target="_blank" rel="noreferrer">
+                                    <img src={tg_icon} alt=""/>
+                                </a>
                             </div>
+                            <div>
+                                <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw" target="_blank"
+                                   rel="noreferrer">
+                                    <img src={instagram_icon} alt=""/>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com/@alg0_ofx" target="_blank" rel="noreferrer">
+                                    <img src={youtube_icon} alt=""/>
+                                </a>
+                            </div>
+                        </div>
 
-                            : <div className="society_block">
+                        : <div className="society_block">
                             <div>
                                 <a href="https://www.instagram.com/alg0_bots?igsh=NW82eGFuajRlYmpw">{t.terra.footer.instagram}</a>
                             </div>

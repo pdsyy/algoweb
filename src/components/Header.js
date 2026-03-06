@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigate, useLocation} from 'react-router-dom'; // Если используете react-router-dom
 import logo from "../images/logo.svg";
+import logoLight from "../images/logoLight.svg";
 import {useScroll} from "../context/ScrollContext";
 import {useLanguage} from "../context/LanguageProvider";
 import YearMonthHandler from "./YearMonthHandler";
 import bottomArrow from "../images/bottom_arrow.svg";
+import bottomArrowWhite from "../images/bottom_arrow_white.svg";
 
-const Header = () => {
+const Header = ({dark, visibleHeader, setVisibleHeader}) => {
     const lang = localStorage.getItem("algo_lang") === "UA";
     const {t, language, setLanguage} = useLanguage();
 
@@ -32,11 +33,11 @@ const Header = () => {
     ];
 
     return (
-        <div className={`header_container liquidGlass-wrapper ${activeMenu ? "active_menu" : ""}`}>
+        <div className={`header_container liquidGlass-wrapper ${activeMenu ? "active_menu" : ""} ${dark ? "dark_header" : ""} ${visibleHeader ? "visible_header" : ""}`}>
             <div className="liquidGlass-effect"></div>
             <div className="liquidGlass-tint"></div>
             <div className="header liquidGlass-text">
-                <a href="/"><img src={logo} alt="Logo" className="logo_img"/></a>
+                <a href="/"><img src={dark ? logoLight :logo} alt="Logo" className="logo_img"/></a>
 
                 <div className="desktop_header_menu">
                     {/*menuItems.map((item) => (
@@ -58,7 +59,7 @@ const Header = () => {
                     <span onClick={() => {
                         handleMenuClick("catalog")
                     }}>{t.home.header.catalog}</span>
-                        <img src={bottomArrow} alt="" className={activeBotList ? "reverse_arrow" : ""}/>
+                        <img src={dark ? bottomArrowWhite : bottomArrow} alt="" className={activeBotList ? "reverse_arrow" : ""}/>
                         <div className={`bots_list_desk_menu ${activeBotList ? "active_bot_list" : ""}`}>
                             <a href="/terra">
                                 <div className="menu_item">Terra EA</div>
@@ -68,6 +69,9 @@ const Header = () => {
                             </a>
                             <a href="/hydro">
                                 <div className="menu_item">Hydro EA</div>
+                            </a>
+                            <a href="/prop">
+                                <div className="menu_item prop_bot_menu">Prop EA <span>NEW</span></div>
                             </a>
                         </div>
                     </div>
@@ -111,7 +115,7 @@ const Header = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className="mobile_menu">
+            <div className={`mobile_menu ${dark ? "prop_bot" : ""}`}>
                 {/*menuItems.map((item) => (
                     <div key={item.id} className="menu_item" onClick={() => handleMenuClick(item.id)}>
                         {item.name}
@@ -127,7 +131,7 @@ const Header = () => {
                     <span onClick={() => {
                         handleMenuClick("catalog")
                     }}>{t.home.header.catalog}</span>
-                    <img src={bottomArrow} alt="" onClick={(e) => {
+                    <img src={dark ? bottomArrowWhite : bottomArrow} alt="" onClick={(e) => {
                         setActiveBotList(!activeBotList)
                         e.currentTarget.classList.toggle("reverse_arrow")
                     }}/>

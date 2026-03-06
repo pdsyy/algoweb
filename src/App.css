@@ -12,6 +12,8 @@
 
 
 .header_container {
+    /*max-height: 64px;*/
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2), max-height 1s;
     position: fixed;
     top: 16px;
     width: 1344px;
@@ -425,7 +427,6 @@
     color: black;
 
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 
     -webkit-transform: translateZ(0);
     transform: translateZ(0);

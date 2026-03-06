@@ -260,10 +260,13 @@ h2{
     align-items: center;
     width: 100%;
     padding: 0 48px;
-    margin-top: 85px;
+    margin-top: 120px;
     overflow-x: hidden;
 }
 @media screen and (min-width: 1919px) {
+    .main_page_prop_container {
+        background: #000000 url(http://localhost:3000/static/media/propBotBg.9385304….png) no-repeat 139px -100px;
+    }
     .effective_algorithm{
         display: flex;
         flex-direction: column;
@@ -363,7 +366,7 @@ h2 span{
 }
 
 .effective_algorithm{
-    margin-top: 120px;
+    margin-top: 85px;
 }
 
 .effective_points{
@@ -1407,6 +1410,8 @@ h2 span{
         display: flex;
         flex-direction: column;
         gap: 0px;
+        opacity: 1;
+        pointer-events: all;
     }
 
 
@@ -1516,13 +1521,36 @@ h2 span{
 }
 
 .main_video_block{
-    aspect-ratio: 1/1;
     overflow: hidden;
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 24px;
 }
+
+.prop_bot .main_video_block{
+    aspect-ratio: auto;
+    padding: 24px;
+    background: #060606;
+    isolation: isolate;
+
+    box-shadow: 0px 35.41px 70.81px 0px rgba(168, 216, 245, 0.06) inset,
+    0px 1.48px 1.48px 0px rgba(216, 236, 248, 0.2) inset
+
+}
+.prop_bot .product_name{
+    background: #121212;
+    box-shadow: 0px 35.41px 70.81px 0px #A8D8F50F inset,
+    0px 1.48px 1.48px 0px #D8ECF833 inset;
+    color: #D3D3D3;
+    backdrop-filter: none;
+}
+
+.prop_bot .product_name::before, .prop_bot .product_name::before{
+    display: none;
+}
+
 
 @media screen and (max-width: 1439px){
     .lang_select_block{
@@ -1573,8 +1601,67 @@ h2 span{
 
 }
 
+
+
+
+.main_page_prop_container{
+    background: #000000 url("./images/propBotBg.png") no-repeat 139px center;
+    background-size: 100%;
+    transition: 0.4s;
+    border-radius: 22px;
+    position: relative;
+    z-index: 99999;
+}
+
+.main_page_prop_container .best_offer_container{
+    width: fit-content;
+    margin-top: 0;
+}
+
+.prop_bot_bg{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    background: black;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.prop_bot_bg.visible_bg{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.prop_container_fs{
+    position: relative;
+    margin-top: 24px;
+    padding: 0 48px;
+    transition: 0.4s;
+}
+
+
+
+.main_page_prop_container .prop_bot_info{
+    max-width: 526px;
+    padding: 32px;
+}
+
+
+.visible_header{
+    max-height: 0 !important;
+    overflow: hidden;
+    pointer-events: none !important;
+}
+
+
+
 .bots_list_desk_menu.active_bot_list{
-    max-height: 120px;
+    max-height: 160px;
     padding: 8px;
 }
 
@@ -1812,7 +1899,7 @@ h2 span{
         position: absolute;
         left: 0;
         margin-left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) !important;
         display: flex;
         flex-direction: column;
         align-items: center;

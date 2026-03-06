@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import cross from "../images/popup_cross.svg";
 import {useLanguage} from "../context/LanguageProvider";
 
-const ThxPopup = ({activePopup, setActivePopup}) => {
+const ThxPopup = ({activePopup, setActivePopup, dark}) => {
     const { t } = useLanguage();
 
     return (
-        <div className={`popup_fs ${activePopup ? "active_popup" : ""}`} onClick={() => setActivePopup(false)}>
+        <div className={`popup_fs ${activePopup ? "active_popup" : ""} ${dark ? "dark_mode" : ""}`} onClick={() => setActivePopup(false)}>
             <div className="popup_container_gradient thx" onClick={(e) => e.stopPropagation()}>
                 <div className="popup_container">
                     <div className="thx_tex">

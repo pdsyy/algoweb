@@ -295,75 +295,6 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                 </motion.div>
             </div>
 
-            <div className="how_to_fs">
-                <div className="how_to_block">
-                    <motion.div className="learn_ho_to" {...fadeLeft}>
-                        <div className="how_to_main_info">
-                            {t.hydro.propInfo.title}
-                        </div>
-                        <a href="https://teletype.in/@volodymyrbbk/sun8mJ6tXbz" target="_blank" rel="noreferrer">
-                            <div className="read_more_button">
-                                {t.aero.propInfo.button}
-                            </div>
-                        </a>
-                    </motion.div>
-                    <motion.div className="hot_to_image" {...fadeRight}>
-                        <img src={how_to_image} alt=""/>
-                    </motion.div>
-                </div>
-            </div>
-
-
-            <div className="algo_feedback_block">
-                <div className="feedback_h2">
-                    <motion.h2 {...fadeUp}>
-                        <span>{t.hydro.reviews.titleAccent}</span> {t.hydro.reviews.title}
-                    </motion.h2>
-
-                    <div className="reviews_nav">
-                        <div className="nav-btn prev" onClick={() => swiperRef.current?.slidePrev()}>
-                            <img src={prev_arrow} alt="prev"/>
-                        </div>
-                        <div className="nav-btn next" onClick={() => swiperRef.current?.slideNext()}>
-                            <img src={next_arrow} alt="next"/>
-                        </div>
-                    </div>
-                </div>
-
-                <motion.div className="slider-container" {...fadeUp}>
-                    <Swiper
-                        loop
-                        modules={[Pagination]}
-                        pagination={{ clickable: true, el: '.custom-pagination' }}
-                        spaceBetween={24}
-                        slidesPerView={3}
-                        onBeforeInit={(swiper) => { swiperRef.current = swiper; }}
-                        breakpoints={{
-                            0: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
-                        }}
-                    >
-                        {reviews.map((review, i) => (
-                            <SwiperSlide key={i} className="review_item">
-                                <img src={review.image} alt={review.name}/>
-                                <div className="review_author">{review.name}</div>
-                                <div className="review_description">{review.text}</div>
-                            </SwiperSlide>
-                        ))}
-                        <div className="custom-pagination"></div>
-                    </Swiper>
-                </motion.div>
-
-                <motion.div className="center-btn" {...fadeUp}>
-                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank" rel="noreferrer">
-                        <div className="more_reviews_button">
-                            {t.terra.reviews1.more}
-                        </div>
-                    </a>
-                </motion.div>
-            </div>
-
             <div className="test_result">
                 <motion.h2 {...fadeUp}>
                     {t.terra.tests.title} <span>{t.terra.tests.titleAccent}</span>
@@ -442,6 +373,77 @@ const HydroPage = ({activePopup, setActivePopup}) => {
                     </motion.div>
                 </div>
             </div>
+
+
+            <div className="algo_feedback_block">
+                <div className="feedback_h2">
+                    <motion.h2 {...fadeUp}>
+                        <span>{t.hydro.reviews.titleAccent}</span> {t.hydro.reviews.title}
+                    </motion.h2>
+
+                    <div className="reviews_nav">
+                        <div className="nav-btn prev" onClick={() => swiperRef.current?.slidePrev()}>
+                            <img src={prev_arrow} alt="prev"/>
+                        </div>
+                        <div className="nav-btn next" onClick={() => swiperRef.current?.slideNext()}>
+                            <img src={next_arrow} alt="next"/>
+                        </div>
+                    </div>
+                </div>
+
+                <motion.div className="slider-container" {...fadeUp}>
+                    <Swiper
+                        loop
+                        modules={[Pagination]}
+                        pagination={{ clickable: true, el: '.custom-pagination' }}
+                        spaceBetween={24}
+                        slidesPerView={3}
+                        onBeforeInit={(swiper) => { swiperRef.current = swiper; }}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },
+                            768: { slidesPerView: 2 },
+                            1024: { slidesPerView: 3 },
+                        }}
+                    >
+                        {reviews.map((review, i) => (
+                            <SwiperSlide key={i} className="review_item">
+                                <img src={review.image} alt={review.name}/>
+                                <div className="review_author">{review.name}</div>
+                                <div className="review_description">{review.text}</div>
+                            </SwiperSlide>
+                        ))}
+                        <div className="custom-pagination"></div>
+                    </Swiper>
+                </motion.div>
+
+                <motion.div className="center-btn" {...fadeUp}>
+                    <a href="https://t.me/+ZjmgYnV_mh9jOGMy" target="_blank" rel="noreferrer">
+                        <div className="more_reviews_button">
+                            {t.terra.reviews1.more}
+                        </div>
+                    </a>
+                </motion.div>
+            </div>
+
+            <div className="how_to_fs">
+                <div className="how_to_block">
+                    <motion.div className="learn_ho_to" {...fadeLeft}>
+                        <div className="how_to_main_info">
+                            {t.hydro.propInfo.title}
+                        </div>
+                        <a href="https://teletype.in/@volodymyrbbk/sun8mJ6tXbz" target="_blank" rel="noreferrer">
+                            <div className="read_more_button">
+                                {t.aero.propInfo.button}
+                            </div>
+                        </a>
+                    </motion.div>
+                    <motion.div className="hot_to_image" {...fadeRight}>
+                        <img src={how_to_image} alt=""/>
+                    </motion.div>
+                </div>
+            </div>
+
+
             <CalculatorSectionHydro startPercentage = {50}/>
 
             <div className="buy_block_fs">
