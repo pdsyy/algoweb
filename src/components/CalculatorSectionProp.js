@@ -166,9 +166,9 @@ const CalculatorSection = ({startPercentage}) => {
         if (active && payload && payload.length) {
             return (
                 <div className="custom-tooltip-container">
-                    <div className="tooltip_label"><div className = "month_text"><img src={calendar_prop_icon} alt = ""/>Місяць</div> <div>{label}</div></div>
-                    <div className = "graph_balance"><div className = "popup_point_text">Баланс:</div> <div className = "graph_popup_value">{payload[0].value}</div></div>
-                    <div className = "graph_profit"><div className = "popup_point_text">Прибуток:</div> <div className = "graph_popup_value" style={{color:"#34C759"}}>{payload[1].value}</div></div>
+                    <div className="tooltip_label"><div className = "month_text" style = {{textTransform:"capitalize"}}><img src={calendar_prop_icon} alt = ""/>{t.prop.calculator.labels.month}</div> <div>{label}</div></div>
+                    <div className = "graph_balance"><div className = "popup_point_text">Баланс:</div> <div className = "graph_popup_value">{payload[0].value} USD</div></div>
+                    <div className = "graph_profit"><div className = "popup_point_text">{t.prop.calculator.graph.legend.profit}:</div> <div className = "graph_popup_value" style={{color:"#34C759"}}>{payload[1].value} USD</div></div>
                 </div>
             );
         }
@@ -226,6 +226,12 @@ const CalculatorSection = ({startPercentage}) => {
                         {t.prop.calculator.labels.botPrice}
                         <div className="test_detail_number">
                             350$
+                        </div>
+                    </div>
+                    <div className="test_detail_item">
+                        {t.prop.calculator.labels.monthSubscribe}
+                        <div className="test_detail_number">
+                            <span>1 {t.prop.calculator.labels.month} FREE</span>39$
                         </div>
                     </div>
 
@@ -312,7 +318,7 @@ const CalculatorSection = ({startPercentage}) => {
                             </div>
 
 
-                            <div style={{ width: '100%', height: 220, overflowX: window.innerWidth < 768 ? "scroll" : "visible"}}>
+                            <div style={{ width: '100%', height: 240, overflowX: window.innerWidth < 768 ? "scroll" : "visible"}}>
                                 <ResponsiveContainer minWidth={750}>
                                     <LineChart data={calcResults} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
                                         <CartesianGrid  vertical={false} stroke="#414141" />

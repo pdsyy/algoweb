@@ -51,6 +51,7 @@ import SEO from "../../SEO";
 import preview from "../../images/logo192.png"
 import {useLanguage} from "../../context/LanguageProvider";
 import PopupBot from "../../components/PopupBot";
+import AnimatedNumber from "../../components/AnimatedNumber";
 
 const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}) => {
     const {t} = useLanguage();
@@ -268,7 +269,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                     <div className="our_advantages_list">
                         {t.home.stats.items.map((item, index) => (
                             <motion.div key={index} className="advantages_point" {...fadeNumeric} custom={index + 1}>
-                                <div className="advantages_point_number">{item.num}</div>
+                                <div className="advantages_point_number"><AnimatedNumber value={item.num} /></div>
                                 <div className="advantages_point_desc">{item.desc}</div>
                             </motion.div>
                         ))}
@@ -387,21 +388,21 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                 </div>
 
                 <motion.div className="prop_container_fs" {...fadeUp}>
-                    <div className={`prop_bot_bg ${visibleBgProp ? "visible_bg" : ""}`}>
+                    {/*<div className= "prop_bot_bg">
 
-                    </div>
-                    <div className={`main_page_prop_container ${visibleBgProp ? "visible_bg" : ""}`}
+                    </div>*/}
+                    <div className= "main_page_prop_container"
                          onMouseOver={() => {
-
+/*
                              if (window.innerWidth > 767) {
                                  setVisibleBgProp(true)
                                  setVisibleHeader(true)
-                             }
+                             }*/
                          }} onMouseOut={() => {
-                        if (window.innerWidth > 767) {
+                       /* if (window.innerWidth > 767) {
                             setVisibleBgProp(false)
                             setVisibleHeader(false)
-                        }
+                        }*/
                     }}>
                         <div className="prop_bot_info">
                             <div className="best_offer_container">

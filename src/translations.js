@@ -656,6 +656,8 @@ export const translations = {
                     depositType: "Тип депозиту",
                     ownDeposit: "Свій депозит",
                     instantProp: "Instant Проп",
+                    monthSubscribe: "Підписка/місяць",
+                    month: "місяць",
                     startSum: "Початкова сума",
                     reinvest: "Реінвестувати прибуток",
                     botPrice: "Вартість бота",
@@ -712,6 +714,8 @@ export const translations = {
                 labels: {
                     depositType: "Тип депозита",
                     ownDeposit: "Свой депозит",
+                    monthSubscribe: "Подписка/месяц",
+                    month: "месяц",
                     instantProp: "Instant Проп",
                     startSum: "Начальная сумма",
                     reinvest: "Реинвестировать прибыль",
