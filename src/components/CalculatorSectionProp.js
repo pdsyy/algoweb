@@ -312,8 +312,8 @@ const CalculatorSection = ({startPercentage}) => {
                             </div>
 
 
-                            <div style={{ width: '100%', height: 220}}>
-                                <ResponsiveContainer>
+                            <div style={{ width: '100%', height: 220, overflowX: window.innerWidth < 768 ? "scroll" : "visible"}}>
+                                <ResponsiveContainer minWidth={750}>
                                     <LineChart data={calcResults} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
                                         <CartesianGrid  vertical={false} stroke="#414141" />
                                         <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
