@@ -7,7 +7,7 @@ import advantageIcon3 from "./images/connection_icon.svg"
 import advantageIcon4 from "./images/connetction_icon2.svg"
 import advantageIcon5 from "./images/bot_icon.svg"
 import result2025 from "./images/result2025.png"
-import demonstration from "./images/demonstration.png"
+import hydroBuyImage from "./images/hydroBuyBlock.png"
 import how_to_image from "./images/how_to_image.png"
 import prev_arrow from "../MainPage/images/prev-arrow.svg";
 import next_arrow from "../MainPage/images/next-arrow.svg";
@@ -449,7 +449,7 @@ const HydroPage = ({activePopup, setActivePopup}) => {
             <div className="buy_block_fs">
                 <div className="buy_block">
                     <motion.div className="buy_block_image" {...fadeLeft}>
-                        <img src={bottom_product_image} alt="Hydro EA"/>
+                        <img src={hydroBuyImage} alt="Hydro EA"/>
                     </motion.div>
                     <motion.div className="buy_block_info" {...fadeRight}>
                         <div className="product_name_bottom">

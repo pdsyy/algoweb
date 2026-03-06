@@ -386,7 +386,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                     </div>
                 </div>
 
-                <motion.div className="prop_container_fs" style={{overflow: "hidden"}} {...fadeUp}>
+                <motion.div className="prop_container_fs" {...fadeUp}>
                     <div className={`prop_bot_bg ${visibleBgProp ? "visible_bg" : ""}`}>
 
                     </div>
@@ -466,7 +466,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                             </div>
                             <a href="/prop">
                                 <div className="main_btn_buy" onClick={() => {
-                                    setIsActive(true)
+                                    //setIsActive(true)
                                 }}>
                                     {t.prop.buySection.button}
                                 </div>

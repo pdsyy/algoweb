@@ -10,12 +10,11 @@ import how_to_image from "./images/how_to_image.png"
 import prev_arrow from "../MainPage/images/prev-arrow.svg";
 import next_arrow from "../MainPage/images/next-arrow.svg";
 import {Swiper, SwiperSlide} from "swiper/react";
-import review_image1 from "./images/review_image1.png";
-import review_image2 from "./images/review_image1.png";
-import review_image3 from "./images/review_image1.png";
-import review_image4 from "./images/review_image1.png";
-import review_image5 from "./images/review_image1.png";
-import review_image6 from "./images/review_image1.png";
+//import review_image1 from "./images/review_image1.png";
+import review_image2 from "./images/reviewImage2.png";
+import review_image3 from "./images/reviewImage3.png";
+import review_image4 from "./images/reviewImage4.png";
+import review_image5 from "./images/reviewImage5.png";
 import test_image from "./images/test_image.png";
 import prop_main_bot_image from "./images/prop_main_bot_image.png";
 import bottom_product_image from "./images/bottom_product_image.png";
@@ -41,7 +40,7 @@ const PropPage = ({activePopup, setActivePopup, setDarkTheme}) => {
     }, [])
     const {t} = useLanguage();
 
-    const reviews_images = [review_image1, review_image2, review_image3, review_image4, review_image5, review_image6];
+    const reviews_images = [review_image2, review_image3, review_image4, review_image5];
 
 
     const [isActive, setIsActive] = useState(false)

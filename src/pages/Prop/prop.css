@@ -277,7 +277,7 @@
 
 .reinvest_handler {
     cursor: pointer;
-    background: linear-gradient(180deg, #34C759 0%, #008B1D 100%);
+    background: #7E7E7E;
     height: 16px;
     width: 28px;
     border-radius: 200px;
@@ -286,6 +286,19 @@
     display: flex;
     align-items: center;
     transition: 0.3s;
+}
+
+.main_page_prop_container.visible_bg::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 22px;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    box-shadow: 0px 1px 2px 0px #0A0D1408, 0px 35.41px 70.81px 0px #A8D8F50F inset, 0px 1.48px 1.48px 0px #D8ECF833 inset, 0px 4px 120px 0px #61D37366;
+
 }
 
 .prop_bot .calculate_table {
@@ -894,6 +907,7 @@
     border: 4px solid #FFFFFF;
     box-shadow: 0px 2px 4px 0px #0E121B14, 0px 4px 8px 0px #1B1C1D0F;
     width: 12px;
+    z-index: 1;
     position: absolute;
 }
 
@@ -901,6 +915,20 @@
     transform: translate(calc(100% - 1px)) !important;
 }
 
+.reinvest_handler::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 200px;
+    background: linear-gradient(180deg, #34C759 0%, #008B1D 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.reinvest_handler.active_reinvest::before {
+    opacity: 1;
+}
 
 .reviews_item img {
     width: 100%;

@@ -1523,6 +1523,12 @@ h2 span{
     }
 }
 
+
+.main_page_prop_container.visible_bg{
+
+}
+
+
 .main_video_block{
     overflow: hidden;
     aspect-ratio: 1 / 1;
