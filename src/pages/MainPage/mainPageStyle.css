@@ -1690,7 +1690,11 @@ h2 span{
     background: #EBEBEB;
 }
 
-
+@media screen and (min-width: 1200px){
+    .main_block_bg{
+        min-height: 900px;
+    }
+}
 @media screen and (min-width: 769px) and (max-width: 1199.9px){
 
     .header_container.active_menu .liquidGlass-effect{

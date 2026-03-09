@@ -269,7 +269,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                     <div className="our_advantages_list">
                         {t.home.stats.items.map((item, index) => (
                             <motion.div key={index} className="advantages_point" {...fadeNumeric} custom={index + 1}>
-                                <div className="advantages_point_number"><AnimatedNumber value={item.num} /></div>
+                                <div className="advantages_point_number"><AnimatedNumber value={item.num} duration={index !== 3 ? 1 : 2} delay = {index * 0.1}/></div>
                                 <div className="advantages_point_desc">{item.desc}</div>
                             </motion.div>
                         ))}
@@ -278,7 +278,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
 
                 <div className="money_in_management">
                     <motion.div className="money_in_management_number" {...fadeUp}>
-                        200 000$
+                        {window.innerWidth < 768 ? "200 000$" : <AnimatedNumber value="200 000$"/>}
                     </motion.div>
                     <motion.div className="in_management" {...fadeUp}>
                         {t.home.stats.management}
