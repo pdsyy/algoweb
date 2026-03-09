@@ -278,7 +278,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
 
                 <div className="money_in_management">
                     <motion.div className="money_in_management_number" {...fadeUp}>
-                        {window.innerWidth < 768 ? "200 000$" : <AnimatedNumber value="200 000$"/>}
+                        {window.innerWidth < 768 ? "200 000$" : <AnimatedNumber value="200 000$" duration={2.5}/>}
                     </motion.div>
                     <motion.div className="in_management" {...fadeUp}>
                         {t.home.stats.management}
