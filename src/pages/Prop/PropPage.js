@@ -280,7 +280,7 @@ const PropPage = ({activePopup, setActivePopup, setDarkTheme}) => {
                         <div className="how_to_main_info">
                             {t.prop.howTo.title}
                         </div>
-                        <a href="#" target="_blank" rel="noreferrer">
+                        <a href="https://teletype.in/@volodymyrbbk/_MMBDWK2r3-" target="_blank" rel="noreferrer">
                             <div className="read_more_button">
                                 {t.aero.propInfo.button}
                             </div>
