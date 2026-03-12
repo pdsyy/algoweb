@@ -370,6 +370,7 @@ export const translations = {
                 timeframeValue: "1 день ( D1 )"
             }
         }, home: {
+            piecePay: "Доступна оплата частинами",
             botsList: [
                 {
                     name: "Terra EA",
@@ -1203,6 +1204,7 @@ export const translations = {
                 timeframeValue: "1 день ( D1 )"
             }
         }, home: {
+            piecePay: "Доступная оплата частями",
             botsList: [
                 {
                     name: "Terra EA",

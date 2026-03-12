@@ -37,6 +37,7 @@ import select_bot_img_mob from "./images/select_bot_img_mob.png"
 import tg_icon from "../../images/tg_icon.svg"
 import instagram_icon from "../../images/insta_icon.svg"
 import youtube_icon from "../../images/youtube_icon.svg"
+import white_info_icon from "./images/white_info_label.svg"
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper/modules";
@@ -269,7 +270,9 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                     <div className="our_advantages_list">
                         {t.home.stats.items.map((item, index) => (
                             <motion.div key={index} className="advantages_point" {...fadeNumeric} custom={index + 1}>
-                                <div className="advantages_point_number"><AnimatedNumber value={item.num} duration={index !== 3 ? 1 : 2} delay = {index * 0.1}/></div>
+                                <div className="advantages_point_number"><AnimatedNumber value={item.num}
+                                                                                         duration={index !== 3 ? 1 : 2}
+                                                                                         delay={index * 0.1}/></div>
                                 <div className="advantages_point_desc">{item.desc}</div>
                             </motion.div>
                         ))}
@@ -346,42 +349,50 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
 
                     <div className="bots_list">
                         {botsList.map((el, idx) =>
-                            <motion.div className="bot_item" key={idx} {...fadeNumeric} custom={idx}>
-                                <div className="bot_image">
-                                    {/*el.prop && <div className="prop_pl">{t.home.catalog.propLabel}</div>*/}
-                                    <img src={el.image} alt={el.name}/>
-                                    {el.paying && <div className="paying_pl">{t.home.catalog.payingLabel}</div>}
+                            <motion.div className = "piece_pay_full_block" key={idx} {...fadeNumeric} custom={idx}>
+                                <div className = "white_info_block">
+                                    <img src = {white_info_icon} alt = ""/>
+                                    {t.home.piecePay}
                                 </div>
-                                <div className="bot_name">{el.name}</div>
-                                <div className="bot_description">{el.description}</div>
-                                <div className="bot_advantages">
-                                    <div className="advantages_item">
-                                        <div className="advantages_name">Year profit</div>
-                                        <div className="advantages_numbers">{el.advantages.yearProfit}</div>
-                                    </div>
-                                    <div className="advantages_item">
-                                        <div className="advantages_name">Max drawdown</div>
-                                        <div className="advantages_numbers">{el.advantages.maxDrawDown}</div>
-                                    </div>
-                                    <div className="advantages_item">
-                                        <div className="advantages_name">Winrate</div>
-                                        <div className="advantages_numbers">{el.advantages.winRate}</div>
-                                    </div>
-                                </div>
+                                <div className = "bot_gradient_border">
+                                    <div className="bot_item">
+                                        <div className="bot_image">
+                                            {/*el.prop && <div className="prop_pl">{t.home.catalog.propLabel}</div>*/}
+                                            <img src={el.image} alt={el.name}/>
+                                            {/*{el.paying && <div className="paying_pl">{t.home.catalog.payingLabel}</div>}*/}
+                                        </div>
+                                        <div className="bot_name">{el.name}</div>
+                                        <div className="bot_description">{el.description}</div>
+                                        <div className="bot_advantages">
+                                            <div className="advantages_item">
+                                                <div className="advantages_name">Year profit</div>
+                                                <div className="advantages_numbers">{el.advantages.yearProfit}</div>
+                                            </div>
+                                            <div className="advantages_item">
+                                                <div className="advantages_name">Max drawdown</div>
+                                                <div className="advantages_numbers">{el.advantages.maxDrawDown}</div>
+                                            </div>
+                                            <div className="advantages_item">
+                                                <div className="advantages_name">Winrate</div>
+                                                <div className="advantages_numbers">{el.advantages.winRate}</div>
+                                            </div>
+                                        </div>
 
-                                <div className="bot_price_block">
-                                    <div className="bot_price_text">{t.terra.buy.price}</div>
-                                    <div className="bot_price">
-                                        {el.price}
-                                        <span>USD</span>
+                                        <div className="bot_price_block">
+                                            <div className="bot_price_text">{t.terra.buy.price}</div>
+                                            <div className="bot_price">
+                                                {el.price}
+                                                <span>USD</span>
+                                            </div>
+                                        </div>
+
+                                        <a href={el.href}>
+                                            <div className="bot_more_details">
+                                                {t.home.catalog.moreDetails}
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-
-                                <a href={el.href}>
-                                    <div className="bot_more_details">
-                                        {t.home.catalog.moreDetails}
-                                    </div>
-                                </a>
                             </motion.div>
                         )}
                     </div>
@@ -391,18 +402,18 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                     {/*<div className= "prop_bot_bg">
 
                     </div>*/}
-                    <div className= "main_page_prop_container"
+                    <div className="main_page_prop_container"
                          onMouseOver={() => {
-/*
-                             if (window.innerWidth > 767) {
-                                 setVisibleBgProp(true)
-                                 setVisibleHeader(true)
-                             }*/
+                             /*
+                                                          if (window.innerWidth > 767) {
+                                                              setVisibleBgProp(true)
+                                                              setVisibleHeader(true)
+                                                          }*/
                          }} onMouseOut={() => {
-                       /* if (window.innerWidth > 767) {
-                            setVisibleBgProp(false)
-                            setVisibleHeader(false)
-                        }*/
+                        /* if (window.innerWidth > 767) {
+                             setVisibleBgProp(false)
+                             setVisibleHeader(false)
+                         }*/
                     }}>
                         <div className="prop_bot_info">
                             <div className="best_offer_container">
