@@ -2394,6 +2394,8 @@
         grid-gap: 8px;
         grid-template-columns: 1fr;
     }
+
+
 }
 
 
@@ -2664,10 +2666,10 @@
     }
 
     .prop_container_fs {
-        padding: 0 20px;
+        padding: 0 20px !important;
     }
     .main_page_prop_container .prop_bot_info{
-        padding: 20px;
+        padding: 20px !important;
     }
 
     .main_page .best_offer_container{

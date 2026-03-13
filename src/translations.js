@@ -370,6 +370,7 @@ export const translations = {
                 timeframeValue: "1 день ( D1 )"
             }
         }, home: {
+            bestOfferProp:"Краща пропозиція",
             piecePay: "Доступна оплата частинами",
             botsList: [
                 {
@@ -434,7 +435,7 @@ export const translations = {
                 management: "в управлінні",
                 items: [
                     {num: "2", desc: "Роки на ринку"},
-                    {num: "3", desc: "Профітних ботів"},
+                    {num: "4", desc: "Профітних ботів"},
                     {num: "5", desc: "Рахунків з live статистикою"},
                     {num: "+80%", desc: "За 2025 рік"}
                 ]
@@ -1204,6 +1205,7 @@ export const translations = {
                 timeframeValue: "1 день ( D1 )"
             }
         }, home: {
+            bestOfferProp:"Лучшее предложение",
             piecePay: "Доступная оплата частями",
             botsList: [
                 {
@@ -1290,7 +1292,7 @@ export const translations = {
                 management: "в управлении",
                 items: [
                     {num: "2", desc: "Года на рынке"},
-                    {num: "3", desc: "Профитных бота"},
+                    {num: "4", desc: "Профитных бота"},
                     {num: "5", desc: "Счетов с live статистикой"},
                     {num: "+80%", desc: "За 2025 год"}
                 ]

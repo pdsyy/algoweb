@@ -1126,6 +1126,7 @@ h2 span{
     }
     .our_main_advantages {
         margin-top: 48px;
+        padding: 0 20px;
     }
     h2 {
         width: 100%;
@@ -2199,5 +2200,112 @@ h2 span{
     position: fixed;
     left: 50%;
     top: 50%;
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .main_page .main_page_prop_container {
+        background: #000000 url("./images/propBotBg.png") no-repeat 87% -28px;
+        background-size: 151% 38%;
+        transition: 0.4s;
+        border-radius: 22px;
+        position: relative;
+        z-index: 99999;
+    }
+
+    .two_prop_bot_advantages.prop_bot{
+        grid-template-columns: 1fr;
+    }
+
+   .main_page .two_prop_bot_advantages .test_detail_item{
+       margin-top: 0;
+       flex-direction: row;
+   }
+
+   .main_page .three_prop_bot_advantages{
+       grid-template-columns: 1fr 1fr;
+   }
+
+   .main_page .prop_bot_name{
+       margin-top: 216px;
+   }
+
+   .main_page .prop_bot_desc{
+       margin-bottom: 16px;
+       color: #FFFFFFCC;
+   }
+
+    .main_page .prop_bot_advantages{
+        gap: 4px;
+    }
+
+    .prop_container_fs .three_prop_bot_advantages{
+        margin-top: 4px;
+
+    }
+
+    .main_page .prop_bot_advantages, .main_page .test_detail_item{
+        box-shadow: none;
+        background: #19191980 !important;
+        border: 1px solid #FFFFFF14 !important;
+    }
+
+    .main_page .prop_advantage_name{
+        font-size: 12px !important;
+    }
+
+    .main_page .prop_advantage_number{
+        font-family: Manrope;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+
+    }
+
+    .first_month_free_main{
+        margin-top: 16px;
+        font-family: Inter;
+        font-weight: 500;
+        width: 100%;
+        color: #34C759;
+        font-size: 12px;
+        line-height: 120%;
+        text-align: center;
+
+    }
+
+    .main_page .prop_container_fs .main_btn_buy{
+        margin-top: 16px;
+    }
+
+    .main_page .prop_bot .test_detail_item {
+        padding: 12px 12px;
+        color: #FFFFFFB2;
+    }
+    .main_page .prop_bot .test_detail_number {
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    .usd_main{
+        background: none !important;
+        padding: 0 !important;
+        color: #FFFFFFB2 !important;
+        margin-left: 4px !important;
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 14px !important;
+        line-height: 120% !important;
+
+    }
+
+    .mobile_prop_container{
+        padding: 8px 2px 2px 2px;
+        background: linear-gradient(180deg, #34C759 0%, #008B1D 100%);
+        border-radius: 24px;
+    }
 
 }
