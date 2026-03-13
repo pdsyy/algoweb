@@ -2231,6 +2231,8 @@ h2 span{
 
    .main_page .prop_bot_name{
        margin-top: 216px;
+       background: #000000;
+       box-shadow: 0 0 20px 7px #000000;
    }
 
    .main_page .prop_bot_desc{

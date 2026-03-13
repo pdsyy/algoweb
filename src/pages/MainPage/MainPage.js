@@ -551,9 +551,6 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                     </div>
                                 </div>
 
-                                <div className = "first_month_free_main">
-                                        {t.prop.buySection.freeMonth}
-                                </div>
                                 <a href="/prop">
                                     <div className="main_btn_buy" onClick={() => {
                                         //setIsActive(true)
