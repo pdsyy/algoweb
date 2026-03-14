@@ -2227,6 +2227,15 @@ h2 span{
 }
 @media screen and (max-width: 768px) {
 
+    .usd_main{
+        margin-top: auto;
+    }
+
+    .test_detail_number.f_month_free{
+        display: flex;
+        align-items: center;
+    }
+
     .main_page .main_page_prop_container {
         background: #000000 url("./images/propBotBg.png") no-repeat 87% -28px;
         background-size: 151% 38%;

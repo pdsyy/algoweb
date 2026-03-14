@@ -590,7 +590,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                     </div>
                                     <div className="test_detail_item">
                                         {t.prop.calculator.labels.monthSubscribe}
-                                        <div className="test_detail_number">
+                                        <div className="test_detail_number f_month_free">
                                             <span>1 {t.prop.calculator.labels.month} FREE</span>39<span className = "usd_main">USD</span>
                                         </div>
                                     </div>
