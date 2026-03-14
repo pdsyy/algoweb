@@ -349,7 +349,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
 
                     <div className="bots_list">
                         {botsList.map((el, idx) =>
-                            <motion.div className = "piece_pay_full_block" key={idx} {...fadeNumeric} custom={idx}>
+                            {return window.innerWidth > 768 ?  <motion.div className = "piece_pay_full_block" key={idx} {...fadeNumeric} custom={idx}>
                                 <div className = "white_info_block">
                                     <img src = {white_info_icon} alt = ""/>
                                     {t.home.piecePay}
@@ -393,7 +393,52 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                         </a>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </motion.div> :
+
+                                <div className = "bot_gradient_border">
+                                    <div className="bot_item">
+                                        <div className="bot_image">
+                                            {/*el.prop && <div className="prop_pl">{t.home.catalog.propLabel}</div>*/}
+                                            <img src={el.image} alt={el.name}/>
+                                            {/*{el.paying && <div className="paying_pl">{t.home.catalog.payingLabel}</div>}*/}
+                                        </div>
+                                        <div className="bot_name">{el.name}</div>
+                                        <div className="bot_description">{el.description}</div>
+                                        <div className="bot_advantages">
+                                            <div className="advantages_item">
+                                                <div className="advantages_name">Year profit</div>
+                                                <div className="advantages_numbers">{el.advantages.yearProfit}</div>
+                                            </div>
+                                            <div className="advantages_item">
+                                                <div className="advantages_name">Max drawdown</div>
+                                                <div className="advantages_numbers">{el.advantages.maxDrawDown}</div>
+                                            </div>
+                                            <div className="advantages_item">
+                                                <div className="advantages_name">Winrate</div>
+                                                <div className="advantages_numbers">{el.advantages.winRate}</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="bot_price_block">
+                                            <div className="bot_price_text">{t.terra.buy.price}</div>
+                                            <div className="bot_price">
+                                                {el.price}
+                                                <span>USD</span>
+                                            </div>
+                                        </div>
+
+                                        <div className = "mob_piece_pay">
+                                            ✓ {t.home.piecePay}
+                                        </div>
+
+                                        <a href={el.href}>
+                                            <div className="bot_more_details">
+                                                {t.home.catalog.moreDetails}
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
                         )}
                     </div>
                 </div>
