@@ -96,10 +96,10 @@ const CalculatorSection = ({startPercentage}) => {
     let paybackDaysDisplay;
     if (exactPaybackX !== null) {
         const days = Math.round(exactPaybackX * 30.44);
-        paybackDaysDisplay = `${days} днів`;
+        paybackDaysDisplay = `${days} ${t.prop.calculationWords.days}`;
     } else if (calcResults) {
         // Если расчет был, но точка не найдена
-        paybackDaysDisplay = "> 1 року";
+        paybackDaysDisplay = `> 1 ${t.prop.calculationWords.year}`;
     } else {
         paybackDaysDisplay = "—";
     }
@@ -110,7 +110,7 @@ const CalculatorSection = ({startPercentage}) => {
         let currentBalance = startSum;
         const results = [];
         const monthlyRate = rate / 100;
-        const botCost = 350;
+        const botCost = 399;
 
         // Точка старта
         results.push({ month: 0, balance: startSum, profit: 0 });
@@ -225,7 +225,7 @@ const CalculatorSection = ({startPercentage}) => {
                     <div className="test_detail_item mt16">
                         {t.prop.calculator.labels.botPrice}
                         <div className="test_detail_number">
-                            350$
+                            399$
                         </div>
                     </div>
                     <div className="test_detail_item">
@@ -367,7 +367,7 @@ const CalculatorSection = ({startPercentage}) => {
                                                 />
                                                 <ReferenceDot
                                                     x={Number(exactPaybackX)}
-                                                    y={350}
+                                                    y={399}
                                                     r={5}
                                                     shape={CustomPaybackDot}
                                                 />

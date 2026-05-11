@@ -501,7 +501,7 @@ const PropPage = ({activePopup, setActivePopup, setDarkTheme}) => {
                                     {t.prop.buySection.labels.price}
                                 </div>
                                 <div className="advantages_num">
-                                    350
+                                    399
                                     <span>USD</span>
                                 </div>
                             </div>

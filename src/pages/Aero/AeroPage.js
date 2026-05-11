@@ -9,6 +9,7 @@ import how_to_image from "./images/how_to_image.png"
 import prev_arrow from "../MainPage/images/prev-arrow.svg";
 import next_arrow from "../MainPage/images/next-arrow.svg";
 import {Swiper, SwiperSlide} from "swiper/react";
+import mql5_button from "./images/mql_button.svg";
 import review_image1 from "./images/review_image1.png";
 import review_image2 from "./images/review_image2.png";
 import review_image3 from "./images/review_image3.png";
@@ -163,9 +164,21 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                     <motion.div className="bot_main_desc" {...fadeNumeric} custom={3}>
                         {t.aero.hero.desc}
                     </motion.div>
-                    <motion.div className="button_buy_bot" onClick={() => setIsActive(true)} {...fadeNumeric} custom={4}>
-                        {t.aero.hero.buy}
-                    </motion.div>
+                    <div className="top_buttons_cont">
+                        <motion.div className="button_buy_bot" onClick={() => setIsActive(true)} {...fadeNumeric}
+                                    custom={4}>
+                            {t.aero.hero.buy}
+                        </motion.div>
+                        <motion.a href="https://www.mql5.com/en/users/ferwer31234/news"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  {...fadeNumeric} custom={4} className="mql_link">
+                            <div className="open_mql5">
+                                {t.buttons.openMql}
+                                <img src={mql5_button} alt=""/>
+                            </div>
+                        </motion.a>
+                    </div>
                     <motion.div className="product_slogan" {...fadeNumeric} custom={5}>
                         {t.aero.hero.slogan}
                     </motion.div>
@@ -419,7 +432,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
             <CalculatorSectionAero startPercentage = {30}/>
 
             <div className="buy_block_fs">
-                <div className="buy_block">
+                <div className="buy_block aero_bot">
                     <div className="buy_block_image">
                         <img src={bottom_product_image} alt="Aero EA"/>
                     </div>
@@ -455,6 +468,13 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                                 {t.terra.buy.parts}
                             </div>
                         </div>
+                        <a className = "open_mql5_bottom"
+                           href="https://www.mql5.com/en/users/ferwer31234/news"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            {t.buttons.openMql}
+                            <img src={mql5_button} alt=""/>
+                        </a>
                     </div>
                 </div>
             </div>

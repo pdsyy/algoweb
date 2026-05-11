@@ -431,6 +431,7 @@ h2 span{
 }
 
 .bot_item{
+    position: relative;
     padding: 20px;
     flex-grow: 1;
     background: #F1F1F1;

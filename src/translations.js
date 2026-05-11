@@ -1,6 +1,10 @@
 export const translations = {
     UA: {
 
+        mql5: {
+            title: "Ми офіційно на маркетплейсі MQL5",
+            description: "Тепер наші торгові алгоритми доступні на найбільшому незалежному майданчику для трейдерів.<br/><br/>Ми за абсолютну прозорість результатів. Перевіряйте реальну статистику, історію угод та підключайте ботів у безпечному середовищі.",
+        },
         menu: {
             how: "Як працюють",
             advantages: "Переваги",
@@ -10,6 +14,7 @@ export const translations = {
         },
         buttons: {
             selectBot: "Обрати бота",
+            openMql: "Відкрити в MQL5",
         },
         terra: {
             seo: {
@@ -234,6 +239,11 @@ export const translations = {
                 about: "Aero - елемент повітря, він може бути спокійним, <span>як легкий вітер, так і динамічним, перетворюючи вітер на бурю</span>, завдяки рівню ризику, що налаштовується.<br/><br/>Алгоритм навчали за допомогою AI на базі символу XAUUSD з 1999 року, <span>його стратегія не має жодних «небезпечних» методик як мартингейл, сіткова торгівля та подібні.</span><br/><br/>Це забезпечує максимально <span>безпечну торгівлю.</span>",
                 videoFallback: "Ваш браузер не підтримує відео."
             },
+            seo: {
+                title: "Aero EA — Безпечний торговий бот з просадкою 3.7%",
+                description: "Aero EA: алгоритм на базі AI для XAUUSD (Gold). Без мартингейла та сіток. Ідеально підходить для проп-компаній. Winrate 86.8% та стабільний прибуток.",
+                keywords: "Aero EA, бот для проп компаній, безпечний трейдинг бот, робот для золота XAUUSD, трейдинг без мартингейла, торгові боти AI"
+            },
             advantages: {
                 title: "Переваги",
                 items: [
@@ -327,7 +337,13 @@ export const translations = {
                 slogan: "Приріст вашого капіталу",
                 about: "Hydro поєднує спокій глибоких вод і силу припливів, <span>допомагаючи знаходити баланс між стабільністю та прибутковістю.</span><br/><br/>Він швидко реагує на зміни ринку, <span>знаходячи оптимальні точки входу</span> та виходу з високою точністю.<br/><br/>Маючи Winrate вище 90% та дохідність більше 4.5% на місяць, <span>Hydro показує себе як довершений скальпінг бот, який максимально імітує людську торгову поведінку.</span>",
                 videoFallback: "Ваш браузер не підтримує відео."
-            }, advantages: {
+            },
+            seo: {
+                title: "Hydro EA — Торговий бот з Winrate 91.9% та високою прибутковістю",
+                description: "Hydro EA: професійний скальпінг-бот для Gold (XAUUSD). Середня дохідність 5% на місяць, захист від волатильності та робота без мартингейла. Найкращий вибір для капіталу.",
+                keywords: "Hydro EA, скальпінг бот, високоприбутковий торговий робот, бот для золота, Winrate 90 трейдинг, автоматизація XAUUSD, професійні торгові алгоритми"
+            },
+            advantages: {
                 title: "Переваги",
                 items: [
                     {
@@ -370,7 +386,7 @@ export const translations = {
                 timeframeValue: "1 день ( D1 )"
             }
         }, home: {
-            bestOfferProp:"Краща пропозиція",
+            bestOfferProp:"Найкращий вибір для проп-компаній",
             piecePay: "Доступна оплата частинами",
             botsList: [
                 {
@@ -427,8 +443,8 @@ export const translations = {
                     text: "Довго не доходили руки залишити фідбек по Террі. За 3 місяці на підвищеному ризику отримав +48%. Дуже задоволений ботом, постійними оновленнями налаштувань і підтримкою. Окрема повага за чесність — усе, що пишеш, відповідає реальності."
                 }
             ], hero: {
-                title: "Пасивний дохід за допомогою ботів",
-                desc: "Торгові боти, які самостійно працюють за чіткою стратегією, контрольованим ризиком та прогнозованим прибутком.",
+                title: "Ваш капітал зростає — без вашої участі",
+                desc: "Торгові боти які самостійно працюють за чіткою стратегією — з мінімальною просадкою та реальною історією на живих рахунках.",
                 button: "Обрати бота"
             }, stats: {
                 title: "<span>Наша команда вже автоматизувала трейдинг</span><br/>для багатьох клієнтів, допоможемо і вам",
@@ -552,6 +568,10 @@ export const translations = {
 
 
         prop: {
+            calculationWords:{
+                days: "днів",
+                year: "року",
+            },
             hero: {
                 botName: "PROP EA",
                 theme: "Торговий бот для проп-компаній",
@@ -599,7 +619,7 @@ export const translations = {
                     "Налаштування бота під проп-компанію"
                 ],
                 botName: "PROP EA",
-                botPrice: 350
+                botPrice: 399
             }, faq: [
                 {
                     question: "Цей бот залишиться у мене назавжди?",
@@ -675,7 +695,7 @@ export const translations = {
                     payback: "Рентабельність бота",
                     period12: "за 12 місяців",
                     endOfTerm: "на кінець терміну",
-                    costNotice: "бот коштує $350",
+                    costNotice: "бот коштує $399",
                     legend: {
                         pnl: "PnL за рік",
                         payback: "Окупність",
@@ -690,9 +710,16 @@ export const translations = {
     },
 
     RU: {
-
+        mql5: {
+            title: "Мы официально на маркетплейсе MQL5",
+            description: "Теперь наши торговые алгоритмы доступны на крупнейшей независимой площадке для трейдеров.<br/><br/>Мы за абсолютную прозрачность результатов. Проверяйте реальную статистику, историю сделок и подключайте ботов в безопасной среде.",
+        },
 
         prop: {
+            calculationWords:{
+                days: "дней",
+                year: "года",
+            },
             buy: {
                 subscribe: "Подписка"
             },
@@ -707,7 +734,7 @@ export const translations = {
                     "Настройка бота под проп-компанию"
                 ],
                 botName: "PROP EA",
-                botPrice: 350
+                botPrice: 399
             },
             calculator: {
                 titleAccent: "Рассчитайте",
@@ -734,7 +761,7 @@ export const translations = {
                     payback: "Рентабельность бота",
                     period12: "за 12 месяцев",
                     endOfTerm: "на конец срока",
-                    costNotice: "бот стоит $350",
+                    costNotice: "бот стоит $399",
                     legend: {
                         pnl: "PnL за год",
                         payback: "Окупаемость",
@@ -846,6 +873,7 @@ export const translations = {
         },
         buttons: {
             selectBot: "Выбрать бота",
+            openMql: "Открыть в MQL5",
         },
 
         terra: {
@@ -1068,6 +1096,11 @@ export const translations = {
                 about: "Aero - элемент воздуха, он может быть как спокойным, <span>словно легкий бриз, так и динамичным, превращая ветер в бурю</span> благодаря настраиваемому уровню риска.<br/><br/>Алгоритм обучали с помощью AI на базе символа XAUUSD с 1999 года, <span>его стратегия не использует «опасных» методик, таких как мартингейл, сеточная торговля и подобные.</span><br/><br/>Это обеспечивает максимально <span>безопасную торговлю.</span>",
                 videoFallback: "Ваш браузер не поддерживает видео."
             },
+            seo: {
+                title: "Aero EA — Безопасный торговый бот с просадкой 3.7%",
+                description: "Aero EA: алгоритм на базе AI для XAUUSD (Gold). Без мартингейла и сеток. Идеально подходит для проп-компаний. Winrate 86.8% и стабильная прибыль.",
+                keywords: "Aero EA, бот для проп компаний, безопасный трейдинг бот, робот для золота XAUUSD, трейдинг без мартингейла, торговые боты AI"
+            },
             advantages: {
                 title: "Преимущества",
                 items: [
@@ -1162,6 +1195,11 @@ export const translations = {
                 about: "Hydro сочетает спокойствие глубоких вод и силу приливов, <span>помогая находить баланс между стабильностью и прибыльностью.</span><br/><br/>Он быстро реагирует на изменения рынка, <span>находя оптимальные точки входа</span> и выхода с высокой точностью.<br/><br/>Обладая Winrate выше 90% и доходностью более 4.5% в месяц, <span>Hydro проявляет себя как совершенный скальпинг-бот, максимально имитирующий торговое поведение человека.</span>",
                 videoFallback: "Ваш браузер не поддерживает видео."
             },
+            seo: {
+                title: "Hydro EA — Торговый бот с Winrate 91.9% и высокой доходностью",
+                description: "Hydro EA: профессиональный скальпинг-бот для Gold (XAUUSD). Средняя доходность 5% в месяц, защита от волатильности и работа без мартингейла. Лучший выбор для управления капиталом.",
+                keywords: "Hydro EA, скальпинг бот, высокодоходный торговый робот, бот для золота, Winrate 90 трейдинг, автоматизация XAUUSD, профессиональные торговые алгоритмы"
+            },
             advantages: {
                 title: "Преимущества",
                 items: [
@@ -1205,7 +1243,7 @@ export const translations = {
                 timeframeValue: "1 день ( D1 )"
             }
         }, home: {
-            bestOfferProp:"Лучшее предложение",
+            bestOfferProp:"Лучший выбор для проп-компаний",
             piecePay: "Доступная оплата частями",
             botsList: [
                 {
@@ -1284,8 +1322,8 @@ export const translations = {
                     answer: "Для правильного подбора рекомендуем ознакомиться с каждым ботом или обратиться за консультацией в телеграм, где мы определим подходящий вам алгоритм."
                 }
             ], hero: {
-                title: "Пассивный доход с помощью ботов",
-                desc: "Торговые боты, которые самостоятельно работают по четкой стратегии, с контролируемым риском и прогнозируемой прибылью.",
+                title: "Ваш капитал растет — без вашего участия",
+                desc: "Торговые боты, которые самостоятельно работают по четкой стратегии — с минимальной просадкой и реальной историей на живых счетах.",
                 button: "Выбрать бота"
             }, stats: {
                 title: "<span>Наша команда уже автоматизировала трейдинг</span><br/>для многих клиентов, поможем и вам",
@@ -1383,6 +1421,733 @@ export const translations = {
             title: "Спасибо! Ваша заявка успешно отправлена.",
             desc: "Наш менеджер обработает информацию и свяжется с вами в ближайшее время для уточнения деталей. Хорошего дня!",
             button: "На главную"
+        }
+    },
+
+    EN:{
+        prop: {
+            calculationWords:{
+                days: "days",
+                year: "year",
+            },
+            buy: {
+                subscribe: "Subscription"
+            },
+            botInfoPopup: {
+                botInfo: [
+                    "Lifetime access to updates",
+                    "2 versions for MT4/MT5",
+                    "Video instructions with step-by-step setup",
+                    "Set-files for various risk levels",
+                    "Access to a private news channel",
+                    "100% guarantee that your results will match ours",
+                    "Bot configuration for prop firms"
+                ],
+                botName: "PROP EA",
+                botPrice: 399
+            },
+            calculator: {
+                titleAccent: "Calculate",
+                title: "your profit",
+                sumAndTerm: "Amount and conditions",
+                labels: {
+                    depositType: "Deposit type",
+                    ownDeposit: "Own deposit",
+                    monthSubscribe: "Subscription/month",
+                    month: "month",
+                    instantProp: "Instant Prop",
+                    startSum: "Initial amount",
+                    reinvest: "Reinvest profit",
+                    botPrice: "Bot price",
+                    term: "Chart period",
+                    months12: "12 months",
+                    calculateBtn: "Calculate profitability"
+                },
+                graph: {
+                    title: "Calculation chart",
+                    placeholder: "Click \"Calculate\" to see the chart",
+                    netProfit: "Net profit",
+                    totalBalance: "Total balance",
+                    payback: "Bot ROI",
+                    period12: "for 12 months",
+                    endOfTerm: "at the end of the term",
+                    costNotice: "bot costs $399",
+                    legend: {
+                        pnl: "PnL per year",
+                        payback: "Payback",
+                        balance: "Balance",
+                        profit: "Profit"
+                    }
+                }
+            },
+            seo: {
+                title: "Prop EA — Trading bot for prop firms | Stability and risk control",
+                description: "Prop EA: a professional algorithm for passing prop firm challenges. No martingale or grid, built-in protection against news and drawdowns. Get funded today!",
+                keywords: "Prop EA, prop trading bot, bot for prop firms, pass prop challenge, algorithmic trading, trading robot no martingale, safe trading"
+            },
+            buySection: {
+                badge: "Best Offer",
+                freeMonth: "First month of subscription for free",
+                title: "Prop EA",
+                desc: "A reliable foundation for automated trading with stable results.",
+                labels: {
+                    monthlyProfit: "Monthly profitability",
+                    maxDrawdown: "Max drawdown",
+                    winrate: "Winrate",
+                    price: "Price",
+                    subscription: "Subscription"
+                },
+                button: "Buy Bot"
+            },
+            tests: {
+                title: "Test results",
+                subtitle: "over the last year",
+                winTrades: "Profitable trades"
+            },
+            case: {
+                badge: "Case Study",
+                title: "Setup",
+                desc: "4 payouts in a full trading month."
+            },
+            howTo: {
+                title: "Find out how to increase Prop EA profitability with prop firms",
+                button: "Read more"
+            },
+            faq: [
+                {
+                    question: "Will I keep this bot forever?",
+                    answer: "Yes, the bot belongs to you, but it only trades while the subscription is active."
+                },
+                {
+                    question: "Can I use the bot on a personal deposit?",
+                    answer: "Of course! If the algorithm works on prop accounts, it is reliable for a personal account as well."
+                },
+                {
+                    question: "How many accounts can I connect?",
+                    answer: "You don't need to buy the bot again for each account; you only need to pay the monthly subscription for each additional account."
+                },
+                {
+                    question: "How often can I withdraw profit from Ifunds?",
+                    answer: "There are no restrictions. Minimum $100, and funds are usually credited within a few hours."
+                },
+                {
+                    question: "Is it possible to blow the deposit?",
+                    answer: "Blowing the deposit is excluded.\n" + "The algorithm features an advanced risk protection system.\n" + "With our settings, the maximum drawdown has not exceeded 10%."
+                }
+            ],
+            hero: {
+                botName: "PROP EA",
+                theme: "Trading bot for prop firms",
+                desc: "Features over 7 months of verified statistics and 10 years of tests with stable results.",
+                buy: "Buy Bot",
+                bestOffer: "Best Offer",
+                freeMonth: "First month of subscription for free",
+                slogan: "Growth of your capital",
+                about: "PROP EA is an algorithm designed specifically to pass prop firm challenges, accounting for all their strict rules.<br/><br/> It avoids trading during news events, uses stop-losses to prevent daily losses, is independent of high spreads, and does not trigger suspicion due to its relatively infrequent positions.<br/><br/>At the same time, it performs even more effectively on a personal deposit due to the lack of restrictions, which increases its trading activity and profitability.",
+                videoFallback: "Your browser does not support the video tag."
+            },
+            advantages: {
+                title: "Advantages",
+                items: [
+                    {
+                        title: "Intelligent Precision",
+                        desc: "High win rate thanks to intelligent analysis"
+                    },
+                    {
+                        title: "Risk Control",
+                        desc: "Trades with stop-losses, without martingale or averaging"
+                    },
+                    {
+                        title: "Volatility Protection",
+                        desc: "Includes a news filter to exclude trading during volatile periods"
+                    },
+                    {
+                        title: "Prop Compatibility",
+                        desc: "Due to the absence of martingale and grid, the algorithm fully complies with the strict risk management rules of most prop firms."
+                    },
+                    {
+                        title: "24/7 Monitoring",
+                        desc: "The algorithm works 24/7 without emotion or fatigue, instantly reacting to trading signals in any session."
+                    }
+                ]
+            }
+        },
+
+        menu: {
+            how: "How it works",
+            advantages: "Advantages",
+            catalog: "Bot Catalog",
+            reviews: "Reviews",
+            faq: "FAQ",
+        },
+        buttons: {
+            selectBot: "Select Bot",
+            openMql: "Open in MQL5",
+        },
+        mql5:{
+            title: "We are officially on the MQL5 Marketplace",
+            description: "Our trading algorithms are now available on the largest independent marketplace for traders.<br/><br/>We stand for absolute transparency of results. Check real-time statistics, trade history, and connect bots in a secure environment.",
+        },
+
+        terra: {
+            seo: {
+                title: "Terra EA — Trading bot with the longest track record in Ukraine",
+                description: "Terra EA: over 2 years of verified statistics, 23 out of 24 months in profit. A reliable algorithm for MT4/MT5 with +20% annual return and risk control.",
+                keywords: "Terra EA, trading robot statistics, forex bot download, automated trading MT4, RSI Bollinger algorithm, stable trading income"
+            },
+
+            hero: {
+                theme: "The bot with the longest track record in our lineup",
+                desc: "Over 2 years of verified statistics with stable results",
+                buy: "Purchase bot",
+                slogan: "The foundation of your capital",
+                about: "Just as the earth <span>is the foundation of all life,</span> Terra EA creates a reliable base <span>for automated trading with stable results.</span><br/><br/>The algorithm is designed for those <span>who value confidence.</span><br/><br/>The strategy has a <span>positive mathematical expectation</span> and has been proven by time and the market.",
+                videoFallback: "Your browser does not support the video tag."
+            },
+
+            advantages: {
+                titleAccent: "An intelligent approach",
+                title: "to trading",
+                items: [
+                    {
+                        title: "Combination of Indicators",
+                        desc: "The algorithm is based on the synergy of RSI, Bollinger Bands, and ATR."
+                    },
+                    {
+                        title: "Smart Risk Management",
+                        desc: "Sophisticated capital management, hedging, and martingale used only when necessary."
+                    },
+                    {
+                        title: "Money Management",
+                        desc: "Terra demonstrates effective performance with minimal drawdowns on deposits from $1,000, which is rare for martingale bots."
+                    }
+                ]
+            },
+            results: {
+                title: "Results speak for themselves",
+                subtitle: "23 out of 24 trading months closed in profit.",
+                stats: [
+                    {label: "Year profit", value: "+20%"},
+                    {label: "Max drawdown", value: "16.5%"},
+                    {label: "Winrate", value: "72.3%"}
+                ],
+                button: "View statistics"
+            },
+
+            video: {
+                titleAccent: "Video demonstration",
+                title: "of the bot in action"
+            },
+
+            reviews: {
+                titleAccent: "What those who use",
+                title: "TERRA EA are saying"
+            },
+            reviews1: {
+                more: "More reviews"
+            },
+
+            tests: {
+                title: "Test results",
+                titleAccent: "over the last 10 years",
+
+                period: "Testing period",
+                timeframe: "Timeframe",
+                timeframeValue: "1 hour (H1)",
+                dates: "Testing dates",
+
+                depositProfit: "Deposit and profit",
+                startDeposit: "Initial deposit",
+                netProfit: "Net profit",
+
+                pairs: "Currency pairs",
+
+                risk: "Risk",
+                maxDrawdown: "Maximum drawdown",
+
+                trades: "Trade statistics"
+            },
+
+            buy: {
+                desc: "A reliable foundation for automated trading with stable results.",
+                price: "Price",
+                buy: "Buy",
+                parts: "Pay in installments"
+            },
+
+            stats: {
+                yearProfit: "Year profit",
+                maxDrawdown: "Max drawdown",
+                winrate: "Winrate"
+            },
+
+            footer: {
+                instagram: "Instagram",
+                telegram: "Telegram",
+                youtube: "YouTube"
+            },
+            reviewsList: [
+                {
+                    name: "Paul",
+                    text: "I've been using the bot since November and am very satisfied with the result. I was looking for a passive income tool with low risks — this option was perfect. In two months, I got 4% net profit thanks to the compound interest system. The bot is fully automatic: I set it up with the seller's help and haven't interfered since. I'm especially pleased that the system turns itself off during major news events, minimizing risks. I expect about 40% annually. I recommend it as a reliable and safe tool.",
+                },
+                {
+                    name: "John",
+                    text: "The bot demonstrates excellent performance. I use it at minimum risks for stable capital growth. For me, it has become a great alternative to other ways of diversifying funds for interest. A huge plus is that the bot integrates with the Bybit exchange, and I can keep the entire deposit in my own account, which adds confidence in asset safety. The tool is convenient, clear, and most importantly, brings predictable profit without unnecessary hassle or daily monitoring.",
+                },
+                {
+                    name: "Tom",
+                    text: "I've been using the 'Terra' bot for three months now. I decided to test the strategy on high risks and the result was amazing — I have +48% on my deposit. It's really cool that the developer constantly updates the settings and is always in touch in the chat to answer questions. Besides the technical part, I'm impressed by the author's honesty: the words in the posts always match the real numbers. This builds great trust. Looking forward to new releases and algorithms, as this product is definitely worth attention.",
+                },
+                {
+                    name: "Max",
+                    text: "I purchased this software about a month ago and can already draw my first conclusions. The setup process was quick, and the strategy logic is clear even without deep technical knowledge. The bot works very precisely, without technical failures or errors in order execution. This is exactly the product that matches the stated characteristics. So far, everything is going according to plan, results are stable, so I can safely recommend this bot to those who value quality execution and clear trading logic.",
+                },
+                {
+                    name: "David",
+                    text: "I've been working with the 'Terra' bot for five months now. I consciously went for an experiment and lowered the safety level (increased the risks), even though the developer warned about possible consequences. Despite this, I'm very satisfied with the result for this period — the bot withstood market movements and showed a good profit. The system works stably even with aggressive settings. Thanks to Vova for a high-quality product that allows for flexible strategy management and achieving desired profits over the long run.",
+                },
+            ],
+            botInfoPopup: {
+                botInfo: [
+                    "Unlimited number of bot activations",
+                    "Lifetime access to updates",
+                    "2 versions for MT4/MT5",
+                    "Video instructions with step-by-step setup",
+                    "Set-files for various risk levels",
+                    "Access to a private news channel",
+                    "100% guarantee that your results will match ours"
+                ],
+                botName: "TERRA EA",
+                botPrice: 800
+            },
+            calculator: {
+                titleAccent: "Calculate your",
+                title: "long-term profitability",
+                themes: {
+                    sumAndTerm: "Amount and Term",
+                    interest: "Interest Calculation",
+                    refill: "Top-up"
+                },
+                labels: {
+                    startSum: "Initial amount",
+                    unit: "Unit",
+                    term: "Term",
+                    frequency: "Frequency",
+                    rate: "Interest rate",
+                    sum: "Amount"
+                },
+                units: {
+                    year: "Year",
+                    month: "Month",
+                    yearly: "Yearly",
+                    monthly: "Monthly"
+                },
+                warnings: {
+                    startSum: "The amount with which the investment begins",
+                    term: "Number of years/months you plan to invest funds",
+                    rate: "Size of annual/monthly income in percent",
+                    refill: "The amount you plan to add to the deposit"
+                },
+                button: "Calculate Profitability",
+                table: {
+                    tableName: "Calculation Table",
+                    balance: "Balance",
+                    addedYear: "Added (year)",
+                    addedMonth: "Added (month)",
+                    totalAdded: "Total Investments",
+                    incomeYear: "Annual Income",
+                    incomeMonth: "Monthly Income",
+                    totalIncome: "Total Income",
+                    finalBalance: "Final Balance",
+                    description: "Terra EA averages a stable +20% per year / 1.6% per month.<br/>The longer the investment period, the greater the magic of compound interest!",
+                    descriptionAero: "Aero EA averages a stable +30% per year / 2.5% per month.<br/>The longer the investment period, the greater the magic of compound interest!",
+                    descriptionHydro: "Hydro EA averages a stable +50% per year / 4.2% per month.<br/>The longer the investment period, the greater the magic of compound interest!"
+                }
+            }
+        },
+
+        aero: {
+            reviewsList: [
+                {
+                    name: "William",
+                    text: "I am writing this review based on the results of the first week of trading. It’s great to see that all trades perfectly match the Myfxbook monitoring; the profit is absolutely consistent. A great start, so I’m looking forward to a long and productive cooperation.",
+                },
+                {
+                    name: "Lucas",
+                    text: "In the first month of using the bot, I got this result ⬆️ +5% net profit on the deposit. It works stably, without unnecessary risk, with clear entry and exit logic. For me, this is a good and predictable result.",
+                },
+                {
+                    name: "Benjamin",
+                    text: "Hi! I've been using the Aero bot for exactly two months now. During this time, it has traded +$321 on my personal Bybit exchange deposit. I am completely satisfied with the result; the bot is performing excellently over the long run.",
+                },
+                {
+                    name: "Oliver",
+                    text: "I'm sharing a review of my experience using the bots. I bought two algorithms at once—I really liked the delivery and presentation. I launched them on one account and got great numbers. Support, consultations, and guidance are all at a high level.",
+                },
+                {
+                    name: "Liam",
+                    text: "Hi everyone. Two months have passed since I bought the Aero bot. On my personal Bybit account, the net profit is already +$321. The system works stably and fully justifies the investment.",
+                },
+            ],
+            botInfoPopup: {
+                botInfo: [
+                    "Unlimited number of bot activations",
+                    "Lifetime access to updates",
+                    "2 versions for MT4/MT5",
+                    "Video instructions with step-by-step setup",
+                    "Set-files for various risk levels",
+                    "Access to a private news channel",
+                    "100% guarantee that your results will match ours",
+                    "Bot configuration for prop firms"
+                ],
+                botName: "AERO EA",
+                botPrice: 1200
+            },
+            hero: {
+                botName: "Aero EA",
+                theme: "Trading bot with the lowest drawdowns",
+                desc: "Over 7 months of verified statistics and 10 years of tests with stable results.",
+                buy: "Purchase bot",
+                slogan: "The security of your capital",
+                about: "Aero is the element of air; it can be as calm <span>as a light breeze or as dynamic as a storm,</span> turning wind into a gale thanks to adjustable risk levels.<br/><br/>The algorithm was trained using AI based on the XAUUSD symbol since 1999. <span>Its strategy does not use 'dangerous' methods such as martingale, grid trading, or similar techniques.</span><br/><br/>This ensures the <span>safest possible trading.</span>",
+                videoFallback: "Your browser does not support the video tag."
+            },
+            seo: {
+                title: "Aero EA — Safe Trading Bot with 3.7% Max Drawdown",
+                description: "Aero EA: AI-based algorithm for XAUUSD (Gold). No martingale or grids. Perfect for prop firm challenges. 86.8% win rate and stable profit.",
+                keywords: "Aero EA, prop firm bot, safe trading bot, XAUUSD gold robot, no martingale trading, AI trading bots"
+            },
+            advantages: {
+                title: "Advantages",
+                items: [
+                    {
+                        title: "Suitable for Prop Firms",
+                        desc: "Since it does not use forbidden strategies, Aero is suitable for most popular prop firms."
+                    },
+                    {
+                        title: "Market Adaptation",
+                        desc: "The algorithm trades on the breakout of key price levels and adapts to various market stages."
+                    },
+                    {
+                        title: "Flexibility for Any Style",
+                        desc: "Ideal for both conservative and aggressive traders. You control the trading style yourself."
+                    },
+                    {
+                        title: "Full Automation",
+                        desc: "Aero EA works in the background, is fully automated, and does not require constant manual intervention."
+                    }
+                ]
+            },
+            results: {
+                subtitle: "On a live account, Aero demonstrates phenomenal results with a profitability of 2%/month at a drawdown of 3.7%",
+                winrateText: "Meanwhile, its win rate has reached 86.8%.",
+                stats: [
+                    {label: "Year profit", value: "+30%"},
+                    {label: "Max drawdown", value: "3.7%"},
+                    {label: "Winrate", value: "86.8%"}
+                ],
+                button: "View statistics"
+            },
+            video: {
+                title: "<span>Video demonstration</span><br/> of the bot in action"
+            },
+            propInfo: {
+                title: "Find out how to increase Aero profitability with prop firms",
+                button: "Read more"
+            },
+            reviews: {
+                titleAccent: "What those who use",
+                title: "AERO EA are saying"
+            },
+            tests: {
+                winTrades: "Profitable trades"
+            },
+            buy: {
+                desc: "A reliable foundation for automated trading with stable results.",
+            }
+        },
+
+        hydro: {
+            reviewsList: [
+                {
+                    name: "Noah",
+                    text: "I bought the bot two weeks ago; I was interested in the detailed statistics 📈 I tested it for a week since I've been in this field for a long time and know that often it's one thing in words and quite another in practice. I can confirm — everything matches the claims, and the trades align with the statistics.",
+                },
+                {
+                    name: "Mateo",
+                    text: "The bot successfully passed the first phase on FTMO in 22 trading days ✅ It closed the second verification phase in just 4 days. I am completely satisfied with the result; it works stably, without surprises, follows risk management, and shows a predictable outcome.",
+                },
+                {
+                    name: "Kai",
+                    text: "I made my first withdrawal from trading in a long time. Honestly, it's a very pleasant feeling, especially when the result is achieved without constant monitoring. A great bonus and a gift for the upcoming holidays that really motivates me to keep moving forward.",
+                },
+                {
+                    name: "Maverick",
+                    text: "I have a result of +$1200 on my personal Bybit account! The bot has been trading for 3 months, and I plan to increase the deposit in the near future.",
+                },
+                {
+                    name: "Hudson",
+                    text: "Hi again, I want to write a review about the bot's performance and, actually, about your work. Initially, the bot was bought for a prop firm; I'll say right away that I was warned that I take all risks with prop firms upon myself. As for the personal deposit, the bot, with all its ups and downs, brought 4-5% for the period since August 18.",
+                },
+                {
+                    name: "Theodore",
+                    text: "I managed to get 20% in a month, taking into account the stops on both low-risk and high-risk settings! 😂",
+                },
+            ],
+            botInfoPopup: {
+                botInfo: [
+                    "Unlimited number of bot activations",
+                    "Lifetime access to updates",
+                    "2 versions for MT4/MT5",
+                    "Video instructions with step-by-step setup",
+                    "Set-files for various risk levels",
+                    "Access to a private news channel",
+                    "100% guarantee that your results will match ours",
+                    "Bot configuration for prop firms"
+                ],
+                botName: "HYDRO EA",
+                botPrice: 2000
+            },
+            hero: {
+                botName: "Hydro EA",
+                theme: "Trading bot with the highest profitability",
+                desc: "Over 7 months of verified statistics and 10 years of tests with stable results.",
+                buy: "Purchase bot",
+                slogan: "Growth of your capital",
+                about: "Hydro combines the calmness of deep waters and the strength of the tides, <span>helping to find a balance between stability and profitability.</span><br/><br/>It reacts quickly to market changes, <span>finding optimal entry and exit points</span> with high precision.<br/><br/>With a win rate above 90% and profitability of over 4.5% per month, <span>Hydro proves to be a perfect scalping bot that mimics human trading behavior as closely as possible.</span>",
+                videoFallback: "Your browser does not support the video tag."
+            },
+            seo: {
+                title: "Hydro EA — Trading Bot with 91.9% Win Rate and High Profitability",
+                description: "Hydro EA: Professional scalping bot for Gold (XAUUSD). Average monthly return of 5%, volatility protection, and no-martingale execution. The best choice for capital management.",
+                keywords: "Hydro EA, scalping bot, high-profit trading robot, gold bot, 90 win rate trading, XAUUSD automation, professional trading algorithms"
+            },
+            advantages: {
+                title: "Advantages",
+                items: [
+                    {
+                        title: "Intelligent Precision",
+                        desc: "High win rate thanks to intelligent analysis"
+                    },
+                    {
+                        title: "Risk Control",
+                        desc: "Trades with stop-losses without martingale or averaging"
+                    },
+                    {
+                        title: "Volatility Protection",
+                        desc: "Features a news filter to exclude trading during volatile periods"
+                    },
+                    {
+                        title: "Prop Compatibility",
+                        desc: "Due to the absence of martingale and grid, the algorithm fully complies with the strict risk management rules of most prop firms."
+                    },
+                    {
+                        title: "24/7 Monitoring",
+                        desc: "The algorithm works 24/7 without emotion or fatigue, instantly reacting to trading signals in any session."
+                    }
+                ]
+            },
+            results: {
+                subtitle: "On a public account, Hydro demonstrates phenomenal results with an average profitability of 5% per month.",
+                winrateText: "Meanwhile, its win rate has reached 91.9%.",
+                stats: [
+                    {label: "Year profit", value: "+50%"},
+                    {label: "Max drawdown", value: "14.3%"},
+                    {label: "Winrate", value: "91.9%"}
+                ]
+            },
+            propInfo: {
+                title: "Find out how to increase Hydro profitability with prop firms"
+            },
+            reviews: {
+                titleAccent: "What those who use",
+                title: "HYDRO EA are saying"
+            },
+            tests: {
+                timeframeValue: "1 day ( D1 )"
+            }
+        },
+
+        home: {
+            bestOfferProp: "Best For Prop-Companies",
+            piecePay: "Available payment in installments",
+            botsList: [
+                {
+                    name: "Terra EA",
+                    description: "The bot with the longest public statistics in Ukraine.",
+                    advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
+                    price: 800,
+                    href: "/terra",
+                    prop: false,
+                    paying: true,
+                },
+                {
+                    name: "Aero EA",
+                    description: "The bot with the lowest drawdown in the lineup.",
+                    advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
+                    price: 1200,
+                    href: "/aero",
+                    prop: true,
+                    paying: true,
+                },
+                {
+                    name: "Hydro EA",
+                    description: "The bot with the highest profitability in the lineup.",
+                    advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
+                    price: 2000,
+                    href: "/hydro",
+                    prop: true,
+                    paying: true
+                }
+            ],
+            reviewsList: [
+                {
+                    name: "Michael",
+                    text: "I bought the bot two weeks ago; I was interested in the detailed statistics 📈 I tested it for a week since I've been in this field for a long time and know that words often diverge from practice. I confirm — everything matches the claims, and the trades align with the statistics."
+                },
+                {
+                    name: "Robert",
+                    text: "The bot successfully passed the first phase on FTMO in 22 trading days ✅ It closed the second verification phase in just 4 days. I am completely satisfied with the result; it works stably, without surprises, and follows risk management."
+                },
+                {
+                    name: "John",
+                    text: "I made my first withdrawal from trading in a long time. Honestly, it's a very pleasant feeling, especially when the result is achieved without constant monitoring. A great bonus and a gift for the holidays."
+                },
+                {
+                    name: "Joseph",
+                    text: "I'm writing a review about my experience using the bots. I bought two algorithms at once — I really liked the presentation. I launched them on one account and got great numbers. Support and consultations are at a high level."
+                },
+                {
+                    name: "Richard",
+                    text: "In the first month of using the bot, I received +5% net profit on the deposit. It works stably, without unnecessary risk, with clear entry and exit logic. For me, this is a good, predictable result."
+                },
+                {
+                    name: "Christopher",
+                    text: "I haven't had the time to leave feedback for Terra for a while. In 3 months on high-risk settings, I got +48%. Very happy with the bot, updates, and support. Special respect for the honesty — the numbers match reality."
+                }
+            ],
+            faq: [
+                {
+                    question: "How do I choose a bot?",
+                    answer: "All risks for each bot are detailed on its page. We work exclusively with stable risk settings that do not exceed a 15-20% drawdown of the deposit."
+                },
+                {
+                    question: "Do I need to keep my computer on all the time?",
+                    answer: "No. The bots work on remote servers. You can turn off your phone or laptop — the process will not be interrupted."
+                },
+                {
+                    question: "Do I need extensive trading experience?",
+                    answer: "Absolutely not. All you need to do is create an account and connect the bot. Video instructions will be available immediately after purchase."
+                },
+                {
+                    question: "Can I lose my entire deposit?",
+                    answer: "Our bots have been tested at various market stages and in critical situations. With our settings, losing the entire deposit is impossible."
+                },
+                {
+                    question: "How can I get a consultation?",
+                    answer: "For the correct selection, we recommend familiarizing yourself with each bot or contacting us for a consultation via Telegram, where we will help determine the right algorithm for you."
+                }
+            ], hero: {
+                title: "Your capital grows — without your involvement",
+                desc: "Trading bots that operate autonomously using a clear strategy — with minimal drawdown and a real track record on live accounts.",
+                button: "Select a Bot"
+            }, stats: {
+                title: "<span>Our team has already automated trading</span><br/>for many clients, we will help you too",
+                management: "under management",
+                items: [
+                    {num: "2", desc: "Years on the market"},
+                    {num: "4", desc: "Profitable bots"},
+                    {num: "5", desc: "Accounts with live statistics"},
+                    {num: "+80%", desc: "For 2025"}
+                ]
+            },
+            steps: {
+                title: "<span>The journey from setup</span> to the first trade",
+                items: [
+                    {
+                        title: "Algorithm Selection",
+                        desc: "You define your goals and acceptable risk. Our catalog contains solutions for both conservative accumulation and active trading."
+                    },
+                    {
+                        title: "Connection",
+                        desc: "The bot is installed on your account in a couple of clicks. You receive all instructions and a license for activation."
+                    },
+                    {
+                        title: "Autonomous Trading",
+                        desc: "The algorithm scans the market 24/7. As soon as the strategy conditions are met, the bot instantly opens a position."
+                    },
+                    {
+                        title: "Monitoring and Results",
+                        desc: "You follow the statistics in real-time. At any moment, the bot's operation can be paused or modified."
+                    }
+                ]
+            }, effective: {
+                title: "Why choose <br/><span>algorithmic trading?</span>",
+                items: [
+                    {
+                        title: "Trading without the 'human factor'",
+                        desc: "The bot won't close a trade too early due to fear or stay in a loss due to hope. Only mathematical expectation."
+                    },
+                    {
+                        title: "Real Statistics",
+                        desc: "Each algorithm has public statistics for at least 6 months of operation on a real account with a licensed broker."
+                    },
+                    {
+                        title: "Passive Income",
+                        desc: "The market never sleeps. The bot works day and night while you rest. It is a full-fledged passive income without your involvement."
+                    },
+                    {
+                        title: "Transparency and Testing",
+                        desc: "Every algorithm is run through historical data. You understand the logic of the system's operation before you even launch it."
+                    }
+                ]
+            },
+            catalog: {
+                title: "Bot Catalog",
+                propLabel: "Suitable for Prop",
+                payingLabel: "Installments",
+                moreDetails: "More details"
+            },
+            reviews: {
+                titleAccent: "What those say who",
+                title: "have already switched to ALGO"
+            },
+            faqTitle: "Frequently Asked Questions",
+            consult: {
+                title: "Difficult to choose your first bot?",
+                desc: "The market offers hundreds of options, but not all of them fit your capital and temperament. We will help you find a solution that is comfortable exactly for you.",
+                button: "Get a consultation"
+            }, header: {
+                howItWorks: "How it works",
+                advantages: "Advantages",
+                catalog: "Bot Catalog",
+                reviews: "Reviews",
+                faq: "FAQ",
+                selectBot: "Select Bot"
+            },
+        }, popup: {
+            subtitle: "Forex trading bot",
+            title: "Convenient way to connect",
+            labels: {
+                name: "Your name",
+                contact: "Your"
+            },
+            placeholders: {
+                name: "Your name"
+            },
+            channels: {
+                tg: "telegram",
+                inst: "instagram"
+            },
+            submit: "Send",
+            or: "Or write to us",
+            writeTg: "Message on Telegram",
+            error: "An error occurred while sending the request."
+        }, thx: {
+            title: "Thank you! Your request has been successfully sent.",
+            desc: "Our manager will process the information and contact you shortly to clarify the details. Have a great day!",
+            button: "Back to Home"
         }
     },
 

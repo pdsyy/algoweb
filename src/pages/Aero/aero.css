@@ -2,6 +2,26 @@
     padding-bottom: 27px;
 }
 
+
+.buy_block.aero_bot .bot_stat_item{
+    padding: 10px;
+    gap: 14px;
+}
+
+.buy_block.aero_bot .bot_stat_price {
+    padding: 10px;
+}
+.buy_block.aero_bot .product_desc_bottom {
+    margin-top: 14px;
+}
+
+.buy_block.aero_bot .buy_block_bot_stat {
+    margin-top: 15px;
+}
+
+.buy_block.aero_bot .bottom_buttons_block{
+    margin-top: 18px;
+}
 .bot_info_main{
     width: 100%;
     padding: 0 48px;
