@@ -11,8 +11,8 @@ import market_image5 from "./images/market_image5.png"
 import market_image6 from "./images/market_image6.png"
 import market_image7 from "./images/market_image7.png"
 import mql_pl from "./images/mql_pl.svg"
-import mql5_2x from "./images/mql5_2x.png"
-import metaTrader_icon from "./images/metaTrader_icon.svg"
+import mql5_2x from "./images/mql_f.png"
+import metaTrader_icon from "./images/metaTrader_icon_light.svg"
 import mql5_light from "./images/mql5_light.svg"
 import firstDealImage from "./images/firstDealImage.png"
 import firstDealItem1 from "./images/firstDealItem1.svg"
@@ -293,7 +293,7 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                 </div>
 
                 <div className="main_page_mql5_fs">
-                    <div className="main_page_mql5">
+                    <motion.div className="main_page_mql5" {...fadeUp}>
                         <div className="mql_info">
                             <div className="meta_trader_badge">
                                 <img src={metaTrader_icon} alt="Meta Trader Icon"/>
@@ -308,11 +308,10 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                target="_blank"
                                rel="noopener noreferrer">
                                 {t.buttons.openMql}
-                                <img src={mql5_light} alt=""/>
                             </a>
                         </div>
                         <img src={mql5_2x} className="mql5_big_image" alt="mql5_logo"/>
-                    </div>
+                    </motion.div>
                 </div>
 
 
