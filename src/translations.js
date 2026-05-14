@@ -146,7 +146,7 @@ export const translations = {
                     "Гарантія 100% ідентичності ваших результатів з нашими"
                 ],
                 botName: "TERRA EA",
-                botPrice: 800
+                botPrice: 499
             }, calculator: {
                 titleAccent: "Розрахуйте свою",
                 title: "довгострокову дохідність",
@@ -229,14 +229,14 @@ export const translations = {
                     "Налаштування бота під проп-компанію"
                 ],
                 botName: "AERO EA",
-                botPrice: 1200
+                botPrice: 699
             }, hero: {
                 botName: "Aero EA",
                 theme: "Торговий бот з найнижчими просадками",
-                desc: "Має понад 7 місяців підтвердженої статистики і 10 років тестів зі стабільними результатами.",
+                desc: "Має понад 11 місяців підтвердженої статистики і 10 років тестів зі стабільними результатами.",
                 buy: "Придбати бота",
                 slogan: "Безпека вашого капіталу",
-                about: "Aero - елемент повітря, він може бути спокійним, <span>як легкий вітер, так і динамічним, перетворюючи вітер на бурю</span>, завдяки рівню ризику, що налаштовується.<br/><br/>Алгоритм навчали за допомогою AI на базі символу XAUUSD з 1999 року, <span>його стратегія не має жодних «небезпечних» методик як мартингейл, сіткова торгівля та подібні.</span><br/><br/>Це забезпечує максимально <span>безпечну торгівлю.</span>",
+                about: "Aero — елемент повітря; він може бути як спокійним, <span>немов легкий бриз, так і динамічним, як шторм,</span> перетворюючи вітер на шквал завдяки налаштовуваним рівням ризику.<br/><br/>В його основі лежить алгоритм розпізнавання патернів — kNN (k-найближчих сусідів), <span>метод машинного навчання, навчений на даних про ціну золота за 25+ років.</span><br/><br/>Результат: <span>короткі, чисті угоди з незмінно високим вінрейтом і чітко визначеним ризиком у кожній позиції.</span>",
                 videoFallback: "Ваш браузер не підтримує відео."
             },
             seo: {
@@ -328,7 +328,7 @@ export const translations = {
                     "Налаштування бота під проп-компанію"
                 ],
                 botName: "HYDRO EA",
-                botPrice: 2000
+                botPrice: 999
             }, hero: {
                 botName: "Hydro EA",
                 theme: "Торговий бот з найвищою дохідністю",
@@ -393,7 +393,7 @@ export const translations = {
                     name: "Terra EA",
                     description: "Бот з найдовшою публічною статистикою в Україні.",
                     advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
-                    price: 800,
+                    price: 499,
                     href: "/terra",
                     prop: false,
                     paying: true,
@@ -402,7 +402,7 @@ export const translations = {
                     name: "Aero EA",
                     description: "Бот з найнижчою просадкою в асортименті.",
                     advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
-                    price: 1200,
+                    price: 699,
                     href: "/aero",
                     prop: true,
                     paying: true,
@@ -411,7 +411,7 @@ export const translations = {
                     name: "Hydro EA",
                     description: "Бот з найвищою прибутковістю в асортименті.",
                     advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
-                    price: 2000,
+                    price: 999,
                     href: "/hydro",
                     prop: true,
                     paying: true
@@ -619,7 +619,7 @@ export const translations = {
                     "Налаштування бота під проп-компанію"
                 ],
                 botName: "PROP EA",
-                botPrice: 399
+                botPrice: 599
             }, faq: [
                 {
                     question: "Цей бот залишиться у мене назавжди?",
@@ -654,7 +654,7 @@ export const translations = {
                 subtitle: "за останній рік",
                 winTrades: "Прибуткові угоди"
             }, buySection: {
-                badge: "Краща пропозиція",
+                badge: "Найкращий вибір для проп-компаній",
                 freeMonth: "Перший місяць підписки безкоштовно",
                 title: "Prop EA",
                 desc: "Надійний фундамент для автоматичної торгівлі зі стабільними результатами.",
@@ -695,7 +695,7 @@ export const translations = {
                     payback: "Рентабельність бота",
                     period12: "за 12 місяців",
                     endOfTerm: "на кінець терміну",
-                    costNotice: "бот коштує $399",
+                    costNotice: "бот коштує $599",
                     legend: {
                         pnl: "PnL за рік",
                         payback: "Окупність",
@@ -734,7 +734,7 @@ export const translations = {
                     "Настройка бота под проп-компанию"
                 ],
                 botName: "PROP EA",
-                botPrice: 399
+                botPrice: 599
             },
             calculator: {
                 titleAccent: "Рассчитайте",
@@ -761,7 +761,7 @@ export const translations = {
                     payback: "Рентабельность бота",
                     period12: "за 12 месяцев",
                     endOfTerm: "на конец срока",
-                    costNotice: "бот стоит $399",
+                    costNotice: "бот стоит $599",
                     legend: {
                         pnl: "PnL за год",
                         payback: "Окупаемость",
@@ -776,7 +776,7 @@ export const translations = {
                 keywords: "Prop EA, проп трейдинг бот, бот для проп компаний, пройти челлендж проп, алгоритмическая торговля, торговый робот без мартингейла, безопасный трейдинг"
             },
             buySection: {
-                badge: "Лучшее предложение",
+                badge: "Лучший выбор для проп-компаний",
                 freeMonth: "Первый месяц подписки бесплатно",
                 title: "Prop EA",
                 desc: "Надежный фундамент для автоматической торговли со стабильными результатами.",
@@ -1004,7 +1004,7 @@ export const translations = {
                     "Гарантия 100% идентичности ваших результатов с нашими"
                 ],
                 botName: "TERRA EA",
-                botPrice: 800
+                botPrice: 499
             }, calculator: {
                 titleAccent: "Рассчитайте свою",
                 title: "долгосрочную доходность",
@@ -1086,14 +1086,14 @@ export const translations = {
                     "Настройка бота под проп-компанию"
                 ],
                 botName: "AERO EA",
-                botPrice: 1200
+                botPrice: 699
             }, hero: {
                 botName: "Aero EA",
                 theme: "Торговый бот с самыми низкими просадками",
-                desc: "Более 7 месяцев подтвержденной статистики и 10 лет тестов со стабильными результатами.",
+                desc: "Более 11 месяцев подтвержденной статистики и 10 лет тестов со стабильными результатами.",
                 buy: "Приобрести бота",
                 slogan: "Безопасность вашего капитала",
-                about: "Aero - элемент воздуха, он может быть как спокойным, <span>словно легкий бриз, так и динамичным, превращая ветер в бурю</span> благодаря настраиваемому уровню риска.<br/><br/>Алгоритм обучали с помощью AI на базе символа XAUUSD с 1999 года, <span>его стратегия не использует «опасных» методик, таких как мартингейл, сеточная торговля и подобные.</span><br/><br/>Это обеспечивает максимально <span>безопасную торговлю.</span>",
+                about: "Aero — это стихия воздуха; он может быть как спокойным, <span>словно легкий бриз, так и динамичным, как шторм,</span> превращая ветер в шквал благодаря настраиваемым уровням риска.<br/><br/>В его основе лежит алгоритм распознавания паттернов — kNN (k-ближайших соседей), <span>метод машинного обучения, обученный на данных о цене золота за 25+ лет.</span><br/><br/>Результат: <span>короткие, чистые сделки с неизменно высоким винрейтом и четко определенным риском в каждой позиции.</span>",
                 videoFallback: "Ваш браузер не поддерживает видео."
             },
             seo: {
@@ -1185,7 +1185,7 @@ export const translations = {
                     "Настройка бота под проп-компанию"
                 ],
                 botName: "HYDRO EA",
-                botPrice: 2000
+                botPrice: 999
             }, hero: {
                 botName: "Hydro EA",
                 theme: "Торговый бот с самой высокой доходностью",
@@ -1250,7 +1250,7 @@ export const translations = {
                     name: "Terra EA",
                     description: "Бот с самой долгой публичной статистикой в Украине.",
                     advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
-                    price: 800,
+                    price: 499,
                     href: "/terra",
                     prop: false,
                     paying: true,
@@ -1259,7 +1259,7 @@ export const translations = {
                     name: "Aero EA",
                     description: "Бот с самой низкой просадкой в ассортименте.",
                     advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
-                    price: 1200,
+                    price: 699,
                     href: "/aero",
                     prop: true,
                     paying: true,
@@ -1268,7 +1268,7 @@ export const translations = {
                     name: "Hydro EA",
                     description: "Бот с самой высокой доходностью в ассортименте.",
                     advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
-                    price: 2000,
+                    price: 999,
                     href: "/hydro",
                     prop: true,
                     paying: true
@@ -1444,7 +1444,7 @@ export const translations = {
                     "Bot configuration for prop firms"
                 ],
                 botName: "PROP EA",
-                botPrice: 399
+                botPrice: 599
             },
             calculator: {
                 titleAccent: "Calculate",
@@ -1471,7 +1471,7 @@ export const translations = {
                     payback: "Bot ROI",
                     period12: "for 12 months",
                     endOfTerm: "at the end of the term",
-                    costNotice: "bot costs $399",
+                    costNotice: "bot costs $599",
                     legend: {
                         pnl: "PnL per year",
                         payback: "Payback",
@@ -1486,7 +1486,7 @@ export const translations = {
                 keywords: "Prop EA, prop trading bot, bot for prop firms, pass prop challenge, algorithmic trading, trading robot no martingale, safe trading"
             },
             buySection: {
-                badge: "Best Offer",
+                badge: "Best For Prop-Companies",
                 freeMonth: "First month of subscription for free",
                 title: "Prop EA",
                 desc: "A reliable foundation for automated trading with stable results.",
@@ -1719,7 +1719,7 @@ export const translations = {
                     "100% guarantee that your results will match ours"
                 ],
                 botName: "TERRA EA",
-                botPrice: 800
+                botPrice: 499
             },
             calculator: {
                 titleAccent: "Calculate your",
@@ -1802,15 +1802,15 @@ export const translations = {
                     "Bot configuration for prop firms"
                 ],
                 botName: "AERO EA",
-                botPrice: 1200
+                botPrice: 699
             },
             hero: {
                 botName: "Aero EA",
                 theme: "Trading bot with the lowest drawdowns",
-                desc: "Over 7 months of verified statistics and 10 years of tests with stable results.",
+                desc: "Over 11 months of verified statistics and 10 years of tests with stable results.",
                 buy: "Purchase bot",
                 slogan: "The security of your capital",
-                about: "Aero is the element of air; it can be as calm <span>as a light breeze or as dynamic as a storm,</span> turning wind into a gale thanks to adjustable risk levels.<br/><br/>The algorithm was trained using AI based on the XAUUSD symbol since 1999. <span>Its strategy does not use 'dangerous' methods such as martingale, grid trading, or similar techniques.</span><br/><br/>This ensures the <span>safest possible trading.</span>",
+                about: "Aero is the element of air; it can be as calm <span>as a light breeze or as dynamic as a storm,</span> turning wind into a gale thanks to adjustable risk levels.<br/><br/>At its core is a pattern recognition algorithm — kNN (k-Nearest Neighbors), <span>a machine learning method trained on 25+ years of Gold price data.</span><br/><br/>The result: <span>short, clean trades with a consistently high winrate and clearly defined risk on every position.</span>",
                 videoFallback: "Your browser does not support the video tag."
             },
             seo: {
@@ -1907,7 +1907,7 @@ export const translations = {
                     "Bot configuration for prop firms"
                 ],
                 botName: "HYDRO EA",
-                botPrice: 2000
+                botPrice: 999
             },
             hero: {
                 botName: "Hydro EA",
@@ -1977,7 +1977,7 @@ export const translations = {
                     name: "Terra EA",
                     description: "The bot with the longest public statistics in Ukraine.",
                     advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
-                    price: 800,
+                    price: 499,
                     href: "/terra",
                     prop: false,
                     paying: true,
@@ -1986,7 +1986,7 @@ export const translations = {
                     name: "Aero EA",
                     description: "The bot with the lowest drawdown in the lineup.",
                     advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
-                    price: 1200,
+                    price: 699,
                     href: "/aero",
                     prop: true,
                     paying: true,
@@ -1995,7 +1995,7 @@ export const translations = {
                     name: "Hydro EA",
                     description: "The bot with the highest profitability in the lineup.",
                     advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
-                    price: 2000,
+                    price: 999,
                     href: "/hydro",
                     prop: true,
                     paying: true

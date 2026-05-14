@@ -169,7 +169,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                                     custom={4}>
                             {t.aero.hero.buy}
                         </motion.div>
-                        <motion.a href="https://www.mql5.com/en/users/ferwer31234/news"
+                        <motion.a href="https://www.mql5.com/en/market/product/176860?source=Site+Market+My+Products+Page#description"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   {...fadeNumeric} custom={4} className="mql_link">
@@ -410,7 +410,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
             </div>
 
 
-            <div className="how_to_fs">
+            {/*<div className="how_to_fs">
                 <div className="how_to_block">
                     <motion.div className="learn_ho_to" {...fadeLeft}>
                         <div className="how_to_main_info">
@@ -426,7 +426,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                         <img src={how_to_image} alt=""/>
                     </motion.div>
                 </div>
-            </div>
+            </div>*/}
 
 
             <CalculatorSectionAero startPercentage = {30}/>
@@ -469,7 +469,7 @@ const AeroPage = ({activePopup, setActivePopup}) => {
                             </div>
                         </div>
                         <a className = "open_mql5_bottom"
-                           href="https://www.mql5.com/en/users/ferwer31234/news"
+                           href="https://www.mql5.com/en/market/product/176860?source=Site+Market+My+Products+Page#description"
                            target="_blank"
                            rel="noopener noreferrer">
                             {t.buttons.openMql}

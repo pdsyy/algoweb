@@ -413,11 +413,27 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                             </div>
                                         </div>
 
-                                        <a href={el.href}>
-                                            <div className="bot_more_details">
-                                                {t.home.catalog.moreDetails}
+                                        {el.name === "Aero EA" ?
+                                            <div className = "aero_card_buttons">
+                                                <a href={el.href}>
+                                                    <div className="bot_more_details">
+                                                        {t.home.catalog.moreDetails}
+                                                    </div>
+                                                </a>
+                                                <a href="https://www.mql5.com/en/market/product/176860?source=Site+Market+My+Products+Page#description" target="_blank"
+                                                   rel="noopener noreferrer" className = "mql_card_button">
+                                                    <div className="mql_aero_card_button">
+                                                        {t.buttons.openMql}
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
+                                            :
+                                            <a href={el.href}>
+                                                <div className="bot_more_details">
+                                                    {t.home.catalog.moreDetails}
+                                                </div>
+                                            </a>
+                                        }
                                     </div>
                                 </div>
                             </motion.div> :
@@ -459,11 +475,27 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                             ✓ {t.home.piecePay}
                                         </div>
 
-                                        <a href={el.href}>
-                                            <div className="bot_more_details">
-                                                {t.home.catalog.moreDetails}
+                                        {el.name === "Aero EA" ?
+                                            <div className = "aero_card_buttons">
+                                                <a href={el.href}>
+                                                    <div className="bot_more_details">
+                                                        {t.home.catalog.moreDetails}
+                                                    </div>
+                                                </a>
+                                                <a href="https://www.mql5.com/en/market/product/176860?source=Site+Market+My+Products+Page#description" target="_blank"
+                                                   rel="noopener noreferrer" className = "mql_card_button">
+                                                    <div className="mql_aero_card_button">
+                                                        {t.buttons.openMql}
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
+                                            :
+                                            <a href={el.href}>
+                                                <div className="bot_more_details">
+                                                    {t.home.catalog.moreDetails}
+                                                </div>
+                                            </a>
+                                        }
                                     </div>
                                 </div>
                             }
@@ -491,9 +523,9 @@ const MainPage = ({activePopup, setActivePopup, visibleHeader, setVisibleHeader}
                                     <div className="best_offer">
                                         {t.prop.buySection.badge}
                                     </div>
-                                    <div className="first_month_free">
+                                    {/*<div className="first_month_free">
                                         {t.prop.buySection.freeMonth}
-                                    </div>
+                                    </div>*/}
                                 </div>
                                 <div className="prop_bot_name">
                                     {t.prop.buySection.title}
