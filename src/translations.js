@@ -146,7 +146,7 @@ export const translations = {
                     "Гарантія 100% ідентичності ваших результатів з нашими"
                 ],
                 botName: "TERRA EA",
-                botPrice: 499
+                botPrice: 800
             }, calculator: {
                 titleAccent: "Розрахуйте свою",
                 title: "довгострокову дохідність",
@@ -229,7 +229,7 @@ export const translations = {
                     "Налаштування бота під проп-компанію"
                 ],
                 botName: "AERO EA",
-                botPrice: 699
+                botPrice: 1200
             }, hero: {
                 botName: "Aero EA",
                 theme: "Торговий бот з найнижчими просадками",
@@ -328,7 +328,7 @@ export const translations = {
                     "Налаштування бота під проп-компанію"
                 ],
                 botName: "HYDRO EA",
-                botPrice: 999
+                botPrice: 2000
             }, hero: {
                 botName: "Hydro EA",
                 theme: "Торговий бот з найвищою дохідністю",
@@ -393,7 +393,7 @@ export const translations = {
                     name: "Terra EA",
                     description: "Бот з найдовшою публічною статистикою в Україні.",
                     advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
-                    price: 499,
+                    price: 800,
                     href: "/terra",
                     prop: false,
                     paying: true,
@@ -402,7 +402,7 @@ export const translations = {
                     name: "Aero EA",
                     description: "Бот з найнижчою просадкою в асортименті.",
                     advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
-                    price: 699,
+                    price: 1200,
                     href: "/aero",
                     prop: true,
                     paying: true,
@@ -411,7 +411,7 @@ export const translations = {
                     name: "Hydro EA",
                     description: "Бот з найвищою прибутковістю в асортименті.",
                     advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
-                    price: 999,
+                    price: 2000,
                     href: "/hydro",
                     prop: true,
                     paying: true
@@ -1004,7 +1004,7 @@ export const translations = {
                     "Гарантия 100% идентичности ваших результатов с нашими"
                 ],
                 botName: "TERRA EA",
-                botPrice: 499
+                botPrice: 800
             }, calculator: {
                 titleAccent: "Рассчитайте свою",
                 title: "долгосрочную доходность",
@@ -1086,7 +1086,7 @@ export const translations = {
                     "Настройка бота под проп-компанию"
                 ],
                 botName: "AERO EA",
-                botPrice: 699
+                botPrice: 1200
             }, hero: {
                 botName: "Aero EA",
                 theme: "Торговый бот с самыми низкими просадками",
@@ -1185,7 +1185,7 @@ export const translations = {
                     "Настройка бота под проп-компанию"
                 ],
                 botName: "HYDRO EA",
-                botPrice: 999
+                botPrice: 2000
             }, hero: {
                 botName: "Hydro EA",
                 theme: "Торговый бот с самой высокой доходностью",
@@ -1250,7 +1250,7 @@ export const translations = {
                     name: "Terra EA",
                     description: "Бот с самой долгой публичной статистикой в Украине.",
                     advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
-                    price: 499,
+                    price: 800,
                     href: "/terra",
                     prop: false,
                     paying: true,
@@ -1259,7 +1259,7 @@ export const translations = {
                     name: "Aero EA",
                     description: "Бот с самой низкой просадкой в ассортименте.",
                     advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
-                    price: 699,
+                    price: 1200,
                     href: "/aero",
                     prop: true,
                     paying: true,
@@ -1268,7 +1268,7 @@ export const translations = {
                     name: "Hydro EA",
                     description: "Бот с самой высокой доходностью в ассортименте.",
                     advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
-                    price: 999,
+                    price: 2000,
                     href: "/hydro",
                     prop: true,
                     paying: true
@@ -1719,7 +1719,7 @@ export const translations = {
                     "100% guarantee that your results will match ours"
                 ],
                 botName: "TERRA EA",
-                botPrice: 499
+                botPrice: 800
             },
             calculator: {
                 titleAccent: "Calculate your",
@@ -1802,7 +1802,7 @@ export const translations = {
                     "Bot configuration for prop firms"
                 ],
                 botName: "AERO EA",
-                botPrice: 699
+                botPrice: 1200
             },
             hero: {
                 botName: "Aero EA",
@@ -1907,7 +1907,7 @@ export const translations = {
                     "Bot configuration for prop firms"
                 ],
                 botName: "HYDRO EA",
-                botPrice: 999
+                botPrice: 2000
             },
             hero: {
                 botName: "Hydro EA",
@@ -1977,7 +1977,7 @@ export const translations = {
                     name: "Terra EA",
                     description: "The bot with the longest public statistics in Ukraine.",
                     advantages: {yearProfit: "+20%", maxDrawDown: "16.5%", winRate: "72.3%"},
-                    price: 499,
+                    price: 800,
                     href: "/terra",
                     prop: false,
                     paying: true,
@@ -1986,7 +1986,7 @@ export const translations = {
                     name: "Aero EA",
                     description: "The bot with the lowest drawdown in the lineup.",
                     advantages: {yearProfit: "+30%", maxDrawDown: "3.7%", winRate: "86.8%"},
-                    price: 699,
+                    price: 1200,
                     href: "/aero",
                     prop: true,
                     paying: true,
@@ -1995,7 +1995,7 @@ export const translations = {
                     name: "Hydro EA",
                     description: "The bot with the highest profitability in the lineup.",
                     advantages: {yearProfit: "+50%", maxDrawDown: "14.3%", winRate: "91.9%"},
-                    price: 999,
+                    price: 2000,
                     href: "/hydro",
                     prop: true,
                     paying: true
